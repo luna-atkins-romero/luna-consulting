@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+/* Custom theme colors */
+@theme {
+  --color-navy-deep: #011f4b;
+  --color-navy: #03396c;
+  --color-blue-rich: #005b96;
+  --color-blue-mid: #6497b1;
+  --color-blue-light: #b3cde0;
+}
+
+/* Custom utility classes for fonts */
+.font-heading {
+  font-family: 'Goudy Bookletter 1911', serif;
+}
+
+.font-body {
+  font-family: 'Raleway', sans-serif;
+}

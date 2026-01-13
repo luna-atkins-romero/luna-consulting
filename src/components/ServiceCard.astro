@@ -1,0 +1,95 @@
+---
+/**
+ * ServiceCard Component
+ * 
+ * @description A reusable card component for displaying services
+ * with an elegant drop shadow effect, styled like Feature.astro
+ */
+
+import { Icon } from 'astro-icon/components'
+
+interface Props {
+  title: string
+  icon?:  string
+}
+
+
+const { title = 'Service Title', icon = 'lucide: star' }: Props = Astro.props
+---
+
+<div class="service-card">
+  <div class="service-card-inner">
+    {icon && <Icon aria-hidden="true" name={icon} class="service-card-icon" />}
+    <h3 class="service-card-title">{title}</h3>
+    <div class="service-card-content">
+      <slot>Default content goes here</slot>
+    </div>
+  </div>
+</div>
+
+<style lang="scss">
+  .service-card {
+    position: relative;
+    padding: 1.5rem;
+    inline-size: calc(100% - 1.5rem);
+
+    > * {
+      position: relative;
+      z-index: 2;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      border:  3px solid rgb(15, 23, 42);
+      border-radius: 0.5rem;
+      background-color: white;
+      box-shadow: 0 0 0 6px white;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 1rem -0.85rem -0.85rem 1rem;
+      z-index:  0;
+      border-radius: 0.5rem;
+      background-color: rgb(59, 130, 246);
+      opacity: 0.12;
+      transition: all 0.3s ease;
+    }
+
+    &:hover::after {
+      opacity: 0.18;
+      box-shadow: 0 4px 6px rgb(0, 0, 0, 0.1);
+    }
+  }
+
+  .service-card-inner {
+    position: relative;
+    z-index: 2;
+    padding:  2rem;
+  }
+
+  .service-card-icon {
+    inline-size:  2rem;
+    block-size: auto;
+    color:  #6497b1;
+    margin-bottom: 0.5rem;
+  }
+
+  .service-card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: rgb(15, 23, 42);
+    margin-bottom: 0.75rem;
+    font-family: var(--font-heading, inherit);
+  }
+
+  .service-card-content {
+    color: rgb(55, 65, 81);
+    line-height: 1.625;
+    font-size: 1rem;
+  }
+</style>
