@@ -1,6 +1,6 @@
 ---
-import ResponsiveToggle from './ResponsiveToggle.astro'
-import Logo from './Logo.astro'
+// import ResponsiveToggle from './ResponsiveToggle.astro'
+// import Logo from './Logo.astro'
 import { Icon } from 'astro-icon/components'
 
 /**
@@ -13,14 +13,14 @@ import { Icon } from 'astro-icon/components'
 
 <div id="main-navigation" class="py-6 px-6 bg-white border-b border-gray-100">
   <div class="max-w-5xl mx-auto flex flex-wrap justify-between items-center">
-    <Logo />
+    <!-- <Logo /> -->
     <div class="flex items-center gap-6">
       <nav class="hidden md:block" aria-label="Main navigation">
         <ul class="menu flex gap-12 font-body text-sm items-center">
           <slot />
         </ul>
       </nav>
-      <ResponsiveToggle />
+      <!-- <ResponsiveToggle /> -->
     </div>
   </div>
 
@@ -307,7 +307,7 @@ import { Icon } from 'astro-icon/components'
         min-width: 200px;
       }
 
-      > button. show ~ ul {
+      > button.show ~ ul {
         display:  flex;
       }
     }
