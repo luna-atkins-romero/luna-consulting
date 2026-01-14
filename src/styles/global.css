@@ -1,7 +1,6 @@
 @import './fonts.css';
 @import "tailwindcss";
 
-/* Custom theme colors and fonts */
 @theme {
   /* Colors */
   --color-navy-deep: #011f4b;
@@ -11,16 +10,17 @@
   --color-blue-light: #b3cde0;
 }
 
-/* -----------------------------
-   Base typography (elements)
------------------------------- */
+/* Base typography (elements) */
+h1, h2 {
+  font-family: "Goudy Bookletter 1911", serif;
+  font-weight: 400;
+  font-style: normal;
+}
 
-h1, h2, h3, h4, h5, h6 {
+h3, h4, h5, h6 {
   font-family: "Hanken Grotesk Variable", sans-serif;
   font-weight: 500;
   font-style: normal;
-  line-height: 1.15;
-  margin: 0;
 }
 
 h1 {
@@ -35,6 +35,10 @@ h3 {
   font-size: 1.75rem;
 }
 
+h4 {
+  font-size: 1.5rem;
+}
+
 p {
   font-family: "Hanken Grotesk Variable", sans-serif;
   font-weight: 400;
@@ -44,7 +48,6 @@ p {
 }
 
 /* Custom font utility classes */
-
 .font-headline {
   font-family: "Goudy Bookletter 1911", serif;
 }

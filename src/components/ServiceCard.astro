@@ -13,14 +13,13 @@ interface Props {
   icon?:  string
 }
 
-
 const { title = 'Service Title', icon = 'lucide: star' }: Props = Astro.props
 ---
 
 <div class="service-card">
   <div class="service-card-inner">
     {icon && <Icon aria-hidden="true" name={icon} class="service-card-icon" />}
-    <h3 class="service-card-title">{title}</h3>
+    <h4 class="service-card-title">{title}</h4>
     <div class="service-card-content">
       <slot>Default content goes here</slot>
     </div>
@@ -80,11 +79,9 @@ const { title = 'Service Title', icon = 'lucide: star' }: Props = Astro.props
   }
 
   .service-card-title {
-    font-size: 1.25rem;
-    font-weight: 700;
     color: rgb(15, 23, 42);
     margin-bottom: 0.75rem;
-    font-family: var(--font-headline, inherit);
+    // font-family: var(--font-headline, inherit);
   }
 
   .service-card-content {
