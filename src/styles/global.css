@@ -1,7 +1,9 @@
+@import './fonts.css';
 @import "tailwindcss";
 
-/* Custom theme colors */
+/* Custom theme colors and fonts */
 @theme {
+  /* Colors */
   --color-navy-deep: #011f4b;
   --color-navy: #03396c;
   --color-blue-rich: #005b96;
@@ -9,11 +11,61 @@
   --color-blue-light: #b3cde0;
 }
 
-/* Custom utility classes for fonts */
-.font-heading {
-  font-family: 'Goudy Bookletter 1911', serif;
+/* -----------------------------
+   Base typography (elements)
+------------------------------ */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Hanken Grotesk Variable", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 1.15;
+  margin: 0;
 }
 
-.font-body {
-  font-family: 'Raleway', sans-serif;
+h1 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
 }
+
+h2 {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+p {
+  font-family: "Hanken Grotesk Variable", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Custom font utility classes */
+
+.font-headline {
+  font-family: "Goudy Bookletter 1911", serif;
+}
+
+.font-brand {
+  font-family: "Sorts Mill Goudy", serif;
+  font-weight: 400;
+}
+
+.font-thin {
+  font-family: Raleway, sans-serif;
+}
+
+.font-accent {
+  font-family: "Montserrat Variable", sans-serif;
+}
+
+.font-nav {
+  font-family: "Hanken Grotesk Variable", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
