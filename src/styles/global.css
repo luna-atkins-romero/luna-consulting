@@ -3,11 +3,21 @@
 
 @theme {
   /* Colors */
-  --color-navy-deep: #011f4b;
+
+  --color-navy-deep: #2c5378;
+  /* --color-navy-deep: #011f4b; */
   --color-navy: #03396c;
   --color-blue-rich: #005b96;
-  --color-blue-mid: #6497b1;
+  --color-blue-mid: #71A2B6;
   --color-blue-light: #b3cde0;
+  --color-pink-subtle: #9b7d73;
+
+  --color-vibrant-coral: #EE6055;
+
+  --color-neutral-bone: #d2d0ba;
+
+  --font-size-hero: clamp(2.5rem, 5vw, 4rem);
+  --font-size-headline: clamp(1.75rem, 3vw, 2.5rem);
 }
 
 /* Base typography (elements) */
@@ -23,22 +33,6 @@ h3, h4, h5, h6 {
   font-style: normal;
 }
 
-h1 {
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
-}
-
-h2 {
-  font-size: clamp(2rem, 4vw, 2.75rem);
-}
-
-h3 {
-  font-size: 1.75rem;
-}
-
-h4 {
-  font-size: 1.5rem;
-}
-
 p {
   font-family: "Hanken Grotesk Variable", sans-serif;
   font-weight: 400;
@@ -47,14 +41,27 @@ p {
   margin: 0;
 }
 
-/* Custom font utility classes */
-.font-headline {
-  font-family: "Goudy Bookletter 1911", serif;
-}
+/* Spacing between paragraphs */
+/* p + p {
+  margin-bottom:  1.5rem; 
+} */
 
+/* Custom font utility classes */
 .font-brand {
   font-family: "Sorts Mill Goudy", serif;
   font-weight: 400;
+}
+
+.font-hero {
+  font-family: "Goudy Bookletter 1911", serif;
+  font-size: var(--font-size-hero);
+  line-height: 1.1;
+}
+
+.font-headline {
+  font-family: "Goudy Bookletter 1911", serif;
+  font-size: var(--font-size-headline);
+  line-height: 1.6;
 }
 
 .font-thin {

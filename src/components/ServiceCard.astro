@@ -3,25 +3,25 @@
  * ServiceCard Component
  * 
  * @description A reusable card component for displaying services
- * with an elegant drop shadow effect, styled like Feature.astro
+ * with a drop shadow effect
  */
 
 import { Icon } from 'astro-icon/components'
 
 interface Props {
   title: string
-  icon?:  string
+  icon?: string
 }
 
-const { title = 'Service Title', icon = 'lucide: star' }: Props = Astro.props
+const { title = 'Service Title', icon = 'lucide:star' }: Props = Astro.props
 ---
 
 <div class="service-card">
   <div class="service-card-inner">
     {icon && <Icon aria-hidden="true" name={icon} class="service-card-icon" />}
-    <h4 class="service-card-title">{title}</h4>
+    <h3 class="service-card-title">{title}</h3>
     <div class="service-card-content">
-      <slot>Default content goes here</slot>
+      <slot><p>Default content goes here</p></slot>
     </div>
   </div>
 </div>
@@ -42,7 +42,7 @@ const { title = 'Service Title', icon = 'lucide: star' }: Props = Astro.props
       position: absolute;
       inset: 0;
       z-index: 1;
-      border:  3px solid rgb(15, 23, 42);
+      border: 3px solid #2c5378;
       border-radius: 0.5rem;
       background-color: white;
       box-shadow: 0 0 0 6px white;
@@ -52,10 +52,10 @@ const { title = 'Service Title', icon = 'lucide: star' }: Props = Astro.props
       content: '';
       position: absolute;
       inset: 1rem -0.85rem -0.85rem 1rem;
-      z-index:  0;
+      z-index: 0;
       border-radius: 0.5rem;
-      background-color: rgb(59, 130, 246);
-      opacity: 0.12;
+      background-color: var(--color-vibrant-coral);
+      opacity: 0.3;
       transition: all 0.3s ease;
     }
 
@@ -68,25 +68,27 @@ const { title = 'Service Title', icon = 'lucide: star' }: Props = Astro.props
   .service-card-inner {
     position: relative;
     z-index: 2;
-    padding:  2rem;
+    padding: 2rem;
   }
 
   .service-card-icon {
-    inline-size:  2rem;
+    inline-size: 2rem;
     block-size: auto;
-    color:  #6497b1;
+    color: #6497b1;
     margin-bottom: 0.5rem;
   }
 
   .service-card-title {
+    font-size: 1.5rem; 
+    font-weight: 600;
     color: rgb(15, 23, 42);
     margin-bottom: 0.75rem;
-    // font-family: var(--font-headline, inherit);
+    line-height: 1.3;
   }
 
   .service-card-content {
+    font-size: 1rem; /* 16px - body text */
     color: rgb(55, 65, 81);
     line-height: 1.625;
-    font-size: 1rem;
   }
 </style>

@@ -6,13 +6,11 @@ import Brand from "../components/Brand.astro";
 ---
 
 <DefaultLayout>
-
   <!-- Navbar + Hero - Full viewport -->
   <section class="min-h-screen bg-navy-deep text-white flex flex-col">
     <!-- Header -->
     <header class="py-8 px-6">
       <div class="max-w-5xl mx-auto flex items-center justify-between">
-        
         <!-- Brand -->
         <Brand />
 
@@ -52,168 +50,260 @@ import Brand from "../components/Brand.astro";
             </a>
           </li>
         </Navigation>
-
       </div>
     </header>
 
     <!-- Hero -->
     <div class="flex-grow flex items-center px-6">
       <div class="max-w-4xl mx-auto">
-        <h1 class="text-9xl md:text-6xl leading-tight">
+        <h1 class="font-hero">
           Strengthening non-profits in collaboration with their teams, leaders
           and communities.
         </h1>
       </div>
     </div>
-
   </section>
 
-</DefaultLayout>
+  <!-- Services Cards -->
+  <section id="services" class="pt-12 pb-24 px-6">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-headline text-navy-deep mb-12 text-center">
+        How can I help you?
+      </h2>
+      <div class="grid md:grid-cols-2 gap-12">
+        <ServiceCard title="Strategic planning" icon="lucide:compass">
+          Supporting organisations to define their vision and create actionable
+          roadmaps for sustainable impact.
+        </ServiceCard>
 
-<!-- Services Cards -->
-<section id="services" class="py-12 px-6">
-  <div class="max-w-5xl mx-auto">
-    <h2
-      class="text-5xl md:text-5xl text-navy-deep mb-24 text-center py-12"
-    >
-      How can I help you?
-    </h2>
-    <div class="grid md:grid-cols-2 gap-12">
-      <ServiceCard title="Strategic planning" icon="lucide:compass">
-        Supporting organisations to define their vision and create actionable
-        roadmaps for sustainable impact.
-      </ServiceCard>
-
-      <ServiceCard
-        title="Strategic evaluations and reviews"
-        icon="lucide:clipboard-list"
-      >
-        Comprehensive analysis of organisational effectiveness and opportunities
-        for improvement.
-      </ServiceCard>
-
-      <ServiceCard
-        title="Horizon scanning and market analysis"
-        icon="lucide:binoculars"
-      >
-        Identifying emerging trends and opportunities to position your
-        organisation for future success.
-      </ServiceCard>
-
-      <ServiceCard title="Governance" icon="lucide:shield-check">
-        Building robust governance structures that ensure accountability and
-        effective decision-making.
-      </ServiceCard>
-
-      <ServiceCard title="Organisational design" icon="lucide:layers">
-        Creating efficient structures and systems that enable teams to deliver
-        their mission effectively.
-      </ServiceCard>
-
-      <ServiceCard title="Defining and measuring impact" icon="lucide:target">
-        Developing frameworks to track, evaluate and communicate your
-        organisation's social impact.
-      </ServiceCard>
-
-      <ServiceCard
-        title="Stakeholder and community consultations"
-        icon="lucide:users"
-      >
-        Facilitating meaningful engagement with communities and stakeholders to
-        inform strategy.
-      </ServiceCard>
-
-      <ServiceCard
-        title="Mentoring and strategic advice"
-        icon="lucide:lightbulb"
-      >
-        One-to-one support for leaders navigating complex organisational
-        challenges.
-      </ServiceCard>
-    </div>
-  </div>
-</section>
-
-<!-- About & Approach Combined -->
-<!-- About & Approach -->
-<section id="about" class="py-32 px-6 bg-blue-light bg-opacity-5">
-  <div class="max-w-5xl mx-auto space-y-20">
-
-    <!-- Intro: Profile + Principles -->
-    <div class="grid md:grid-cols-[280px_1fr] gap-16 items-start">
-      
-      <!-- Profile image -->
-      <div class="flex justify-center md:justify-start">
-        <div
-          class="w-64 h-64 rounded-full bg-gradient-to-br from-blue-light to-blue-rich overflow-hidden border-4 border-blue-rich"
+        <ServiceCard
+          title="Strategic evaluations and reviews"
+          icon="lucide:clipboard-list"
         >
-          <img
-            src="/images/luna-portrait.jpg"
-            alt="Luna Atkins Romero"
-            class="w-full h-full object-cover"
-          />
+          Comprehensive analysis of organisational effectiveness and
+          opportunities for improvement.
+        </ServiceCard>
+
+        <ServiceCard
+          title="Horizon scanning and market analysis"
+          icon="lucide:binoculars"
+        >
+          Identifying emerging trends and opportunities to position your
+          organisation for future success.
+        </ServiceCard>
+
+        <ServiceCard title="Governance" icon="lucide:shield-check">
+          Building robust governance structures that ensure accountability and
+          effective decision-making.
+        </ServiceCard>
+
+        <ServiceCard title="Organisational design" icon="lucide:layers">
+          Creating efficient structures and systems that enable teams to deliver
+          their mission effectively.
+        </ServiceCard>
+
+        <ServiceCard title="Defining and measuring impact" icon="lucide:target">
+          Developing frameworks to track, evaluate and communicate your
+          organisation's social impact.
+        </ServiceCard>
+
+        <ServiceCard
+          title="Stakeholder and community consultations"
+          icon="lucide:users"
+        >
+          Facilitating meaningful engagement with communities and stakeholders
+          to inform strategy.
+        </ServiceCard>
+
+        <ServiceCard
+          title="Mentoring and strategic advice"
+          icon="lucide:lightbulb"
+        >
+          One-to-one support for leaders navigating complex organisational
+          challenges.
+        </ServiceCard>
+      </div>
+    </div>
+  </section>
+
+  <!-- After Services Cards -->
+
+<!-- About + Experience/Approach Combined Section -->
+<section id="about" class="py-32 px-6 bg-neutral-bone">
+  <div class="max-w-6xl mx-auto">
+    
+    <!-- About Me Header -->
+    <div class="mb-20">
+      <h2 class="font-headline text-4xl md:text-5xl text-navy-deep mb-8">
+        About Me
+      </h2>
+      
+      <!-- Wavy Divider -->
+      <svg
+        class="w-full h-2 mb-12"
+        viewBox="0 0 1200 12"
+        preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0,6 Q10,0 20,6 T40,6 T60,6 T80,6 T100,6 T120,6 T140,6 T160,6 T180,6 T200,6 T220,6 T240,6 T260,6 T280,6 T300,6 T320,6 T340,6 T360,6 T380,6 T400,6 T420,6 T440,6 T460,6 T480,6 T500,6 T520,6 T540,6 T560,6 T580,6 T600,6 T620,6 T640,6 T660,6 T680,6 T700,6 T720,6 T740,6 T760,6 T780,6 T800,6 T820,6 T840,6 T860,6 T880,6 T900,6 T920,6 T940,6 T960,6 T980,6 T1000,6 T1020,6 T1040,6 T1060,6 T1080,6 T1100,6 T1120,6 T1140,6 T1160,6 T1180,6 T1200,6"
+          stroke="currentColor"
+          stroke-width="3"
+          fill="none"
+          class="text-navy-deep"
+        />
+      </svg>
+
+      <!-- Bio with Image -->
+      <div class="flex flex-col md:flex-row items-center gap-12">
+        <!-- Profile image -->
+        <div class="flex-shrink-0">
+          <div class="w-64 h-64 rounded-full overflow-hidden border-4 border-navy-deep">
+            <img
+              src="/images/luna-portrait.jpg"
+              alt="Luna Atkins Romero"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+
+        <!-- About text -->
+        <div class="flex-1">
+          <p class="text-lg text-gray-800 leading-relaxed">
+            I have dedicated my career to working with and for mission-driven
+            organisations. Over the last 20 years, I have garnered 360° lived
+            experience of non-profits: as an employee and manager, as a
+            consultant, and as a Trustee.
+          </p>
+
+          <p class="text-lg text-gray-800 leading-relaxed">
+            My academic and professional background is in the social sciences,
+            particularly equality, gender justice, human rights and
+            international development.
+          </p>
+
+          <p class="text-lg text-gray-800 leading-relaxed">
+            I am passionate about the role of the non-profit sector in bringing
+            about social and economic justice.
+          </p>
         </div>
       </div>
+    </div>
 
-      <!-- Approach Values -->
-      <div class="space-y-12">
-        <h2 class="font-headline text-3xl md:text-4xl text-navy-deep">
-          How I work
-        </h2>
-
-        <div class="grid sm:grid-cols-2 gap-8">
-          <!-- Collaborative -->
+    <!-- Experience & How I Work Section -->
+<section class="py-32 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid md:grid-cols-2 gap-16">
+      
+      <!-- How I Work -->
+      <div>
+        <h3 class="font-headline text-2xl md:text-3xl text-navy-deep mb-8">
+          How I Work
+        </h3>
+        
+        <div class="space-y-6">
           <div class="flex items-start gap-4">
-            <div class="text-blue-rich mt-1">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path d="M12 6v6l4 2" />
+            <div class="w-10 h-10 rounded-full bg-blue-rich/10 flex items-center justify-center flex-shrink-0 mt-1">
+              <svg
+                class="w-5 h-5 text-blue-rich"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
               </svg>
             </div>
-            <div class="space-y-1">
-              <p class="font-accent text-lg text-navy-deep">Collaborative</p>
-              <p class="text-gray-700 text-sm">
+            <div>
+              <h4 class="font-accent text-lg text-navy-deep mb-2 font-semibold">
+                Collaborative
+              </h4>
+              <p class="text-gray-700 leading-relaxed">
                 Co-creating solutions alongside teams to ensure ownership and practical outcomes.
               </p>
             </div>
           </div>
-          <!-- Empowering -->
+
           <div class="flex items-start gap-4">
-            <div class="text-blue-rich mt-1">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path d="M12 2l9 4.5v9L12 20 3 15.5v-9L12 2z" />
+            <div class="w-10 h-10 rounded-full bg-blue-rich/10 flex items-center justify-center flex-shrink-0 mt-1">
+              <svg
+                class="w-5 h-5 text-blue-rich"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M12 2v20"/>
+                <path d="m15 5-3-3-3 3"/>
+                <path d="m9 19 3 3 3-3"/>
               </svg>
             </div>
-            <div class="space-y-1">
-              <p class="font-accent text-lg text-navy-deep">Empowering</p>
-              <p class="text-gray-700 text-sm">
+            <div>
+              <h4 class="font-accent text-lg text-navy-deep mb-2 font-semibold">
+                Empowering
+              </h4>
+              <p class="text-gray-700 leading-relaxed">
                 Building capacity, confidence and resilience within organisations.
               </p>
             </div>
           </div>
-          <!-- Analytical -->
+
           <div class="flex items-start gap-4">
-            <div class="text-blue-rich mt-1">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path d="M3 3h18v18H3z" />
+            <div class="w-10 h-10 rounded-full bg-blue-rich/10 flex items-center justify-center flex-shrink-0 mt-1">
+              <svg
+                class="w-5 h-5 text-blue-rich"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="12" x2="12" y1="20" y2="10"/>
+                <line x1="18" x2="18" y1="20" y2="4"/>
+                <line x1="6" x2="6" y1="20" y2="16"/>
               </svg>
             </div>
-            <div class="space-y-1">
-              <p class="font-accent text-lg text-navy-deep">Analytical</p>
-              <p class="text-gray-700 text-sm">
+            <div>
+              <h4 class="font-accent text-lg text-navy-deep mb-2 font-semibold">
+                Analytical
+              </h4>
+              <p class="text-gray-700 leading-relaxed">
                 Evidence-led insight that informs practical strategy and decision-making.
               </p>
             </div>
           </div>
-          <!-- Candid -->
+
           <div class="flex items-start gap-4">
-            <div class="text-blue-rich mt-1">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path d="M5 12h14" />
+            <div class="w-10 h-10 rounded-full bg-blue-rich/10 flex items-center justify-center flex-shrink-0 mt-1">
+              <svg
+                class="w-5 h-5 text-blue-rich"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
               </svg>
             </div>
-            <div class="space-y-1">
-              <p class="font-accent text-lg text-navy-deep">Candid</p>
-              <p class="text-gray-700 text-sm">
+            <div>
+              <h4 class="font-accent text-lg text-navy-deep mb-2 font-semibold">
+                Candid
+              </h4>
+              <p class="text-gray-700 leading-relaxed">
                 Honest, clear guidance rooted in real-world experience.
               </p>
             </div>
@@ -221,77 +311,83 @@ import Brand from "../components/Brand.astro";
         </div>
       </div>
 
+      <!-- Experience -->
+      <div>
+        <h3 class="font-headline text-2xl md:text-3xl text-navy-deep mb-8">
+          Experience
+        </h3>
+        
+        <p class="text-gray-700 leading-relaxed mb-6">
+          Over 20 years of dedicated work with mission-driven organisations across the non-profit sector.
+        </p>
+
+        <div class="space-y-3">
+          <div class="flex items-center gap-3">
+            <div class="w-2 h-2 rounded-full bg-blue-rich flex-shrink-0"></div>
+            <p class="text-gray-800">Amnesty International</p>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-2 h-2 rounded-full bg-blue-rich flex-shrink-0"></div>
+            <p class="text-gray-800">Goal</p>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-2 h-2 rounded-full bg-blue-rich flex-shrink-0"></div>
+            <p class="text-gray-800">UNICEF</p>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-2 h-2 rounded-full bg-blue-rich flex-shrink-0"></div>
+            <p class="text-gray-800">GNB</p>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-2 h-2 rounded-full bg-blue-rich flex-shrink-0"></div>
+            <p class="text-gray-800">Kerry Community Youth Service</p>
+          </div>
+        </div>
+
+        <div class="mt-8 pt-8 border-t border-gray-200">
+          <p class="text-gray-700 leading-relaxed">
+            Spanning roles as an employee, manager, consultant, and Trustee—providing 360° understanding of non-profit challenges and opportunities.
+          </p>
+        </div>
+      </div>
+
     </div>
-
-    <!-- About Narrative -->
-    <div class="max-w-3xl space-y-6">
-      <h3 class="font-headline text-3xl text-navy-deep">
-        About me
-      </h3>
-
-      <p class="text-lg text-gray-800 leading-relaxed">
-        I have dedicated my career to working with and for mission-driven organisations. Over the last
-        20 years, I have garnered 360° lived experience of non-profits: as an employee and manager,
-        as a consultant, and as a Trustee.
-      </p>
-
-      <p class="text-lg text-gray-800 leading-relaxed">
-        My academic and professional background is in the social sciences, particularly equality,
-        gender justice, human rights and international development.
-      </p>
-
-      <p class="text-lg text-gray-800 leading-relaxed">
-        I am passionate about the role of the non-profit sector in bringing about social and economic
-        justice.
-      </p>
-    </div>
-
   </div>
 </section>
 
-
-<!-- Organizations -->
-<section class="py-24 px-6 bg-white border-t border-b border-gray-100">
-  <div class="max-w-5xl mx-auto">
-    <p class="text-sm uppercase tracking-widest text-gray-500 mb-3">
-      Experience
-    </p>
-    <p class="text-lg text-gray-700">Amnesty, Goal, Unicef, GNB, KCYS</p>
-  </div>
-</section>
-
-<!-- Testimonials Placeholder -->
-<section class="py-32 px-6">
-  <div class="max-w-3xl mx-auto">
-    <h2 class="font-headline text-4xl md:text-5xl text-navy-deep mb-16">
+<!-- Testimonials - Condensed -->
+<section class="py-24 px-6 bg-white">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="font-headline text-3xl md:text-4xl text-navy-deep mb-12 text-center">
       What people say
     </h2>
-    <div class="space-y-8">
-      <div class="border-l-4 border-blue-rich pl-8">
-        <p class="text-lg italic text-gray-700 mb-4">
-          [Testimonial placeholder]
-        </p>
-        <p class="text-sm text-gray-600">— Name, Organization</p>
-      </div>
+    <div class="bg-gray-50 rounded-lg p-8 md:p-12 border-l-4 border-blue-rich">
+      <p class="text-lg italic text-gray-700 mb-4 leading-relaxed">
+        [Testimonial placeholder - compelling quote from a client about the impact of working together]
+      </p>
+      <p class="text-sm text-gray-600 font-medium">— Name, Title, Organization</p>
     </div>
   </div>
 </section>
 
-<!-- Contact / Footer -->
-<footer id="contact" class="py-32 px-6 bg-navy-deep text-white">
-  <div class="max-w-3xl mx-auto text-center">
-    <h2 class="font-headline text-4xl md:text-5xl mb-8">Let's work together</h2>
-    <p class="text-lg mb-12 leading-relaxed">
-      Connect with me on LinkedIn to discuss how I can support your
-      organisation.
-    </p>
-    <a
-      href="https://linkedin.com"
-      target="_blank"
-      rel="noopener"
-      class="inline-block px-8 py-4 bg-blue-rich hover: bg-blue-light transition-colors rounded text-white font-medium"
-    >
-      View LinkedIn Profile
-    </a>
-  </div>
-</footer>
+  <!-- Contact / Footer -->
+  <footer id="contact" class="py-32 px-6 bg-navy-deep text-white">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="font-headline text-4xl md:text-5xl mb-8">
+        Let's work together
+      </h2>
+      <p class="text-lg mb-12 leading-relaxed">
+        Connect with me on LinkedIn to discuss how I can support your
+        organisation.
+      </p>
+      <a
+        href="https://linkedin.com"
+        target="_blank"
+        rel="noopener"
+        class="inline-block px-8 py-4 bg-blue-rich hover: bg-blue-light transition-colors rounded text-white font-medium"
+      >
+        View LinkedIn Profile
+      </a>
+    </div>
+  </footer>
+</DefaultLayout>
