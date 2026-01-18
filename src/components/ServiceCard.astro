@@ -1,25 +1,31 @@
 ---
 /**
  * ServiceCard Component
- * 
+ *
  * @description A reusable card component for displaying services
  * with a drop shadow effect
  */
 
-import { Icon } from 'astro-icon/components'
+import { Icon } from "astro-icon/components";
 
 interface Props {
-  title: string
-  icon?: string
+  title: string;
+  icon?: string;
 }
 
-const { title = 'Service Title', icon = 'lucide:star' }: Props = Astro.props
+const { title = "Service Title", icon = "lucide:star" }: Props = Astro.props;
 ---
 
 <div class="service-card">
   <div class="service-card-inner">
-    {icon && <Icon aria-hidden="true" name={icon} class="service-card-icon" />}
-    <h3 class="service-card-title">{title}</h3>
+    {
+      icon && (
+        <div class="icon-circle">
+          <Icon aria-hidden="true" name={icon} class="icon-svg" />
+        </div>
+      )
+    }
+    <h4 class="service-card-title">{title}</h4>
     <div class="service-card-content">
       <slot><p>Default content goes here</p></slot>
     </div>
@@ -38,30 +44,29 @@ const { title = 'Service Title', icon = 'lucide:star' }: Props = Astro.props
     }
 
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       inset: 0;
       z-index: 1;
-      border: 3px solid #2c5378;
+      border: 3px solid var(--color-dusk-blue);
       border-radius: 0.5rem;
       background-color: white;
       box-shadow: 0 0 0 6px white;
     }
 
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       inset: 1rem -0.85rem -0.85rem 1rem;
       z-index: 0;
       border-radius: 0.5rem;
-      background-color: var(--color-vibrant-coral);
-      opacity: 0.3;
-      transition: all 0.3s ease;
+      background-color: var(--color-green-aqua);
+      opacity: 0.7;
+      transition: opacity 0.3s ease;
     }
 
     &:hover::after {
-      opacity: 0.18;
-      box-shadow: 0 4px 6px rgb(0, 0, 0, 0.1);
+      opacity: 0.4;
     }
   }
 
@@ -71,24 +76,42 @@ const { title = 'Service Title', icon = 'lucide:star' }: Props = Astro.props
     padding: 2rem;
   }
 
-  .service-card-icon {
-    inline-size: 2rem;
-    block-size: auto;
-    color: #6497b1;
-    margin-bottom: 0.5rem;
+  .icon-circle {
+    width: 3.5rem; /* circle size */
+    height: 3.5rem;
+    border-radius: 9999px; /* full circle */
+    background-color: rgba(100, 151, 177, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-bottom: 0.75rem;
+    transition: transform 0.3s ease;
+  }
+
+  .service-card:hover .icon-circle {
+    transform: scale(1.1);
+  }
+
+  .icon-svg {
+    display: block;
+    width: 2.25rem;
+    height: 2.25rem;
+    color: var(--color-blue-green); /* icon color */
   }
 
   .service-card-title {
-    font-size: 1.5rem; 
-    font-weight: 600;
-    color: rgb(15, 23, 42);
     margin-bottom: 0.75rem;
     line-height: 1.3;
+    font-size: large;
+    color: var(--color-dusk-blue); /* icon color */
   }
 
   .service-card-content {
-    font-size: 1rem; /* 16px - body text */
-    color: rgb(55, 65, 81);
-    line-height: 1.625;
+    font-family: "Montserrat Variable", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 1.6;
+    margin: 0;
   }
 </style>

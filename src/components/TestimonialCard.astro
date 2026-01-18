@@ -1,0 +1,26 @@
+---
+// TestimonialCard.astro
+interface Props {
+  quote: string;
+  name: string;
+  title: string;
+  initials: string;
+}
+
+const { quote, name, title, initials } = Astro.props;
+---
+
+<div class="border-l-4 border-green-aqua pl-6 py-4">
+  <p class="text-gray-700 leading-relaxed mb-4 italic">
+    "{quote}"
+  </p>
+  <div class="flex items-center gap-3">
+    <div class="w-10 h-10 rounded-full bg-blue-green/20 flex items-center justify-center flex-shrink-0">
+      <span class="text-blue-green font-semibold text-sm">{initials}</span>
+    </div>
+    <div>
+      <p class="font-semibold text-dusk-blue text-sm">{name}</p>
+      <p class="text-xs text-gray-600">{title}</p>
+    </div>
+  </div>
+</div>

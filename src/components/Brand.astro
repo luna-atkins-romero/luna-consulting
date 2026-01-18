@@ -2,17 +2,48 @@
 interface Props {
   showLogo?: boolean;
 }
-const { showLogo = false } = Astro.props;
+const { showLogo = false } = Astro. props;
+
+// Get the current URL path
+const currentPath = new URL(Astro.request. url).pathname;
+const isHomePage = currentPath === '/';
 ---
 
 <div class="flex flex-col items-start gap-0">
-  {showLogo && (
-    <span class="material-symbols-outlined text-5xl md:text-6xl">nightlight</span>
-  )}
-  <h1 class="font-brand text-4xl md:text-5xl leading-tight">
-    Luna Atkins Romero
-  </h1>
-  <h2 class="font-brand text-2xl md:text-4xl text-blue-light">
-    Consulting
-  </h2>
+  <a href="/" aria-current={isHomePage ?  "page" : undefined} class="brand-link">
+    {showLogo && (
+      <span class="material-symbols-outlined text-5xl md:text-6xl">nightlight</span>
+    )}
+    <h1 class="font-brand text-3xl lg:text-5xl leading-tight brand-heading">
+      Luna Atkins Romero
+    </h1>
+    <h2 class="font-brand text-2xl lg:text-4xl">
+      Consulting
+    </h2>
+  </a>
 </div>
+
+<style>
+  . brand-link {
+    text-decoration: none;
+  }
+
+  .brand-heading {
+    position: relative;
+  }
+
+  .brand-link:hover . brand-heading,
+  .brand-link:focus-visible .brand-heading,
+  .brand-link[aria-current="page"] .brand-heading {
+    text-decoration: underline;
+    text-decoration-style: wavy;
+    text-decoration-color: var(--color-green-aqua);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 8px;
+  }
+
+  . brand-link:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 4px;
+  }
+</style>

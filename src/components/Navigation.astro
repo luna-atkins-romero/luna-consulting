@@ -1,16 +1,61 @@
----
-/**
- * Simple primary navigation
- * - Single-level
- * - Hash links
- * - Accessible by default
- */
----
+<nav aria-label="Primary navigation" class="relative font-nav">
+  <!-- Toggle button (mobile only) -->
+  <button
+    id="nav-toggle"
+    aria-expanded="false"
+    aria-controls="primary-menu"
+    aria-label="Toggle navigation"
+    class="md:hidden
+      flex items-center justify-center
+      w-10 h-10
+      rounded
+      focus-visible:outline
+      focus-visible:outline-2
+      focus-visible:outline-white"
+  >
+    <span class="sr-only">Menu</span>
 
-<nav aria-label="Primary navigation" class="font-nav">
+    <!-- Hamburger icon -->
+    <svg
+      class="nav-icon nav-icon--open w-6 h-6"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+    >
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+
+    <!-- Close icon -->
+    <svg
+      class="nav-icon nav-icon--close hidden w-6 h-6"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+    >
+      <line x1="18" y1="6" x2="6" y2="18"></line>
+      <line x1="6" y1="6" x2="18" y2="18"></line>
+    </svg>
+  </button>
+
+  <!-- Menu -->
   <ul
-    class="flex flex-col md:flex-row
-      gap-6 md:gap-12"
+    id="primary-menu"
+    class="hidden
+      absolute right-0 top-full mt-4
+      flex flex-col gap-4
+      px-6 py-6
+      text-right
+      bg-dusk-blue
+      md:static md:flex
+      md:flex-row md:gap-6 lg:gap-12
+      md:border-0 md:p-0
+      md:text-left"
   >
     <slot />
   </ul>
@@ -22,7 +67,6 @@
     position: relative;
     text-decoration: none;
   }
-
   :global(nav a)::after {
     content: "";
     position: absolute;
@@ -35,21 +79,19 @@
     transform-origin: left;
     transition: transform 0.2s ease;
   }
-
   :global(nav a:hover),
   :global(nav a:focus-visible),
   :global(nav a[aria-current="page"]) {
     text-decoration: underline;
     text-decoration-style: wavy;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 7px;
+    text-decoration-color: var(--color-green-aqua);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 8px;
   }
-
   :global(nav a:focus-visible) {
     outline: 2px solid currentColor;
     outline-offset: 4px;
   }
-
   :global(nav a[aria-label])::after {
     display: none;
   }

@@ -4,14 +4,18 @@
 @theme {
   /* Colors */
 
-  --color-navy-deep: #2c5378;
-  /* --color-navy-deep: #011f4b; */
+  --color-dusk-blue: #2c5378; /* dusk blue */
+
   --color-navy: #03396c;
   --color-blue-rich: #005b96;
-  --color-blue-mid: #71A2B6;
-  --color-blue-light: #b3cde0;
-  --color-pink-subtle: #9b7d73;
+ 
+  --color-blue-light: #00A7E1;   /* fresh sky */
+  --color-pacific-blue: #00B2CA; 
 
+  --color-green-aqua: #83E8BA;
+  --color-blue-green: #71A2B6;
+
+  --color-pink-subtle: #9b7d73;
   --color-vibrant-coral: #EE6055;
 
   --color-neutral-bone: #d2d0ba;
@@ -21,35 +25,39 @@
 }
 
 /* Base typography (elements) */
-h1, h2 {
+h1, h2, h3 {
   font-family: "Goudy Bookletter 1911", serif;
   font-weight: 400;
   font-style: normal;
+  margin-top: 6px;
+  margin-bottom: 6px;
 }
 
-h3, h4, h5, h6 {
-  font-family: "Hanken Grotesk Variable", sans-serif;
-  font-weight: 500;
+h4, h5, h6 {
+  font-family: "Montserrat Variable", sans-serif;
+  font-weight: 600;
   font-style: normal;
 }
 
 p {
-  font-family: "Hanken Grotesk Variable", sans-serif;
-  font-weight: 400;
+  font-family: "Montserrat Variable", sans-serif;
+  font-weight: 500;
   font-style: normal;
   line-height: 1.6;
-  margin: 0;
+  margin-top: 6px;
+  margin-bottom: 6px;
 }
-
-/* Spacing between paragraphs */
-/* p + p {
-  margin-bottom:  1.5rem; 
-} */
 
 /* Custom font utility classes */
 .font-brand {
   font-family: "Sorts Mill Goudy", serif;
   font-weight: 400;
+  font-style: normal;
+/* 
+  font-family: "Goudy Bookletter 1911", serif;
+  font-weight: 400;
+  font-style: normal; */
+
 }
 
 .font-hero {
@@ -64,18 +72,24 @@ p {
   line-height: 1.6;
 }
 
-.font-thin {
-  font-family: Raleway, sans-serif;
+.font-statement {
+  font-family: "Goudy Bookletter 1911", serif;
+  font-weight: 400;
+  font-style: normal;
+  /* font-size: clamp(1.5rem, 3vw, 1.75rem); */
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
-.font-accent {
-  font-family: "Montserrat Variable", sans-serif;
-}
 
 .font-nav {
   font-family: "Hanken Grotesk Variable", sans-serif;
   font-weight: 400;
   font-style: normal;
-}
 
+  /* font-family: "Montserrat Variable", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+} */
+}
 
