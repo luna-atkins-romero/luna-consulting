@@ -1,0 +1,69 @@
+---
+import { getCollection } from 'astro:content';
+import DefaultLayout from "../layouts/DefaultLayout.astro";
+import Header from "../components/Header.astro";
+import WavyDivider from "../components/WavyDivider.astro";
+import Footer from "../components/Footer.astro";
+
+const posts = await getCollection('articles');
+const sortedPosts = posts.sort((a, b) => b.data.date. getTime() - a.data.date.getTime());
+---
+
+<DefaultLayout title="Articles | Luna Atkins Romero">
+  <!-- Header -->
+  <Header />
+
+  <!-- Articles Section -->
+  <section class="py-32 px-6 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <!-- Header -->
+      <div class="mb-16">
+        <h1 class="font-headline text-6xl md:text-8xl text-dusk-blue mb-6">
+          Articles
+        </h1>
+        <WavyDivider />
+        <p class="text-dusk-blue">
+          Insights and thoughts on non-profit strategy, governance, and impact. 
+        </p>
+      </div>
+
+      <!-- Articles List -->
+      <div class="space-y-8">
+        {sortedPosts.map((post) => (
+          <article class="pb-8 border-b border-gray-200">
+            <a href={`/articles/${post.slug}`} class="group">
+              <h4 class="text-dusk-blue group-hover:text-blue-rich transition-colors mb-2">
+                {post. data.title}
+              </h4>
+            </a>
+            <p class="text-gray-600 text-sm mb-3">
+              {post.data. date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+            </p>
+            <p class="text-gray-700">
+              {post.data.description}
+            </p>
+            <a href={`/articles/${post.slug}`} class="text-blue-rich hover:text-dusk-blue inline-flex items-center gap-2 transition-colors mt-4">
+              Read Article
+              <svg
+                class="w-4 h-4"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <Footer />
+</DefaultLayout>

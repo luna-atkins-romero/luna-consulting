@@ -2,12 +2,15 @@
 import DefaultLayout from "../layouts/DefaultLayout.astro";
 import ServiceCard from "../components/ServiceCard.astro";
 import Header from "../components/Header.astro";
-import SocialLinks from "../components/SocialLinks.astro";
+
+import WavyDivider from "../components/WavyDivider.astro";
 import HowIWorkItem from "../components/HowIWorkItem.astro";
-import Testimonials from '../components/Testimonials.astro';
+import TestimonialCard from "../components/TestimonialCard.astro";
+import Footer from '../components/Footer.astro';
 ---
 
 <DefaultLayout>
+
   <!-- Navbar + Hero - Full viewport -->
   <section class="min-h-screen bg-dusk-blue text-white flex flex-col">
     <!-- Header -->
@@ -17,8 +20,13 @@ import Testimonials from '../components/Testimonials.astro';
     <div class="flex-grow flex items-center px-6">
       <div class="max-w-4xl mx-auto">
         <h1 class="font-hero">
-          Strengthening non-profits in collaboration with their teams, leaders
-          and communities.
+          Strengthening non-profits in collaboration with their teams<span
+            class="text-green-aqua"
+            style="display: inline-block; line-height: 1.1;">,</span
+          > leaders and communities<span
+            class="text-green-aqua"
+            style="display: inline-block; line-height: 1.1;">.</span
+          >
         </h1>
       </div>
     </div>
@@ -29,20 +37,7 @@ import Testimonials from '../components/Testimonials.astro';
     <div class="max-w-6xl mx-auto">
       <div class="mb-18">
         <h2 class="font-headline text-dusk-blue mb-2">How can I help you?</h2>
-
-        <svg
-          class="w-full h-2"
-          viewBox="0 0 1200 12"
-          preserveAspectRatio="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M0,6 Q10,0 20,6 T40,6 T60,6 T80,6 T100,6 T120,6 T140,6 T160,6 T180,6 T200,6 T220,6 T240,6 T260,6 T280,6 T300,6 T320,6 T340,6 T360,6 T380,6 T400,6 T420,6 T440,6 T460,6 T480,6 T500,6 T520,6 T540,6 T560,6 T580,6 T600,6 T620,6 T640,6 T660,6 T680,6 T700,6 T720,6 T740,6 T760,6 T780,6 T800,6 T820,6 T840,6 T860,6 T880,6 T900,6 T920,6 T940,6 T960,6 T980,6 T1000,6 T1020,6 T1040,6 T1060,6 T1080,6 T1100,6 T1120,6 T1140,6 T1160,6 T1180,6 T1200,6"
-            stroke="currentColor"
-            stroke-width="4"
-            fill="none"
-            class="text-green-aqua"></path>
-        </svg>
+        <WavyDivider />
       </div>
 
       <div class="grid gap-12 sm:grid-cols-2 lg:grid-cols-3">
@@ -108,28 +103,14 @@ import Testimonials from '../components/Testimonials.astro';
       </div>
     </div>
   </section>
-
+  
   <!-- About -->
   <section id="about" class="pt-12 pb-24 px-6 bg-white">
     <div class="max-w-6xl mx-auto">
       <!-- About Me Header -->
       <div class="mb-18">
         <h2 class="font-headline text-dusk-blue mb-2">About Me</h2>
-
-        <!-- Wavy Divider -->
-        <svg
-          class="w-full h-2 mb-12"
-          viewBox="0 0 1200 12"
-          preserveAspectRatio="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M0,6 Q10,0 20,6 T40,6 T60,6 T80,6 T100,6 T120,6 T140,6 T160,6 T180,6 T200,6 T220,6 T240,6 T260,6 T280,6 T300,6 T320,6 T340,6 T360,6 T380,6 T400,6 T420,6 T440,6 T460,6 T480,6 T500,6 T520,6 T540,6 T560,6 T580,6 T600,6 T620,6 T640,6 T660,6 T680,6 T700,6 T720,6 T740,6 T760,6 T780,6 T800,6 T820,6 T840,6 T860,6 T880,6 T900,6 T920,6 T940,6 T960,6 T980,6 T1000,6 T1020,6 T1040,6 T1060,6 T1080,6 T1100,6 T1120,6 T1140,6 T1160,6 T1180,6 T1200,6"
-            stroke="currentColor"
-            stroke-width="4"
-            fill="none"
-            class="text-green-aqua"></path>
-        </svg>
+        <WavyDivider />
       </div>
 
       <!-- Constrain with centering -->
@@ -177,7 +158,7 @@ import Testimonials from '../components/Testimonials.astro';
           </div>
         </div>
 
-        <!-- Logos Grid - opacity only, no grayscale -->
+        <!-- Logos Grid -->
         <div class="mt-8 pt-8">
           <div
             class="grid grid-cols-2 md:grid-cols-5 gap-6 items-center justify-items-center"
@@ -185,7 +166,7 @@ import Testimonials from '../components/Testimonials.astro';
             <img
               src="/logos/gnb.png"
               alt="GNB"
-              class="max-h-16 object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
+              class="max-h-16 object-contain opacity-[0.7] hover:opacity-[1] transition-opacity duration-300"
             />
             <img
               src="/logos/unicef.png"
@@ -213,26 +194,12 @@ import Testimonials from '../components/Testimonials.astro';
     </div>
   </section>
 
-  <section id="how-i-work" class="pt-12 pb-24 px-6 bg-white">
+    <section id="how-i-work" class="pt-12 pb-24 px-6 bg-white">
     <div class="max-w-6xl mx-auto">
       <!-- How I Work Header -->
       <div class="mb-18">
         <h2 class="font-headline text-dusk-blue mb-2">How I Work</h2>
-
-        <!-- Wavy Divider -->
-        <svg
-          class="w-full h-2 mb-12"
-          viewBox="0 0 1200 12"
-          preserveAspectRatio="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M0,6 Q10,0 20,6 T40,6 T60,6 T80,6 T100,6 T120,6 T140,6 T160,6 T180,6 T200,6 T220,6 T240,6 T260,6 T280,6 T300,6 T320,6 T340,6 T360,6 T380,6 T400,6 T420,6 T440,6 T460,6 T480,6 T500,6 T520,6 T540,6 T560,6 T580,6 T600,6 T620,6 T640,6 T660,6 T680,6 T700,6 T720,6 T740,6 T760,6 T780,6 T800,6 T820,6 T840,6 T860,6 T880,6 T900,6 T920,6 T940,6 T960,6 T980,6 T1000,6 T1020,6 T1040,6 T1060,6 T1080,6 T1100,6 T1120,6 T1140,6 T1160,6 T1180,6 T1200,6"
-            stroke="currentColor"
-            stroke-width="4"
-            fill="none"
-            class="text-green-aqua"></path>
-        </svg>
+        <WavyDivider />
       </div>
 
       <!-- Constrain with centering -->
@@ -263,29 +230,49 @@ import Testimonials from '../components/Testimonials.astro';
           />
         </div>
       </div>
+      
     </div>
   </section>
 
   <!-- Testimonials Section -->
-  <Testimonials />
+  <section id="testimonials" class="pt-12 pb-24 px-6 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <!-- Testimonials Header -->
+      <div class="mb-18">
+        <h2 class="font-headline text-dusk-blue mb-2">Testimonials</h2>
+        <WavyDivider />
+      </div>
+
+      <!-- Testimonials Grid - Responsive -->
+      <div
+        class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+      >
+        <TestimonialCard
+          quote="Working with Luna transformed our organization's approach to strategic planning. Her insight and collaborative style brought our team together in ways we hadn't experienced before."
+          name="Jane Doe"
+          title="Executive Director, Sample Charity"
+          initials="JD"
+        />
+
+        <TestimonialCard
+          quote="Luna's analytical approach combined with her deep understanding of the non-profit sector provided exactly the guidance we needed during a critical transition period."
+          name="Michael Smith"
+          title="Chair, Example Foundation"
+          initials="MS"
+        />
+
+        <TestimonialCard
+          quote="Her candid feedback and empowering methodology helped our team build the confidence and capacity we needed to take our mission to the next level."
+          name="Aisha Johnson"
+          title="CEO, Community Impact Group"
+          initials="AJ"
+        />
+      </div>
+
+    </div>
+  </section>
 
   <!-- Contact / Footer -->
-  <footer class="py-32 bg-dusk-blue text-white">
-    <div class="max-w-3xl mx-auto text-center">
-      <h2 class="font-headline text-4xl md:text-5xl mb-8">
-        Let's work together
-      </h2>
-      <p class="text-lg mb-12 leading-relaxed">
-        Connect with me on LinkedIn to discuss how I can support your
-        organisation.
-      </p>
-      <SocialLinks />
-    </div>
+  <Footer />
 
-    <div class="max-w-3xl mx-auto text-center">
-      <p class="leading-relaxed opacity-90">
-        © 2026 Luna Atkins Romero. All rights reserved.
-      </p>
-    </div>
-  </footer>
 </DefaultLayout>

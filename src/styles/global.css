@@ -33,9 +33,15 @@ h1, h2, h3 {
   margin-bottom: 6px;
 }
 
-h4, h5, h6 {
+h4 {
   font-family: "Montserrat Variable", sans-serif;
   font-weight: 600;
+  font-style: normal;
+}
+
+h5, h6 {
+  font-family: "Montserrat Variable", sans-serif;
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -53,11 +59,6 @@ p {
   font-family: "Sorts Mill Goudy", serif;
   font-weight: 400;
   font-style: normal;
-/* 
-  font-family: "Goudy Bookletter 1911", serif;
-  font-weight: 400;
-  font-style: normal; */
-
 }
 
 .font-hero {
@@ -76,20 +77,20 @@ p {
   font-family: "Goudy Bookletter 1911", serif;
   font-weight: 400;
   font-style: normal;
-  /* font-size: clamp(1.5rem, 3vw, 1.75rem); */
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
+.font-punctuation {
+  font-family: "Goudy Bookletter 1911", serif;
+  font-weight: 400;
+  font-style: normal;
+  display: inline;
+}
 
 .font-nav {
   font-family: "Hanken Grotesk Variable", sans-serif;
   font-weight: 400;
   font-style: normal;
-
-  /* font-family: "Montserrat Variable", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-} */
 }
 

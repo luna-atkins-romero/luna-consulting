@@ -1,95 +1,102 @@
 ---
 import DefaultLayout from "../layouts/DefaultLayout.astro";
 import Header from "../components/Header.astro";
+import WavyDivider from "../components/WavyDivider.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <DefaultLayout>
   <!-- Navbar -->
- <Header />
+  <Header />
 
   <!-- Contact Section -->
-  <section class="py-32 px-6 bg-white">
+  <section class="pt-18 pb-32 px-6 bg-white">
     <div class="max-w-4xl mx-auto">
       <!-- Header -->
       <div class="mb-16">
-        <h1 class="font-headline text-4xl md:text-5xl text-dusk-blue mb-6">
+        <h1 class="font-headline text-6xl md:text-8xl text-dusk-blue">
           Let's work together
         </h1>
-        <p class="text-xl text-gray-700 leading-relaxed">
-          Get in touch to discuss how I can support your organisation's mission and goals.
+        <WavyDivider />
+        <p class="text-lg text-dusk-blue">
+          Get in touch to discuss how I can support your organisation's mission
+          and goals.
         </p>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-16">
+      <div class="grid md:grid-cols-2 gap-24">
         <!-- Contact Form -->
         <div>
-          <h2 class="font-headline text-2xl text-dusk-blue mb-6">
+            <h2 class="font-headline text-6xl md:text-8xl text-dusk-blue">
             Send a message
           </h2>
-          
+
           <form
             action="https://api.web3forms.com/submit"
             method="POST"
             class="space-y-6"
           >
-            <!-- Replace with your access key from web3forms.com -->
-            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
-            
+            <input
+              type="hidden"
+              name="access_key"
+              value="YOUR_ACCESS_KEY_HERE"
+            />
+
             <!-- Name -->
             <div>
-              <label for="name" class="block text-sm font-medium text-dusk-blue mb-2">
-                Name <span class="text-blue-rich">*</span>
+              <label for="name" class="block text-dusk-blue mb-2">
+                <h5>Name *</h5>
               </label>
               <input
                 type="text"
                 id="name"
                 name="name"
                 required
-                class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-rich transition-colors"
+                class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus: outline-none focus:border-blue-rich transition-colors font-nav"
                 placeholder="Your name"
               />
             </div>
 
             <!-- Email -->
             <div>
-              <label for="email" class="block text-sm font-medium text-dusk-blue mb-2">
-                Email <span class="text-blue-rich">*</span>
+              <label for="email" class="block text-dusk-blue mb-2">
+                <h5>Email *</h5>
               </label>
               <input
                 type="email"
                 id="email"
                 name="email"
                 required
-                class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-rich transition-colors"
+                class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus: outline-none focus:border-blue-rich transition-colors font-nav"
                 placeholder="your@email.com"
               />
             </div>
 
             <!-- Organisation -->
             <div>
-              <label for="organisation" class="block text-sm font-medium text-dusk-blue mb-2">
-                Organisation
+              <label for="organisation" class="block text-dusk-blue mb-2">
+                <h5>Organisation</h5>
               </label>
               <input
                 type="text"
                 id="organisation"
                 name="organisation"
-                class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-rich transition-colors"
+                class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus: border-blue-rich transition-colors font-nav"
                 placeholder="Your organisation"
               />
             </div>
 
             <!-- Message -->
             <div>
-              <label for="message" class="block text-sm font-medium text-dusk-blue mb-2">
-                Message <span class="text-blue-rich">*</span>
+              <label for="message" class="block text-dusk-blue mb-2">
+                <h5>Message *</h5>
               </label>
               <textarea
                 id="message"
                 name="message"
                 required
                 rows="6"
-                class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-rich transition-colors resize-none"
+                class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-rich transition-colors resize-none font-nav"
                 placeholder="Tell me about your project or challenge..."
               ></textarea>
             </div>
@@ -97,7 +104,7 @@ import Header from "../components/Header.astro";
             <!-- Submit Button -->
             <button
               type="submit"
-              class="w-full px-8 py-4 bg-blue-rich hover:bg-dusk-blue text-white font-medium rounded-lg transition-colors"
+              class="w-full px-8 py-4 bg-blue-rich hover:bg-dusk-blue text-white rounded-lg transition-colors"
             >
               Send Message
             </button>
@@ -106,14 +113,16 @@ import Header from "../components/Header.astro";
 
         <!-- Contact Information -->
         <div>
-          <h2 class="font-headline text-2xl text-dusk-blue mb-6">
+          <h2 class="font-headline text-2xl text-dusk-blue">
             Other ways to connect
           </h2>
 
-          <div class="space-y-6">
+          <div class="space-y-12">
             <!-- LinkedIn -->
             <div class="flex items-start gap-4">
-              <div class="w-12 h-12 rounded-full bg-blue-rich/10 flex items-center justify-center flex-shrink-0">
+              <div
+                class="w-12 h-12 rounded-full bg-blue-rich/10 flex items-center justify-center flex-shrink-0"
+              >
                 <svg
                   class="w-5 h-5 text-blue-rich"
                   viewBox="0 0 24 24"
@@ -135,19 +144,17 @@ import Header from "../components/Header.astro";
                 </svg>
               </div>
               <div>
-                <h3 class="font-accent text-lg text-dusk-blue mb-2 font-semibold">
-                  LinkedIn
-                </h3>
-                <p class="text-gray-700 mb-3 leading-relaxed">
-                  Connect with me professionally and see my latest updates.
+                <h5 class="text-dusk-blue mb-2">LinkedIn</h5>
+                <p class="text-gray-700 mb-3">
+                  Connect with me professionally and see my latest updates. 
                 </p>
                 <a
                   href="https://linkedin.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="text-blue-rich hover:text-dusk-blue font-medium inline-flex items-center gap-2 transition-colors"
+                  class="text-blue-rich hover:text-dusk-blue inline-flex items-center gap-2 transition-colors"
                 >
-                  View Profile</a>
+                  View Profile
                   <svg
                     class="w-4 h-4"
                     xmlns="http://www.w3.org/2000/svg"
@@ -158,17 +165,19 @@ import Header from "../components/Header.astro";
                     stroke-linecap="round"
                     stroke-linejoin="round"
                   >
-                    <path d="M7 17L17 7"/>
-                    <path d="M7 7h10v10"/>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
                   </svg>
                 </a>
               </div>
             </div>
 
             <!-- Response Time -->
-            <div class="pt-6 border-t border-gray-200">
+            <div>
               <div class="flex items-start gap-4">
-                <div class="w-12 h-12 rounded-full bg-blue-rich/10 flex items-center justify-center flex-shrink-0">
+                <div
+                  class="w-12 h-12 rounded-full bg-blue-rich/10 flex items-center justify-center flex-shrink-0"
+                >
                   <svg
                     class="w-5 h-5 text-blue-rich"
                     xmlns="http://www.w3.org/2000/svg"
@@ -179,25 +188,26 @@ import Header from "../components/Header.astro";
                     stroke-linecap="round"
                     stroke-linejoin="round"
                   >
-                    <circle cx="12" cy="12" r="10"/>
-                    <polyline points="12 6 12 12 16 14"/>
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
                   </svg>
                 </div>
                 <div>
-                  <h3 class="font-accent text-lg text-dusk-blue mb-2 font-semibold">
-                    Response Time
-                  </h3>
-                  <p class="text-gray-700 leading-relaxed">
-                    I aim to respond to all enquiries within 48 hours during business days.
+                  <h5 class="text-dusk-blue mb-2">Response Time</h5>
+                  <p class="text-gray-700">
+                    I aim to respond to all enquiries within 48 hours during
+                    business days.
                   </p>
                 </div>
               </div>
             </div>
 
-            <!-- Working With -->
-            <div class="pt-6 border-t border-gray-200">
+            <!-- Based in Ireland -->
+            <div>
               <div class="flex items-start gap-4">
-                <div class="w-12 h-12 rounded-full bg-blue-rich/10 flex items-center justify-center flex-shrink-0">
+                <div
+                  class="w-12 h-12 rounded-full bg-blue-rich/10 flex items-center justify-center flex-shrink-0"
+                >
                   <svg
                     class="w-5 h-5 text-blue-rich"
                     xmlns="http://www.w3.org/2000/svg"
@@ -208,15 +218,14 @@ import Header from "../components/Header.astro";
                     stroke-linecap="round"
                     stroke-linejoin="round"
                   >
-                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                    <polyline points="9 22 9 12 15 12 15 22"/>
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+                    ></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
                   </svg>
                 </div>
                 <div>
-                  <h3 class="font-accent text-lg text-dusk-blue mb-2 font-semibold">
-                    Based in Ireland
-                  </h3>
-                  <p class="text-gray-700 leading-relaxed">
+                  <h5 class="text-dusk-blue mb-2">Based in Ireland</h5>
+                  <p class="text-gray-700">
                     Working with organisations locally and internationally.
                   </p>
                 </div>
@@ -229,11 +238,5 @@ import Header from "../components/Header.astro";
   </section>
 
   <!-- Footer -->
-  <footer class="py-32 px-6 bg-dusk-blue text-white">
-    <div class="max-w-3xl mx-auto text-center">
-      <p class="text-lg leading-relaxed opacity-90">
-        © 2025 Luna Atkins Romero. All rights reserved.
-      </p>
-    </div>
-  </footer>
+  <Footer />
 </DefaultLayout>
