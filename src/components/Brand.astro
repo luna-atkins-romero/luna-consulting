@@ -4,51 +4,40 @@ interface Props {
 }
 const { showLogo = false } = Astro.props;
 
-// Get the current URL path
 const currentPath = new URL(Astro.request.url).pathname;
 const isHomePage = currentPath === "/";
 ---
 
 <div class="flex flex-col items-start gap-0">
   <a href="/" aria-current={isHomePage ? "page" : undefined} class="brand-link">
-    {
-      showLogo && (
-        <span class="material-symbols-outlined text-5xl md:text-6xl">
-          nightlight
-        </span>
-      )
-    }
-    <h1 class="font-brand text-3xl lg:text-5xl leading-tight brand-heading">
+    {showLogo && (
+      <span class="material-symbols-outlined text-5xl md:text-6xl">
+        nightlight
+      </span>
+    )}
+    
+    <h1 class="font-brand text-3xl lg:text-4xl leading-tight brand-heading">
       Luna Atkins Romero
     </h1>
-    <h2 class="font-brand text-2xl lg:text-4xl">
-       <h2 class="font-brand text-2xl lg:text-4xl">
-        Consulting<span
-          class="font-punctuation text-green-aqua text-3xl lg:text-6xl"
-          style="line-height: 0;"
-          >.
-        </span>
-      </h2>
+    
+    <h2 class="font-brand text-2xl lg:text-3xl brand-heading">
+      Consulting<span class="font-punctuation text-green-aqua text-4xl lg:text-5xl" style="line-height:0;">.</span>
     </h2>
   </a>
-
-  <style>
-    . brand-link {
-      text-decoration: none;
-    }
-
-    .brand-heading {
-      position: relative;
-    }
-
-    .brand-link:hover . brand-heading,
-    .brand-link:focus-visible .brand-heading,
-    .brand-link[aria-current="page"] .brand-heading {
-    }
-
-    . brand-link:focus-visible {
-      outline: 2px solid currentColor;
-      outline-offset: 4px;
-    }
-  </style>
 </div>
+
+<style>
+  .brand-link {
+    text-decoration: none;
+  }
+
+  .brand-link:hover .brand-heading,
+  .brand-link:focus-visible .brand-heading {
+    color: var(--color-green-aqua);
+  }
+
+  .brand-link:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 4px;
+  }
+</style>

@@ -13,84 +13,88 @@
   --color-pacific-blue: #00B2CA; 
 
   --color-green-aqua: #83E8BA;
+  --color-green-neon: #03F7EB;
   --color-blue-green: #71A2B6;
 
   --color-pink-subtle: #9b7d73;
   --color-vibrant-coral: #EE6055;
 
-  --color-neutral-bone: #d2d0ba;
+  --color-neutral-bone: #edf2f8;
 
-  --font-size-hero: clamp(2.5rem, 5vw, 4rem);
-  --font-size-headline: clamp(1.75rem, 3vw, 2.5rem);
+  --color--white: #e3ede1;
+
+  /* Typography Scale */
+  --font-size-hero: clamp(2.5rem, 6vw, 4rem);      /* Main page titles */
+  --font-size-headline: clamp(2rem, 4vw, 3rem);  /* Section headers */
+  --font-size-subhead: clamp(1.5rem, 2.5vw, 2rem); /* Subsections */
+  --font-size-body: 1rem;                        /* Body text */
+  --font-size-label: 0.875rem;                   /* Form labels, UI */
 }
 
-/* Base typography (elements) */
+/* Semantic Elements - Base Styles Only */
 h1, h2, h3 {
   font-family: "Goudy Bookletter 1911", serif;
-  font-weight: 400;
-  font-style: normal;
-  margin-top: 6px;
-  margin-bottom: 6px;
 }
 
-h4 {
+h4, h5, h6 {
   font-family: "Montserrat Variable", sans-serif;
   font-weight: 600;
-  font-style: normal;
-}
-
-h5, h6 {
-  font-family: "Montserrat Variable", sans-serif;
-  font-weight: 500;
-  font-style: normal;
 }
 
 p {
   font-family: "Montserrat Variable", sans-serif;
-  font-weight: 500;
-  font-style: normal;
+  font-weight: 400;
   line-height: 1.6;
-  margin-top: 6px;
-  margin-bottom: 6px;
 }
 
-/* Custom font utility classes */
+/* Utility Classes */
 .font-brand {
   font-family: "Sorts Mill Goudy", serif;
   font-weight: 400;
   font-style: normal;
 }
 
-.font-hero {
-  font-family: "Goudy Bookletter 1911", serif;
-  font-size: var(--font-size-hero);
-  line-height: 1.1;
-}
-
-.font-headline {
-  font-family: "Goudy Bookletter 1911", serif;
-  font-size: var(--font-size-headline);
-  line-height: 1.6;
-}
-
-.font-statement {
-  font-family: "Goudy Bookletter 1911", serif;
-  font-weight: 400;
-  font-style: normal;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-
 .font-punctuation {
   font-family: "Goudy Bookletter 1911", serif;
-  font-weight: 400;
-  font-style: normal;
-  display: inline;
+  display: inline-block;
+  line-height: 0.0;
 }
 
 .font-nav {
   font-family: "Hanken Grotesk Variable", sans-serif;
   font-weight: 400;
-  font-style: normal;
 }
 
+.hero-section {
+  font-size: var(--font-size-hero);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.heading-section {
+  font-family: "Goudy Bookletter 1911", serif;
+  font-size: var(--font-size-headline);
+  line-height: 1.3;
+}
+
+.font-statement {
+  font-family: "Goudy Bookletter 1911", serif;
+  font-size: var(--font-size-subhead);
+  line-height: 1.5;
+  font-style: italic; /* or whatever makes it special */
+}
+
+/* Form Elements */
+label {
+  font-family: "Montserrat Variable", sans-serif;
+  font-weight: 500;
+  font-size: var(--font-size-label);
+  color: var(--color-dusk-blue);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+input, textarea, select {
+  font-family: "Hanken Grotesk Variable", sans-serif;
+  font-size: var(--font-size-body);
+}
