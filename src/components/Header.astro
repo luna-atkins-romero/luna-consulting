@@ -4,11 +4,10 @@ import Navigation from "./Navigation.astro";
 import SocialLinks from "./SocialLinks.astro";
 ---
 
-<header class="py-8 px-6 bg-dusk-blue text-white">
+<header class="py-8 px-6 bg-theme-main text-theme-text-light">
     <div class="max-w-6xl mx-auto flex items-baseline justify-between">
         <!-- Brand -->
         <Brand />
-
         <!-- Nav -->
         <Navigation>
             <li><a href="#services">Services</a></li>
@@ -20,24 +19,4 @@ import SocialLinks from "./SocialLinks.astro";
     </div>
 </header>
 
-<script>
-  const toggle = document.getElementById('nav-toggle');
-  const menu = document.getElementById('primary-menu');
 
-  if (toggle instanceof HTMLButtonElement && menu) {
-    const openIcon = toggle.querySelector('.nav-icon--open');
-    const closeIcon = toggle.querySelector('.nav-icon--close');
-
-    toggle.addEventListener('click', () => {
-      const expanded = toggle.getAttribute('aria-expanded') === 'true';
-
-      toggle.setAttribute('aria-expanded', String(!expanded));
-      menu.classList.toggle('hidden');
-
-      if (openIcon && closeIcon) {
-        openIcon.classList.toggle('hidden');
-        closeIcon.classList.toggle('hidden');
-      }
-    });
-  }
-</script>

@@ -16,28 +16,12 @@ const isHomePage = currentPath === "/";
       </span>
     )}
     
-    <h1 class="font-brand text-3xl lg:text-4xl leading-tight brand-heading">
+    <h1 class="font-brand text-theme-text-light text-3xl lg:text-4xl leading-tight brand-heading">
       Luna Atkins Romero
     </h1>
     
-    <h2 class="font-brand text-2xl lg:text-3xl brand-heading">
-      Consulting<span class="font-punctuation text-green-aqua text-4xl lg:text-5xl" style="line-height:0;">.</span>
+    <h2 class="font-brand text-theme-text-light text-2xl lg:text-3xl brand-heading">
+      Consulting<span class="font-punctuation text-theme-accent text-4xl lg:text-5xl" style="line-height:0;">.</span>
     </h2>
   </a>
 </div>
-
-<style>
-  .brand-link {
-    text-decoration: none;
-  }
-
-  .brand-link:hover .brand-heading,
-  .brand-link:focus-visible .brand-heading {
-    color: var(--color-green-aqua);
-  }
-
-  .brand-link:focus-visible {
-    outline: 2px solid currentColor;
-    outline-offset: 4px;
-  }
-</style>

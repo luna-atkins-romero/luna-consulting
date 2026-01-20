@@ -18,11 +18,11 @@ const sortedPosts = posts.sort((a, b) => b.data.date. getTime() - a.data.date.ge
     <div class="max-w-4xl mx-auto">
       <!-- Header -->
       <div class="mb-16">
-        <h1 class="heading-section text-6xl md:text-8xl text-dusk-blue mb-6">
+        <h1 class="heading-section text-6xl md:text-8xl text-theme-main mb-6">
           Articles
         </h1>
         <WavyDivider />
-        <p class="text-dusk-blue">
+        <p class="text-theme-main">
           Insights and thoughts on non-profit strategy, governance, and impact. 
         </p>
       </div>
@@ -32,7 +32,7 @@ const sortedPosts = posts.sort((a, b) => b.data.date. getTime() - a.data.date.ge
         {sortedPosts.map((post) => (
           <article class="pb-8 border-b border-gray-200">
             <a href={`/articles/${post.slug}`} class="group">
-              <h4 class="text-dusk-blue group-hover:text-blue-rich transition-colors mb-2">
+              <h4 class="text-theme-main group-hover:text-blue-rich transition-colors mb-2">
                 {post. data.title}
               </h4>
             </a>
@@ -42,7 +42,7 @@ const sortedPosts = posts.sort((a, b) => b.data.date. getTime() - a.data.date.ge
             <p class="text-gray-700">
               {post.data.description}
             </p>
-            <a href={`/articles/${post.slug}`} class="text-blue-rich hover:text-dusk-blue inline-flex items-center gap-2 transition-colors mt-4">
+            <a href={`/articles/${post.slug}`} class="text-blue-rich hover:text-theme-main inline-flex items-center gap-2 transition-colors mt-4">
               Read Article
               <svg
                 class="w-4 h-4"

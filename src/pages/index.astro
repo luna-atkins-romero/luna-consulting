@@ -1,9 +1,8 @@
 ---
 import DefaultLayout from "../layouts/DefaultLayout.astro";
-import ServiceCard from "../components/ServiceCard.astro";
 import Header from "../components/Header.astro";
-
 import WavyDivider from "../components/WavyDivider.astro";
+import ServiceCard from "../components/ServiceCard.astro";
 import HowIWorkItem from "../components/HowIWorkItem.astro";
 import TestimonialCard from "../components/TestimonialCard.astro";
 import Footer from '../components/Footer.astro';
@@ -12,19 +11,19 @@ import Footer from '../components/Footer.astro';
 <DefaultLayout>
 
   <!-- Navbar + Hero - Full viewport -->
-  <section class="min-h-screen bg-dusk-blue text-white flex flex-col">
+  <section class="min-h-screen bg-theme-main text-light flex flex-col">
     <!-- Header -->
     <Header />
 
     <!-- Hero -->
     <div class="flex-grow flex items-center px-6">
       <div class="max-w-4xl mx-auto">
-        <h1 class="hero-section">
+        <h1 class="hero-section text-theme-text-light">
           Strengthening non-profits in collaboration with their teams<span
-            class="text-green-aqua"
+            class="text-theme-accent"
             style="display: inline-block; line-height: 1.1;">,</span
           > leaders and communities<span
-            class="text-green-aqua"
+            class="text-theme-accent"
             style="display: inline-block; line-height: 1.1;">.</span
           >
         </h1>
@@ -36,7 +35,7 @@ import Footer from '../components/Footer.astro';
   <section id="services" class="pt-12 pb-24 px-6">
     <div class="max-w-6xl mx-auto">
       <div class="mb-18">
-        <h2 class="heading-section text-dusk-blue mb-2">How can I help you?</h2>
+        <h2 class="heading-section text-theme-main mb-2">How can I help you?</h2>
         <WavyDivider />
       </div>
 
@@ -109,7 +108,7 @@ import Footer from '../components/Footer.astro';
     <div class="max-w-6xl mx-auto">
       <!-- About Me Header -->
       <div class="mb-18">
-        <h2 class="heading-section text-dusk-blue mb-2">About Me</h2>
+        <h2 class="heading-section text-theme-main mb-2">About Me</h2>
         <WavyDivider />
       </div>
 
@@ -120,7 +119,7 @@ import Footer from '../components/Footer.astro';
           <!-- Profile image -->
           <div>
             <div
-              class="w-64 h-64 rounded-full overflow-hidden border-3 border-dusk-blue"
+              class="w-64 h-64 rounded-full overflow-hidden border-3 border-theme-main"
             >
               <img
                 src="/images/luna-portrait.jpg"
@@ -132,9 +131,9 @@ import Footer from '../components/Footer.astro';
 
           <!-- About text -->
           <div
-            class="text-dusk-blue space-y-6 border-l-3 border-green-aqua pl-6"
+            class="text-theme-main space-y-6 border-l-3 border-theme-accent pl-6"
           >
-            <h2 class="text-dusk-blue font-statement text-3xl md:text-4xl">
+            <h2 class="text-theme-main font-statement text-3xl md:text-4xl">
               I have dedicated my career to working with and for mission-driven
               organisations.
             </h2>
@@ -198,7 +197,7 @@ import Footer from '../components/Footer.astro';
     <div class="max-w-6xl mx-auto">
       <!-- How I Work Header -->
       <div class="mb-18">
-        <h2 class="heading-section text-dusk-blue mb-2">How I Work</h2>
+        <h2 class="heading-section text-theme-main mb-2">How I Work</h2>
         <WavyDivider />
       </div>
 
@@ -239,7 +238,7 @@ import Footer from '../components/Footer.astro';
     <div class="max-w-6xl mx-auto">
       <!-- Testimonials Header -->
       <div class="mb-18">
-        <h2 class="heading-section text-dusk-blue mb-2">Testimonials</h2>
+        <h2 class="heading-section text-theme-main mb-2">Testimonials</h2>
         <WavyDivider />
       </div>
 
