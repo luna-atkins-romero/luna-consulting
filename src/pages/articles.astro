@@ -2,58 +2,45 @@
 import { getCollection } from 'astro:content';
 import DefaultLayout from "../layouts/DefaultLayout.astro";
 import Header from "../components/Header.astro";
-import WavyDivider from "../components/WavyDivider.astro";
 import Footer from "../components/Footer.astro";
 
 const posts = await getCollection('articles');
-const sortedPosts = posts.sort((a, b) => b.data.date. getTime() - a.data.date.getTime());
+const sortedPosts = posts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 ---
 
 <DefaultLayout title="Articles | Luna Atkins Romero">
-  <!-- Header -->
   <Header />
 
-  <!-- Articles Section -->
-  <section class="py-32 px-6 bg-neutral-bone">
+  <!-- Hero Section -->
+  <section class="flex-grow flex items-center py-16 px-6 bg-theme-main text-theme-text-light">
     <div class="max-w-4xl mx-auto">
-      <!-- Header -->
-      <div class="mb-16">
-        <h1 class="heading-section text-6xl md:text-8xl text-theme-main mb-6">
-          Articles
-        </h1>
-        <WavyDivider />
-        <p class="text-theme-main">
-          Insights and thoughts on non-profit strategy, governance, and impact. 
-        </p>
-      </div>
+      <h1 class="heading-section text-6xl md:text-8xl">
+        Insights and thoughts on non-profit strategy<span class="text-theme-accent" style="display: inline-block; line-height: 1.1;">,</span> governance<span class="text-theme-accent" style="display: inline-block; line-height: 1.1;">,</span> and impact<span class="text-theme-accent" style="display: inline-block; line-height: 1.1;">.</span>
+      </h1>
+    </div>
+  </section>
 
-      <!-- Articles List -->
-      <div class="space-y-8">
+  <!-- Articles Section -->
+  <section class="py-16 px-6 bg-theme-bg">
+    <div class="max-w-4xl mx-auto">
+
+      <div class="space-y-6">
         {sortedPosts.map((post) => (
-          <article class="pb-8 border-b border-gray-200">
-            <a href={`/articles/${post.slug}`} class="group">
-              <h4 class="text-theme-main group-hover:text-blue-rich transition-colors mb-2">
-                {post. data.title}
-              </h4>
+          <article class="article-card">
+            <a href={`/articles/${post.slug}`}>
+              <h2 class="article-card-title">
+                {post.data.title}
+              </h2>
             </a>
-            <p class="text-gray-600 text-sm mb-3">
-              {post.data. date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
-            </p>
-            <p class="text-gray-700">
+            <time class="article-card-date" datetime={post.data.date.toISOString()}>
+              {post.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+            </time>
+            <p class="article-card-description">
               {post.data.description}
             </p>
-            <a href={`/articles/${post.slug}`} class="text-blue-rich hover:text-theme-main inline-flex items-center gap-2 transition-colors mt-4">
+            <a href={`/articles/${post.slug}`} class="link-arrow">
               Read Article
-              <svg
-                class="w-4 h-4"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12"></line>
                 <polyline points="12 5 19 12 12 19"></polyline>
               </svg>
@@ -61,9 +48,9 @@ const sortedPosts = posts.sort((a, b) => b.data.date. getTime() - a.data.date.ge
           </article>
         ))}
       </div>
+      
     </div>
   </section>
 
-  <!-- Footer -->
   <Footer />
 </DefaultLayout>
