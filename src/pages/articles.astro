@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import DefaultLayout from "../layouts/DefaultLayout.astro";
 import Header from "../components/Header.astro";
+import WavyDivider from '../components/WavyDivider.astro';
 import Footer from "../components/Footer.astro";
 
 const posts = await getCollection('articles');
@@ -46,11 +47,14 @@ const sortedPosts = posts.sort((a, b) => b.data.date.getTime() - a.data.date.get
               </svg>
             </a>
           </article>
+          <WavyDivider />
         ))}
       </div>
-      
+       
     </div>
+   
   </section>
+
 
   <Footer />
 </DefaultLayout>

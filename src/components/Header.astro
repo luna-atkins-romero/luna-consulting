@@ -1,10 +1,10 @@
 ---
 import Brand from "./Brand.astro";
+import LinkedInIcon from "./LinkedInIcon.astro";
 import Navigation from "./Navigation.astro";
-import SocialLinks from "./SocialLinks.astro";
 
 const currentPath = new URL(Astro.request.url).pathname;
-const isHomepage = currentPath === '/';
+const isHomepage = currentPath === "/";
 ---
 
 <header class="py-8 px-6 bg-theme-main text-theme-text-light">
@@ -13,21 +13,25 @@ const isHomepage = currentPath === '/';
         <Brand />
         <!-- Nav -->
         <Navigation>
-             <li>
-                <a href={isHomepage ? "#services" : "/#services"}>
-                    Services
-                </a>
+            <li>
+                <a href={isHomepage ? "#services" : "/#services"}> Services </a>
             </li>
             <li>
-                <a href={isHomepage ? "#about" :  "/#about"}>
-                    About
-                </a>
+                <a href={isHomepage ? "#about" : "/#about"}> About </a>
             </li>
             <li><a href="/articles">Articles</a></li>
             <li><a href="/contact">Contact</a></li>
-            <SocialLinks />
+            <li>
+                <a
+                    href="https://www.linkedin.com/in/lunaatkinsromero/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn profile"
+                    class="inline-flex items-center hover:opacity-80 transition-opacity"
+                >
+                    <LinkedInIcon class="w-4 h-4" />
+                </a>
+            </li>
         </Navigation>
     </div>
 </header>
-
-

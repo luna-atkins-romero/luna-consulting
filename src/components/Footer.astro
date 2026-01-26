@@ -1,7 +1,7 @@
 ---
 // Footer.astro
 import Brand from './Brand.astro';
-import SocialLinks from "../components/SocialLinks.astro";
+import LinkedInIcon from './LinkedInIcon.astro';
 import WavyDivider from './WavyDivider.astro';
 
 const currentYear = new Date().getFullYear();
@@ -43,7 +43,7 @@ const currentYear = new Date().getFullYear();
                 </a>
               </li>
               <li>
-                <a href="/blog" class="text-light">
+                <a href="/articles" class="text-light">
                   Articles
                 </a>
               </li>
@@ -59,7 +59,16 @@ const currentYear = new Date().getFullYear();
         <!-- Connect & Sustainability -->
         <div>
           <h4 class="mb-4 text-theme-accent">Connect</h4>
-          <SocialLinks />
+           <a
+                    href="https://www.linkedin.com/in/lunaatkinsromero/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn profile"
+                    class="inline-flex items-center hover:opacity-80 transition-opacity"
+                >
+                    <LinkedInIcon class="w-4 h-4" />
+                </a>
+          
 
           <div class="mt-6">
             <h4 class="mb-4 text-theme-accent">Accountability</h4>
@@ -100,8 +109,7 @@ const currentYear = new Date().getFullYear();
           © {currentYear} Luna Atkins Romero Consulting.  All rights reserved.
         </p>
         <p>
-          Built with <a href="https://astro.build" target="_blank" rel="noopener noreferrer" class="hover:text-theme-accent transition-colors">Astro</a> • 
-          Designed for accessibility and sustainability
+          Built with <a href="https://astro.build" target="_blank" rel="noopener noreferrer" class="hover:text-theme-accent transition-colors">Astro</a>.
         </p>
       </div>
     </div>
