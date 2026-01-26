@@ -11,10 +11,10 @@ const { title, description, icon } = Astro.props;
 ---
 
 <div class="work-item">
-  <div class="icon-circle">
+  <div>
     <Icon aria-hidden="true" name={icon} />
   </div>
   
-  <h3 class="work-item-title">{title}</h3>
+  <h3 class="work-item-title mt-6">{title}</h3>
   <p class="work-item-description">{description}</p>
 </div>

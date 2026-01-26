@@ -138,7 +138,7 @@ import Footer from "../components/Footer.astro";
 
             <!-- Quotes + Statement Container -->
             <div class="flex flex-row items-start gap-2">
-              <div class="quotes-single text-theme-accent">
+              <!-- <div class="quotes-single text-theme-accent">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 70 54"
@@ -148,7 +148,7 @@ import Footer from "../components/Footer.astro";
                     d="M68.7 4.614c0 2.16-1.555 4.09-3.734 4.475-3.268.617-6.459 2.006-9.571 4.244-4.28 3.01-6.458 6.714-6.458 11.112 0 4.012 3.812 3.858 6.847 3.55 10.738-1.158 17.897 10.262 12.217 19.445-5.447 8.797-19.142 8.41-25.367.849-8.949-10.88-5.836-30.635 4.124-39.894 4.746-4.399 10.271-7.1 16.652-8.257 2.723-.54 5.29 1.698 5.29 4.476zm-37.349 0c0 2.16-1.556 4.09-3.735 4.475-3.268.617-6.458 2.006-9.57 4.244-4.28 3.01-6.46 6.714-6.46 11.112 0 4.012 3.813 3.858 6.848 3.55 10.738-1.158 17.897 10.262 12.217 19.445-5.447 8.797-19.142 8.41-25.367.849C-3.665 37.33-.552 17.577 9.408 8.318 14.154 3.919 19.679 1.218 26.06.06c2.723-.463 5.291 1.775 5.291 4.553z"
                     fill="currentColor"></path></svg
                 >
-              </div>
+              </div> -->
               <div>
                 <h2 class="font-statement-quotes pr-6">
                   I have dedicated my career to working with and for
@@ -160,30 +160,30 @@ import Footer from "../components/Footer.astro";
 
           <!-- About text -->
           <div class="max-w-5xl text-white space-y-6">
-            <h2 class="font-statement text-xl md:text-2xl">
+            <p>
               Charities, NGOs, social enterprises, research and advocacy
               organisations, and social movements play a vital role in
               championing and addressing people’s needs where the state or the
-              economy have failed them. I am passionate about the role of the
-              non-profit sector in bringing about social and economic justice,
+              economy have failed them. <span class="para-emphasis">I am passionate about the role of the
+              non-profit sector in bringing about social and economic justice</span>,
               and am committed to applying my skills and experience to enable
               them to do so more effectively and efficiently.
-            </h2>
+            </p>
 
-            <h2 class="font-statement text-xl md:text-2xl">
+            <p>
               My academic and professional background is in the social sciences,
               particularly equality, gender justice, human rights and
-              international development. I’ve worked with individual
+              international development. <span class="para-emphasis">I’ve worked with individual
               change-makers, organisations and networks spanning a huge
               diversity of social sectors and issues nationally and
-              internationally.
-            </h2>
+              internationally</span>.
+            </p>
 
-            <h2 class="font-statement text-xl md:text-2xl">
-              Over the last 20 years, I have garnered 360° lived experience of
-              non-profits: as an employee and manager within the sector, as a
+            <p>
+              Over the last 20 years, I have garnered <span class="para-emphasis">360° lived experience of
+              non-profits</span>: as an employee and manager within the sector, as a
               consultant to the sector, and as a Charity Trustee.
-            </h2>
+            </p>
           </div>
         </div>
 
@@ -223,44 +223,38 @@ import Footer from "../components/Footer.astro";
     </div>
   </section>
 
-  <section id="how-i-work" class="pt-12 pb-24 px-6 bg-theme-bg">
-    <div class="max-w-6xl mx-auto">
-      <!-- How I Work Header -->
-      <div class="mb-18">
-        <h2 class="heading-section text-theme-main mb-2">How I work</h2>
-        <WavyDivider />
-      </div>
+<section id="how-i-work" class="py-12 bg-theme-bg">
+  <div class="max-w-6xl mx-auto px-6">
+    <!-- Section Heading -->
+    <h2 class="heading-section text-center text-theme-main mb-18">
+      How I Work
+    </h2>
 
-      <!-- Constrain with centering -->
-      <div class="max-w-5xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <HowIWorkItem
-            title="Collaborative"
-            description="Co-creating solutions alongside teams to ensure ownership and practical outcomes."
-            icon="lucide:users"
-          />
-
-          <HowIWorkItem
-            title="Empowering"
-            description="Building capacity, confidence and resilience within organisations."
-            icon="lucide:trending-up"
-          />
-
-          <HowIWorkItem
-            title="Analytical"
-            description="Evidence-led insight that informs practical strategy and decision-making."
-            icon="lucide:bar-chart"
-          />
-
-          <HowIWorkItem
-            title="Candid"
-            description="Honest, clear guidance rooted in real-world experience."
-            icon="lucide:message-circle"
-          />
-        </div>
-      </div>
+    <!-- Icons Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-18 items-start">
+      <HowIWorkItem
+        title="Collaborative"
+        description="Co-creating solutions alongside teams to ensure ownership and practical outcomes."
+        icon="lucide:handshake"
+      />
+      <HowIWorkItem
+        title="Empowering"
+        description="Building capacity, confidence, and resilience within organisations."
+        icon="lucide:mountain"
+      />
+      <HowIWorkItem
+        title="Analytical"
+        description="Evidence-led insight that informs practical strategy and decision-making."
+        icon="lucide:gauge"
+      />
+      <HowIWorkItem
+        title="Candid"
+        description="Honest, clear guidance rooted in real-world experience."
+        icon="lucide:message-square-quote"
+      />
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- Testimonials Section -->
   <section id="testimonials" class="pt-12 pb-24 px-6 bg-theme-bg">
