@@ -1,27 +1,32 @@
 ---
 interface Props {
-  showLogo?: boolean;
+  showCircle?: boolean;
 }
-const { showLogo = false } = Astro.props;
+
+const { showCircle = false } = Astro.props;
 
 const currentPath = new URL(Astro.request.url).pathname;
 const isHomePage = currentPath === "/";
 ---
-
-<div class="flex flex-col items-start gap-0">
+<div class="flex flex-col items-start gap-0 relative overflow-visible">
   <a href="/" aria-current={isHomePage ? "page" : undefined} class="brand-link">
-    {showLogo && (
-      <span class="material-symbols-outlined text-5xl md:text-6xl">
-        nightlight
+   
+    <!-- Circle behind everything (conditional) -->
+    {showCircle && (
+      <span class="absolute rounded-full bg-theme-accent opacity-80" 
+            style="width: 20em; height: 20em; top: -8em; left: -4.55em; z-index: 0;">
       </span>
     )}
     
-    <h1 class="font-brand text-theme-text-light text-3xl lg:text-4xl leading-tight brand-heading">
-      Luna Atkins Romero
+    <!-- Text -->
+    <h1 class="font-brand text-theme-text-light text-3xl lg:text-4xl leading-tight brand-heading relative z-10"
+    style="mix-blend-mode:hard-light;">
+      <span class="font-punctuation" style="font-size: 1.1em;">L</span>una Atkins Romero
     </h1>
     
-    <h2 class="font-brand text-theme-text-light text-2xl lg:text-3xl brand-heading">
-      Consulting<span class="font-punctuation text-theme-accent text-4xl lg:text-5xl" style="line-height:0;">.</span>
+    <h2 class="font-brand text-theme-text-light text-2xl lg:text-3xl brand-heading relative z-10"
+    style="mix-blend-mode:hard-light;">
+      Consulting<span class={`font-punctuation text-5xl lg:text-6xl ${showCircle ? 'text-theme-main' : 'text-theme-accent' }`} style="line-height:0;">.</span>
     </h2>
   </a>
 </div>
