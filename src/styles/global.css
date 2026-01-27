@@ -138,7 +138,6 @@ p:last-child {
 }
 
 .font-statement-alt {
-  /* font-family: "Goudy Bookletter 1911", serif; */
   font-family: "Montserrat Variable", sans-serif;
   font-weight: 500;
   line-height: 1.6;
@@ -146,25 +145,27 @@ p:last-child {
   margin: 0;
 }
 
-/* Brand Styles */
+/* Navigation Styles */
+/* Brand */
 .brand-link {
   text-decoration: none;
+  transition: opacity 0.2s ease;
 }
 
-.brand-link:hover .brand-heading,
-.brand-link:focus-visible .brand-heading {
-  color: var(--color-theme-accent);
+.brand-link:hover {
+  opacity: 0.85;
 }
 
 .brand-link:focus-visible {
-  outline: 2px solid currentColor;
+  outline: 2px solid var(--color-theme-accent);
   outline-offset: 4px;
 }
 
-/* Navigation Styles */
+/* Nav links */
 nav a {
   position: relative;
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 nav a:hover,
@@ -178,7 +179,7 @@ nav a[aria-current="page"] {
 }
 
 nav a:focus-visible {
-  outline: 2px solid currentColor;
+  outline: 2px solid var(--color-theme-accent);
   outline-offset: 4px;
 }
 
@@ -186,20 +187,14 @@ nav a[aria-label]::after {
   display: none;
 }
 
-/* GLOBAL ITEMS */
-
-/* Quatation svg*/
-.quotes-single {
-  display: flex;
-  align-items: flex-start;
+/* LinkedIn icon */
+.linkedin-link {
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-.quotes-single svg {
-  width: clamp(2rem, 3.5vw, 2.5rem);  
-  height: clamp(2rem, 3.5vw, 2.5rem);
-  margin-top: 0.4em;
-  margin-right: 0.5em;
-  flex-shrink: 0;
+.linkedin-link:hover {
+  transform: scale(1.15);
+  opacity: 0.85;
 }
 
 /* Action Button - Uniform CTA style */
@@ -213,18 +208,19 @@ nav a[aria-label]::after {
   border-radius: 0.375rem;
   font-family: "Hanken Grotesk Variable", sans-serif;
   font-weight: 500;
-  min-width: 10rem;  /* 160px - adjust as needed */
-  transition: all 0.2s ease;
+  min-width: 10rem;
+  transition: background-color 0.2s ease;
 }
 
 .action-button svg {
   width: 1em;
   height: 1em;
+  transition: transform 0.2s ease;
+  margin-left: auto;
 }
 
-.action-button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+.action-button:hover svg {
+  transform: translateX(3px);
 }
 
 /* Shared Link Style (used in contact cards and article cards) */
@@ -234,18 +230,38 @@ nav a[aria-label]::after {
   display: inline-flex;
   align-items: center;
   gap: 0.5em;
-  transition: color 0.2s ease, opacity 0.2s ease;
+  transition: gap 0.2s ease, opacity 0.2s ease;
   color: var(--color-theme-text-dark);
 }
 
 .link-arrow:hover {
-  color: var(--color-theme-text-alt-dark);
-  opacity: 0.9;
+  gap: 0.75em; /* Arrow moves away slightly */
+  opacity: 0.85;
 }
 
 .link-arrow svg {
   width: 1em;
   height: 1em;
+  transition: transform 0.2s ease;
+}
+
+.link-arrow:hover svg {
+  transform: translateX(2px); /* Arrow shifts right */
+}
+
+/* GLOBAL ITEMS */
+/* Quatation svg*/
+.quotes-single {
+  display: flex;
+  align-items: flex-start;
+}
+
+.quotes-single svg {
+  width: clamp(2rem, 3.5vw, 2.5rem);  
+  height: clamp(2rem, 3.5vw, 2.5rem);
+  margin-top: 0.4em;
+  margin-right: 0.5em;
+  flex-shrink: 0;
 }
 
 /* Universal Icon Circle + Styles */
@@ -291,6 +307,11 @@ nav a[aria-label]::after {
   transform: scale(1.1);
 }
 
+.footer-link:hover {
+  color: var(--color-theme-accent);
+  transition-duration: 0.3s ease;
+}
+
 /* SERVICE CARDS */
 /* Service Card Styles */
 .service-card {
@@ -312,7 +333,10 @@ nav a[aria-label]::after {
   border: 3px solid var(--color-theme-main);
   border-radius: 0.5rem;
   background-color: white;
-  box-shadow: 0 0 0 6px var(--color-theme-bg);
+  /* Spacing only on right and bottom */
+  box-shadow: 
+    6px 0 0 0 var(--color-theme-bg),  /* right side */
+    0 6px 0 0 var(--color-theme-bg);  /* bottom side */
 }
 
 .service-card::after {
@@ -468,7 +492,9 @@ nav a[aria-label]::after {
   border: 3px solid transparent; 
   border-radius: 0.75rem;
   background-color: white; 
-  box-shadow: 0 0 0 6px var(--color-theme-bg);
+  box-shadow: 
+    6px 0 0 0 var(--color-theme-bg),  /* right side */
+    0 6px 0 0 var(--color-theme-bg);  /* bottom side */
   z-index: 1;
 }
 
@@ -486,6 +512,7 @@ nav a[aria-label]::after {
 .article-container:hover::after {
   opacity: 0.4; 
 }
+
 .article-body {
   color: var(--color-theme-text-dark);
   font-family: "Montserrat Variable", sans-serif;
@@ -629,42 +656,61 @@ select {
   font-size: var(--font-size-body);
   width: 100%;
   padding: 0.75rem 1rem;
-  border: 2px solid #d1d5db; /* gray-300 */
+  border: 2px solid rgba(44, 83, 120, 0.2);
   border-radius: 0.5rem;
-  transition: border-color 0.2s;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 input:focus,
 textarea:focus,
 select:focus {
   outline: none;
-  border-color: var(--color-blue-rich);
+  border-color: var(--color-theme-main);
+  box-shadow: 0 0 0 3px rgba(44, 83, 120, 0.1);
 }
 
 textarea {
-  resize: none;
+  resize: vertical;
+  min-height: 150px;
 }
 
-button[type="submit"] {
+/* Submit Button with Icon */
+.submit-button {
   width: 100%;
   padding: 1rem 2rem;
   background: var(--color-theme-main);
   color: var(--color-theme-text-light);
   border-radius: 0.5rem;
-  transition: opacity 0.2s;
   font-family: "Hanken Grotesk Variable", sans-serif;
   font-weight: 500;
   border: none;
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75em;
+  transition: all 0.2s ease;
 }
 
-button[type="submit"]:hover {
-  opacity: 0.9;
+.submit-button svg {
+  width: 1.25em;
+  height: 1.25em;
+  transition: transform 0.2s ease;
 }
 
+.submit-button:hover {
+  background: var(--color-theme-accent);
+  color: var(--color-theme-main);
+}
+
+.submit-button:hover svg {
+  transform: translateX(3px) translateY(-2px);
+}
+
+/* Contact Cards */
 .connect-card {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
   gap: 1rem;
 }

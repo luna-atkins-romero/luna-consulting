@@ -21,7 +21,9 @@ import logoGOAL from "../assets/logos/goal.png";
 
 <DefaultLayout>
   <!-- Navbar + Hero - Full viewport -->
-  <section class="min-h-screen bg-theme-main text-light flex flex-col">
+  <section
+    class="min-h-screen bg-theme-main text-theme-text-light flex flex-col"
+  >
     <!-- Header -->
     <Header />
 
@@ -91,21 +93,27 @@ import logoGOAL from "../assets/logos/goal.png";
               measurement, and organisational development.
             </p>
 
-            <div class="flex flex-row gap-6">
-              <!-- <a
-                href="#services"
-                class="action-button text-lg text-theme-main border-theme-main bg-theme-accent"
-              >
-                Services →
-              </a> -->
-
+            <div class="flex flex-row gap-6">       
               <a
                 href="#about"
-                class="action-button text-lg text-theme-main border-theme-main bg-theme-accent"
+                class="action-button text-lg text-theme-main border-theme-main bg-transparent hover:bg-theme-accent"
               >
-                About me →
+                About me
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
               </a>
             </div>
+
           </div>
         </div>
       </div>
@@ -278,8 +286,10 @@ import logoGOAL from "../assets/logos/goal.png";
             Charities, NGOs, social enterprises, research and advocacy
             organisations, and social movements play a vital role in championing
             and addressing people's needs where the state or the economy have
-            failed them. <span class="para-emphasis">I am committed to applying my skills and experience to
-            enable them to do so more effectively and efficiently</span>
+            failed them. <span class="para-emphasis"
+              >I am committed to applying my skills and experience to enable
+              them to do so more effectively and efficiently</span
+            >
             .
           </p>
 
