@@ -8,25 +8,34 @@ const { showCircle = false } = Astro.props;
 const currentPath = new URL(Astro.request.url).pathname;
 const isHomePage = currentPath === "/";
 ---
+
 <div class="flex flex-col items-start gap-0 relative overflow-visible">
   <a href="/" aria-current={isHomePage ? "page" : undefined} class="brand-link">
-   
-    <!-- Circle behind everything (conditional) -->
-    {showCircle && (
-      <span class="absolute rounded-full bg-theme-accent opacity-80" 
-            style="width: 20em; height: 20em; top: -8em; left: -4.55em; z-index: 0;">
-      </span>
-    )}
-    
-    <!-- Text -->
-    <h1 class="font-brand text-theme-text-light text-3xl lg:text-4xl leading-tight brand-heading relative z-10"
-    style="mix-blend-mode:hard-light;">
-      <span class="font-punctuation" style="font-size: 1.1em;">L</span>una Atkins Romero
+    <!-- Circle - using z-base (0) so it stays visible but behind text -->
+    {
+      showCircle && (
+        <span
+          class="absolute rounded-full bg-theme-accent opacity-80"
+          style="width: 20em; height: 20em; top: -8em; left: -4.55em; z-index: var(--z-base);"
+        ></span>
+      )
+    }
+
+    <!-- Text - using z-header to sit above circle -->
+    <h1
+      class="font-brand text-theme-text-light text-3xl lg:text-4xl leading-tight brand-heading"
+    >
+      <span class="font-punctuation" style="font-size: 1.1em;">L</span>una
+      Atkins Romero
     </h1>
-    
-    <h2 class="font-brand text-theme-text-light text-2xl lg:text-3xl brand-heading relative z-10"
-    style="mix-blend-mode:hard-light;">
-      Consulting<span class={`font-punctuation text-5xl lg:text-6xl ${showCircle ? 'text-theme-main' : 'text-theme-accent' }`} style="line-height:0;">.</span>
+
+    <h2
+      class="font-brand text-theme-text-light text-2xl lg:text-3xl brand-heading"
+    >
+      Consulting<span
+        class={`font-punctuation-oversize ${showCircle ? "text-theme-main" : "text-theme-accent"}`}
+        >.</span
+      >
     </h2>
   </a>
 </div>

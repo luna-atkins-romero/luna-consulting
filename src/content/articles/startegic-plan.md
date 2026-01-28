@@ -1,7 +1,7 @@
 ---
 title: "How a Strategic Plan Can Strengthen Your Non-Profit"
 description:  "Discover why a clear strategic plan is essential for turning ambition into action and delivering lasting impact."
-date: "2026-01-19"
+date: "2026-01-17"
 ---
 
 Most charities and nonprofits are driven by a strong sense of purpose. But purpose alone isn't enough to deliver lasting impact — especially in complex, fast-changing environments. A strategic plan provides the structure needed to turn ambition into action. Done well, it's not a lengthy document that sits on a shelf, but a practical tool that guides decisions, priorities and resource use.

@@ -1,7 +1,7 @@
 ---
 title: "How a Theory of Change Can Increase Your Not-For-Profit's Impact"
 description: "Learn how a Theory of Change clarifies your mission, improves learning, and helps you communicate impact with confidence."
-date: "2026-01-19"
+date: "2025-12-6"
 ---
 
 Many organisations are doing meaningful work, yet still struggle to explain how that work leads to real, lasting change. A Theory of Change helps bridge that gap. At its best, it's not a bureaucratic requirement or a box-ticking exercise — it's a practical way to think more clearly about what you do, why you do it, and what success actually looks like.

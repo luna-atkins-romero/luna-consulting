@@ -31,13 +31,20 @@ import logoGOAL from "../assets/logos/goal.png";
     <div class="flex-grow flex items-center px-6">
       <div class="max-w-4xl mx-auto">
         <h1 class="hero-section text-theme-text-light">
-          Strengthening non<span class="text-theme-accent font-punctuation"
-            >-</span
-          >profits in collaboration with their teams<span
-            class="text-theme-accent font-punctuation">,</span
-          > leaders and communities<span
-            class="text-theme-accent font-punctuation">.</span
-          >
+          Strengthening
+          <span class="word-unit">
+            non<span class="text-theme-accent font-punctuation">-</span>profits
+          </span>
+          in collaboration with their
+          <span class="word-unit">
+            teams<span class="text-theme-accent font-punctuation">,</span>
+          </span>
+          leaders and
+          <span class="word-unit">
+            communities<span class="text-theme-accent font-punctuation-oversize"
+              >.</span
+            >
+          </span>
         </h1>
       </div>
     </div>
@@ -46,18 +53,45 @@ import logoGOAL from "../assets/logos/goal.png";
   <section id="intro" class="py-12 px-6 bg-theme-bg">
     <div class="max-w-5xl mx-auto">
       <!-- Outer container: stacks vertically on mobile, horizontally on desktop -->
-      <div class="flex flex-col md:flex-row gap-8 md:gap-8 items-center mb-8">
-        <!-- Left: Image -->
-        <div class="flex-shrink-0 w-56 sm:w-64 md:w-72">
-          <Image
-            src={luna}
-            alt="Luna Atkins Romero Portrait"
-            width={512}
-            height={494}
-            class="w-full h-auto"
-            loading="lazy"
-            decoding="async"
-          />
+      <div class="flex flex-col md:flex-row gap-8 md:gap-8 items-stretch">
+        <!-- Left column -->
+        <div class="flex flex-col justify-between">
+          <!-- Image container - grows to fill space -->
+          <div class="flex-1 flex flex-col items-center justify-center">
+            <div class="w-56 sm:w-64 md:w-72">
+              <Image
+                src={luna}
+                alt="Luna Atkins Romero Portrait"
+                width={512}
+                height={494}
+                class="w-full h-auto"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          </div>
+
+          <!-- Button container - fixed size at bottom -->
+          <div class="flex-shrink-0 flex justify-center mt-8 mb-1">
+            <a
+              href="#about"
+              class="action-button text-lg text-theme-main border-theme-main bg-transparent hover:bg-theme-accent"
+            >
+              About me
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
         </div>
 
         <!-- Right: Quote + Text (always in a row) -->
@@ -77,7 +111,7 @@ import logoGOAL from "../assets/logos/goal.png";
           </div>
 
           <!-- Text content -->
-          <div class="flex flex-col gap-6 items start">
+          <div class="flex flex-col gap-6 items-start">
             <!-- Statement -->
             <h2 class="font-statement text-theme-text-dark">
               I have dedicated my career to working with and for mission-driven
@@ -92,28 +126,6 @@ import logoGOAL from "../assets/logos/goal.png";
               expertise spans strategic planning, governance, impact
               measurement, and organisational development.
             </p>
-
-            <div class="flex flex-row gap-6">       
-              <a
-                href="#about"
-                class="action-button text-lg text-theme-main border-theme-main bg-transparent hover:bg-theme-accent"
-              >
-                About me
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </a>
-            </div>
-
           </div>
         </div>
       </div>
@@ -197,41 +209,6 @@ import logoGOAL from "../assets/logos/goal.png";
           One-to-one support for leaders navigating complex organisational
           challenges.
         </ServiceCard>
-      </div>
-    </div>
-  </section>
-
-  <section id="how-i-work" class="py-12 bg-theme-bg">
-    <div class="max-w-6xl mx-auto px-6">
-      <!-- Section Heading -->
-      <h2 class="heading-section text-center text-theme-main mb-18">
-        How I work
-      </h2>
-
-      <!-- Icons Grid -->
-      <div
-        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-18 items-start"
-      >
-        <HowIWorkItem
-          title="Collaborative"
-          description="Co-creating solutions alongside teams to ensure ownership and practical outcomes."
-          icon="lucide:handshake"
-        />
-        <HowIWorkItem
-          title="Empowering"
-          description="Building capacity, confidence, and resilience within organisations."
-          icon="lucide:mountain"
-        />
-        <HowIWorkItem
-          title="Analytical"
-          description="Evidence-led insight that informs practical strategy and decision-making."
-          icon="lucide:gauge"
-        />
-        <HowIWorkItem
-          title="Candid"
-          description="Honest, clear guidance rooted in real-world experience."
-          icon="lucide:message-square-quote"
-        />
       </div>
     </div>
   </section>
@@ -346,6 +323,41 @@ import logoGOAL from "../assets/logos/goal.png";
             />
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how-i-work" class="py-36 bg-theme-main-darker">
+    <div class="max-w-6xl mx-auto px-6">
+      <!-- Section Heading -->
+      <h2 class="heading-section text-center text-theme-text-light mb-24">
+        How I work
+      </h2>
+
+      <!-- Icons Grid -->
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-18 items-start"
+      >
+        <HowIWorkItem
+          title="Collaborative"
+          description="Co-creating solutions alongside teams to ensure ownership and practical outcomes."
+          icon="lucide:handshake"
+        />
+        <HowIWorkItem
+          title="Empowering"
+          description="Building capacity, confidence, and resilience within organisations."
+          icon="lucide:mountain"
+        />
+        <HowIWorkItem
+          title="Analytical"
+          description="Evidence-led insight that informs practical strategy and decision-making."
+          icon="lucide:gauge"
+        />
+        <HowIWorkItem
+          title="Candid"
+          description="Honest, clear guidance rooted in real-world experience."
+          icon="lucide:message-square-quote"
+        />
       </div>
     </div>
   </section>
