@@ -1,0 +1,81 @@
+ <section id="intro" class="py-12 px-6 bg-theme-bg">
+    <div class="max-w-5xl mx-auto">
+      <!-- Outer container: stacks vertically on mobile, horizontally on desktop -->
+      <div class="flex flex-col md:flex-row gap-8 md:gap-8 items-stretch">
+        <!-- Left column -->
+        <div class="flex flex-col justify-between">
+          <!-- Image container - grows to fill space -->
+          <div class="flex-1 flex flex-col items-center justify-center">
+            <div class="w-56 sm:w-64 md:w-72">
+              <Image
+                src={luna}
+                alt="Luna Atkins Romero Portrait"
+                width={512}
+                height={494}
+                class="w-full h-auto"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          </div>
+
+          <!-- Button container - fixed size at bottom -->
+          <div class="flex-shrink-0 flex justify-center mt-8 mb-1">
+            <a
+              href="#about"
+              class="action-button text-lg text-theme-main border-theme-main bg-transparent hover:bg-theme-accent"
+            >
+              About me
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Quote + Text (always in a row) -->
+        <div class="flex flex-row items-start gap-2 md:gap-4">
+          <!-- Quote mark -->
+          <div class="quotes-single text-theme-accent flex-shrink-0">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 70 54"
+              role="img"
+              aria-hidden="true"
+            >
+              <path
+                d="M68.7 4.614c0 2.16-1.555 4.09-3.734 4.475-3.268.617-6.459 2.006-9.571 4.244-4.28 3.01-6.458 6.714-6.458 11.112 0 4.012 3.812 3.858 6.847 3.55 10.738-1.158 17.897 10.262 12.217 19.445-5.447 8.797-19.142 8.41-25.367.849-8.949-10.88-5.836-30.635 4.124-39.894 4.746-4.399 10.271-7.1 16.652-8.257 2.723-.54 5.29 1.698 5.29 4.476zm-37.349 0c0 2.16-1.556 4.09-3.735 4.475-3.268.617-6.458 2.006-9.57 4.244-4.28 3.01-6.46 6.714-6.46 11.112 0 4.012 3.813 3.858 6.848 3.55 10.738-1.158 17.897 10.262 12.217 19.445-5.447 8.797-19.142 8.41-25.367.849C-3.665 37.33-.552 17.577 9.408 8.318 14.154 3.919 19.679 1.218 26.06.06c2.723-.463 5.291 1.775 5.291 4.553z"
+                fill="currentColor"></path>
+            </svg>
+          </div>
+
+          <!-- Text content -->
+          <div class="flex flex-col gap-6 items-start">
+            <!-- Statement -->
+            <h2 class="font-statement text-theme-text-dark">
+              I have dedicated my career to working with and for mission-driven
+              organisations.
+            </h2>
+
+            <!-- Bio paragraph -->
+            <p class="text-lg text-theme-text-dark leading-relaxed">
+              Over the last 20 years, I have worked with mission-driven
+              organisations as an employee, consultant, and Charity Trustee -
+              bringing 360° lived experience of the non-profit sector. My
+              expertise spans strategic planning, governance, impact
+              measurement, and organisational development.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

@@ -8,6 +8,8 @@
     /* Pinks */
   --color-pink-subtle: #9b7d73;
   --color-vibrant-coral: #EE6055;
+  --color-bubble-pink: #FF6978;
+  --color-dark-raspberry: #82204A;
   
   /* Neutrals */
   --color-neutral-bone: #edf2f8;
@@ -48,9 +50,22 @@
    /* inky */
   --color-theme-main-darker: #16264C;  
 
-  --color-theme-subtle: #71A2B6; /* blue green */
+  --color-theme-main-lighter: #71A2B6; /* blue green */
+
+  --color-theme-bg-light-blue: #EEF8FF;
+
+  --color-theme-bg-light-green: #85D6CA;
+
+   --color-theme-bg-dark-green: #095256;
+
 
 /* END BLUES ---------------------------------------------------- */
+
+   /* --color-theme-bg: #edf2f8; */
+  --color-theme-bg: #FFFCF9; /* porcelain */
+
+   --color-theme-bg-alt: #f5f4f1; 
+   --color-theme-bg-alt2: #F4F3EE; /* parchment  */
 
 
 /* GREENS ---------------------------------------------------- */
@@ -61,16 +76,12 @@
  /* verdig shade lighter */
  --color-theme-accent: #3DB8A5; 
 
+ --color-theme-accent-red: #F25F5C;
+
  /* --color-theme-accent: #83E8BA;  green aqua */
 
 
 /* END GREENS ---------------------------------------------------- */
-
- 
-  
-  --color-theme-secondary: #00A7E1;
-  /* --color-theme-bg: #edf2f8; */
- --color-theme-bg: #f5f4f1;
 
   --color-theme-text-dark: #2c5378; /* dusk blue */
   --color-theme-text-alt-dark: #005b96; /* blue rich*/
@@ -414,11 +425,11 @@ nav a[aria-label]::after {
   z-index: 1;
   border: 3px solid var(--color-theme-main);
   border-radius: 0.5rem;
-  background-color: white;
+  background-color: var(--color-theme-bg);
   /* Spacing only on right and bottom */
   box-shadow: 
-    6px 0 0 0 var(--color-theme-bg),  /* right side */
-    0 6px 0 0 var(--color-theme-bg);  /* bottom side */
+    6px 0 0 0 var(--color-theme-accent),  /* right side */
+    0 6px 0 0 var(--color-theme-accent);  /* bottom side */
 }
 
 .service-card::after {
@@ -427,7 +438,7 @@ nav a[aria-label]::after {
   inset: 1rem -0.85rem -0.85rem 1rem;
   z-index: 0;
   border-radius: 0.5rem;
-  background-color: var(--color-theme-accent);
+  background-color: var(--color-theme-accent-red);
   opacity: 0.7;
   transition: opacity 0.3s ease;
 }

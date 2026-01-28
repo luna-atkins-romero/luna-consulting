@@ -50,48 +50,22 @@ import logoGOAL from "../assets/logos/goal.png";
     </div>
   </section>
 
+  <!-- Intro -->
   <section id="intro" class="py-12 px-6 bg-theme-bg">
     <div class="max-w-5xl mx-auto">
       <!-- Outer container: stacks vertically on mobile, horizontally on desktop -->
-      <div class="flex flex-col md:flex-row gap-8 md:gap-8 items-stretch">
-        <!-- Left column -->
-        <div class="flex flex-col justify-between">
-          <!-- Image container - grows to fill space -->
-          <div class="flex-1 flex flex-col items-center justify-center">
-            <div class="w-56 sm:w-64 md:w-72">
-              <Image
-                src={luna}
-                alt="Luna Atkins Romero Portrait"
-                width={512}
-                height={494}
-                class="w-full h-auto"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-          </div>
-
-          <!-- Button container - fixed size at bottom -->
-          <div class="flex-shrink-0 flex justify-center mt-8 mb-1">
-            <a
-              href="#about"
-              class="action-button text-lg text-theme-main border-theme-main bg-transparent hover:bg-theme-accent"
-            >
-              About me
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </a>
-          </div>
+      <div class="flex flex-col md:flex-row gap-8 md:gap-8 items-center mb-8">
+        <!-- Left: Image -->
+        <div class="flex-shrink-0 w-56 sm:w-64 md:w-72">
+          <Image
+            src={luna}
+            alt="Luna Atkins Romero Portrait"
+            width={512}
+            height={494}
+            class="w-full h-auto"
+            loading="lazy"
+            decoding="async"
+          />
         </div>
 
         <!-- Right: Quote + Text (always in a row) -->
@@ -111,7 +85,7 @@ import logoGOAL from "../assets/logos/goal.png";
           </div>
 
           <!-- Text content -->
-          <div class="flex flex-col gap-6 items-start">
+          <div class="flex flex-col gap-6 items start">
             <!-- Statement -->
             <h2 class="font-statement text-theme-text-dark">
               I have dedicated my career to working with and for mission-driven
@@ -126,20 +100,73 @@ import logoGOAL from "../assets/logos/goal.png";
               expertise spans strategic planning, governance, impact
               measurement, and organisational development.
             </p>
+
+            <div class="flex flex-row gap-6">       
+              <a
+                href="#about"
+                class="action-button text-lg text-theme-main border-theme-main bg-transparent hover:bg-theme-accent"
+              >
+                About me
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+
           </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="pt-12 pb-24 px-6 bg-theme-bg">
+    <div class="max-w-6xl mx-auto">
+      <!-- Testimonials Grid - Responsive -->
+      <div
+        class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+      >
+        <TestimonialCard
+          quote="The Board, staff team and community loved working with Luna on our Strategic Plan. She made us feel comfortable and guided us through the process, and kept us focused and on track. It was a pleasure to work with Luna and I would highly recommend her."
+          name="Jackie Landers"
+          title="CEO Listowel Family & Community Resource Centre"
+          initials="JL"
+        />
+
+        <TestimonialCard
+          quote="Luna is extremely skilled at facilitating strategic planning with organisations and groups. I found her openness, perceptiveness and keen insights invaluable throughout. With her support, we achieved a strategic plan that was both ambitious and realisable. No mean feat !!"
+          name="Berni Smyth"
+          title="Former CEO, Kerry Community Youth Service"
+          initials="BS"
+        />
+
+        <TestimonialCard
+          quote="Her candid feedback and empowering methodology helped our team build the confidence and capacity we needed to take our mission to the next level."
+          name="Aisha Johnson"
+          title="CEO, Community Impact Group"
+          initials="AJ"
+        />
+      </div>
+    </div>
+  </section>
+
   <!-- Services Cards -->
-  <section id="services" class="pt-12 pb-24 px-6 bg-theme-bg">
+  <section id="services" class="pt-12 pb-24 px-6 bg-theme-bg-dark-green">
     <div class="max-w-6xl mx-auto">
       <div class="mb-18">
-        <h2 class="heading-section text-theme-main mb-2">
+        <h2 class="heading-section text-theme-bg mb-2">
           How can I help you?
         </h2>
-        <WavyDivider />
+        <WavyDivider color="var(--color-theme-accent-red)" />
       </div>
 
       <div class="grid gap-12 sm:grid-cols-2 lg:grid-cols-3">
@@ -209,37 +236,6 @@ import logoGOAL from "../assets/logos/goal.png";
           One-to-one support for leaders navigating complex organisational
           challenges.
         </ServiceCard>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials Section -->
-  <section id="testimonials" class="pt-12 pb-24 px-6 bg-theme-bg">
-    <div class="max-w-6xl mx-auto">
-      <!-- Testimonials Grid - Responsive -->
-      <div
-        class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-      >
-        <TestimonialCard
-          quote="Working with Luna transformed our organization's approach to strategic planning. Her insight and collaborative style brought our team together in ways we hadn't experienced before."
-          name="Jane Doe"
-          title="Executive Director, Sample Charity"
-          initials="JD"
-        />
-
-        <TestimonialCard
-          quote="Luna's analytical approach combined with her deep understanding of the non-profit sector provided exactly the guidance we needed during a critical transition period."
-          name="Michael Smith"
-          title="Chair, Example Foundation"
-          initials="MS"
-        />
-
-        <TestimonialCard
-          quote="Her candid feedback and empowering methodology helped our team build the confidence and capacity we needed to take our mission to the next level."
-          name="Aisha Johnson"
-          title="CEO, Community Impact Group"
-          initials="AJ"
-        />
       </div>
     </div>
   </section>
@@ -327,6 +323,7 @@ import logoGOAL from "../assets/logos/goal.png";
     </div>
   </section>
 
+   <!-- How I work -->
   <section id="how-i-work" class="py-36 bg-theme-main-darker">
     <div class="max-w-6xl mx-auto px-6">
       <!-- Section Heading -->
