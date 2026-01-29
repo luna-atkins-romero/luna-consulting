@@ -11,24 +11,6 @@
   font-display: swap;
 }
 
-/* Goudy Old Style – Regular */
-@font-face {
-  font-family: "Goudy Old Style";
-  src: url("/fonts/Goudy Old Style.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* Goudy Old Style – Bold */
-@font-face {
-  font-family: "Goudy Old Style";
-  src: url("/fonts/Goudy Old Style Bold.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
 /* Sorts Mill Goudy – Regular */
 @font-face {
   font-family: "Sorts Mill Goudy";
@@ -44,28 +26,6 @@
   src: url("/fonts/SortsMillGoudy-Italic.woff2") format("woff2");
   font-weight: 400;
   font-style: italic;
-  font-display: swap;
-}
-
-/* -----------------------------
-   Sans / UI / Body
------------------------------- */
-
-/* Questrial */
-@font-face {
-  font-family: "Questrial";
-  src: url("/fonts/Questrial-Regular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* Raleway – Thin */
-@font-face {
-  font-family: "Raleway";
-  src: url("/fonts/Raleway-Thin.woff2") format("woff2");
-  font-weight: 100;
-  font-style: normal;
   font-display: swap;
 }
 
@@ -86,15 +46,6 @@
 @font-face {
   font-family: "Hanken Grotesk Variable";
   src: url("/fonts/HankenGrotesk-VariableFont_wght.ttf") format("truetype");
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* Space Grotesk Variable */
-@font-face {
-  font-family: "Space Grotesk Variable";
-  src: url("/fonts/SpaceGrotesk-VariableFont_wght.ttf") format("truetype");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;

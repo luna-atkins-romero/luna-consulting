@@ -8,7 +8,7 @@ Many organisations are doing meaningful work, yet still struggle to explain how 
 
 Here are three reasons a well-developed Theory of Change can significantly increase your impact.
 
-## 1. It forces clarity about what really matters
+# 1. It forces clarity about what really matters
 
 A Theory of Change asks some deceptively simple questions: 
 
@@ -20,7 +20,7 @@ Answering these questions helps organisations move beyond vague ambition and foc
 
 In practice, this clarity often leads organisations to stop doing things that feel useful but don't meaningfully contribute to impact — freeing up time and resources for what truly does.
 
-## 2. It improves learning, not just reporting
+# 2. It improves learning, not just reporting
 
 Too often, measurement is treated as something done after the work is finished, mainly to satisfy funders. A Theory of Change flips that dynamic. By clearly setting out how change is expected to happen, it provides a framework for learning as you go.
 
@@ -28,7 +28,7 @@ With a ToC in place, organisations can test assumptions, track progress against 
 
 The result is work that gets smarter and more effective, not just better documented.
 
-## 3. It helps you communicate impact with confidence
+# 3. It helps you communicate impact with confidence
 
 A strong Theory of Change gives you a clear, credible story to tell — one that connects your mission, your work, and your results. This is invaluable when speaking with funders, partners, trustees, or anyone trying to understand your value.
 
@@ -36,6 +36,6 @@ Instead of listing activities or outputs, you can explain how your work contribu
 
 In crowded and competitive funding environments, that clarity can make a real difference. 
 
-## In summary
+# In summary
 
 A Theory of Change isn't about creating the perfect diagram or predicting the future. It's about thinking rigorously, being honest about assumptions, and staying focused on outcomes. When used well, it becomes a practical tool that strengthens strategy, sharpens learning, and ultimately helps organisations achieve more meaningful change. 

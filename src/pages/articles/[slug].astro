@@ -3,6 +3,7 @@ import { getCollection, type CollectionEntry } from 'astro:content';
 import DefaultLayout from "../../layouts/DefaultLayout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
+import WavyDivider from '../../components/WavyDivider.astro';
 
 export async function getStaticPaths() {
   const posts = await getCollection('articles');
@@ -28,7 +29,7 @@ const { Content } = await post.render();
       
       <!-- Article Header -->
       <header class="mb-12">
-        <h1 class="heading-section text-5xl md:text-6xl text-theme-main mb-4">
+        <h1 class="heading-section text-5xl md:text-6xl text-theme-main">
           {post.data.title}
         </h1>
         <time class="article-meta" datetime={post.data.date.toISOString()}>
@@ -42,7 +43,11 @@ const { Content } = await post.render();
       </div>
 
       <!-- Back Link -->
-      <div class="article-divider">
+       <div class="article-divider">
+        <WavyDivider />
+       </div>
+      
+      <div>
         <a href="/articles" class="link-arrow">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transform: rotate(180deg);">
             <line x1="5" y1="12" x2="19" y2="12"></line>

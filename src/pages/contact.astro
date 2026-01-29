@@ -14,9 +14,11 @@ import LinkedInIcon from "../components/LinkedInIcon.astro";
     class="flex-grow flex items-center py-16 px-6 bg-theme-main text-theme-text-light"
   >
     <div class="max-w-4xl mx-auto text-center">
-      <h1 class="heading-section text-6xl md:text-8xl mb-8">
+      <h1 class="heading-section text-6xl md:text-8xl">
         <span class="word-unit">
-          Let<span class="text-theme-accent">'</span>s work together<span class="text-theme-accent font-oversize">.</span>
+          Let<span class="text-theme-accent">'</span>s work together<span
+            class="text-theme-accent font-oversize">.</span
+          >
         </span>
       </h1>
     </div>
@@ -29,7 +31,7 @@ import LinkedInIcon from "../components/LinkedInIcon.astro";
       <div class="mb-18">
         <div class="flex items-center justify-center gap-3">
           <Icon name="lucide:map-pin" class="w-7 h-7 text-theme-accent" />
-          <h2 class="heading-alt text-2xl md:text-3xl text-theme-main">
+          <h2 class="heading-alt text-2xl md:text-3xl text-theme-main no-mb">
             Based in Ireland
           </h2>
         </div>
@@ -45,7 +47,7 @@ import LinkedInIcon from "../components/LinkedInIcon.astro";
         <!-- Left Column: Contact Form -->
         <div>
           <h2
-            class="heading-alt text-2xl md:text-3xl text-theme-main text-center mb-8"
+            class="heading-alt text-2xl md:text-3xl text-theme-main text-center"
           >
             Send me a message
           </h2>
@@ -115,13 +117,13 @@ import LinkedInIcon from "../components/LinkedInIcon.astro";
         <!-- Right Column: Connect -->
         <div class="flex flex-col items-center">
           <h2
-            class="heading-alt text-2xl md:text-3xl text-theme-main text-center mb-12"
+            class="heading-alt text-2xl md:text-3xl text-theme-main text-center"
           >
             Connect with me
           </h2>
 
           <!-- Email + LinkedIn items-->
-          <div class="flex flex-col items-start gap-12">
+          <div class="flex flex-col items-start gap-12 mt-7">
             <!-- Email - icon + text in row -->
             <div class="flex gap-4">
               <div class="icon-circle-link flex-shrink-0">
@@ -180,9 +182,7 @@ import LinkedInIcon from "../components/LinkedInIcon.astro";
               </div>
             </div>
           </div><!-- END Email + LinkedIn items-->
-          
         </div><!-- ENDRight Column: Connect -->
-        
       </div>
     </div>
   </section>

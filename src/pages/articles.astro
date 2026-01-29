@@ -14,7 +14,7 @@ const sortedPosts = posts.sort((a, b) => b.data.date.getTime() - a.data.date.get
 
   <!-- Hero Section -->
   <section class="flex-grow flex items-center py-16 px-6 bg-theme-main text-theme-text-light">
-    <div class="max-w-4xl mx-auto">
+    <div class="max-w-4xl mx-auto text-center">
       <h1 class="heading-section text-6xl md:text-8xl">
         Insights and thoughts on
         <span class="word-unit">
@@ -56,7 +56,10 @@ const sortedPosts = posts.sort((a, b) => b.data.date.getTime() - a.data.date.get
               </svg>
             </a>
           </article>
-          <WavyDivider />
+          <div class="wavy-divider">
+            <WavyDivider />
+          </div>
+          
         ))}
       </div>
        
