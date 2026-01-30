@@ -1,177 +1,84 @@
----
-import DefaultLayout from "../layouts/DefaultLayout.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import { Icon } from "astro-icon/components";
-import LinkedInIcon from "../components/LinkedInIcon.astro";
----
+<!-- About -->
+  <section id="about" class="pt-12 pb-24 px-6 bg-theme-bg-neutral1">
+    <div class="max-w-5xl mx-auto">
+      <!-- Constrain with centering -->
+      <div class="max-w-4xl mx-auto">
+        <!-- Passionate Statement as Subheading -->
+        <h2 class="heading-section text-theme-text-dark text-center">
+          I am passionate about the role of the non-profit sector in bringing
+          about social and economic justice.
+        </h2>
 
-<DefaultLayout>
-  <!-- Navbar -->
-  <Header />
-  <!-- Landing Section -->
-  <section
-    class="flex-grow flex items-center py-16 px-6 bg-theme-main text-theme-text-light"
-  >
-    <div class="max-w-4xl mx-auto">
-      <h1 class="heading-section text-6xl md:text-8xl">
-        Let's work together<span
-          class="text-theme-accent"
-          style="display:  inline-block; line-height:  1.1;">.</span
-        >
-      </h1>
+        <!-- About text -->
+        <div class="max-w-3xl mx-auto text-theme-text-dark space-y-6 mb-12">
+          <p>
+            Charities, NGOs, social enterprises, research and advocacy
+            organisations, and social movements play a vital role in championing
+            and addressing people's needs where the state or the economy have
+            failed them. <span class="para-emphasis"
+              >I am committed to applying my skills and experience to enable
+              them to do so more effectively and efficiently</span
+            >
+            .
+          </p>
+
+          <p>
+            My academic and professional background is in the social sciences,
+            particularly equality, gender justice, human rights and
+            international development. <span class="para-emphasis"
+              >I've worked with individual change-makers, organisations and
+              networks spanning a huge diversity of social sectors and issues
+              nationally and internationally</span
+            >.
+          </p>
+
+          <p>
+            Over the last 20 years, I have garnered <span class="para-emphasis"
+              >360° lived experience of non-profits</span
+            >: as an employee and manager within the sector, as a consultant to
+            the sector, and as a Charity Trustee.
+          </p>
+        </div>
+
+        <!-- Logos Grid -->
+        <div>
+          <div class="mb-12">
+            <h3 class="text-theme-text-dark text-center">
+            A sample of the organisations I've worked with, and for:
+            </h3>
+          </div>
+          
+          
+          <div
+            class="grid grid-cols-2 md:grid-cols-5 gap-6 items-center justify-items-center"
+          >
+            <Image
+              src={logoGNB}
+              alt="Girls not Brides Charity Logo"
+              class="work-logo max-h-16 object-contain"
+            />
+            <Image
+              src={logoUnicef}
+              alt="UNICEF UK Charity Logo"
+              class="work-logo max-h-20 object-contain"
+            />
+            <Image
+              src={logoAmnesty}
+              alt="Amnesty International Charity Logo Banner"
+              class="work-logo max-h-16 object-contain"
+            />
+            <Image
+              src={logoKCYS}
+              alt="Kerry Community Youth Services Charity Logo"
+              class="work-logo max-h-24 object-contain"
+            />
+            <Image
+              src={logoGOAL}
+              alt="GOAL Charity Logo"
+              class="work-logo max-h-16 object-contain"
+            />
+          </div>
+        </div>
+      </div>
     </div>
   </section>
-
-  <section class="py-16 px-6 bg-theme-bg">
-    <div class="max-w-4xl mx-auto">
-      <!-- Message + Connect Columns -->
-      <div class="grid md:grid-cols-2 gap-24">
-        <!-- Contact Form -->
-        <div>
-          <h2 class="heading-alt text-2xl md:text-3xl text-theme-main mb-8">
-            Send me a message
-          </h2>
-
-          <form
-            action="https://api.web3forms.com/submit"
-            method="POST"
-            class="space-y-6"
-          >
-            <input
-              type="hidden"
-              name="access_key"
-              value="07207747-177e-49e6-93ed-ceb2af8654c1"
-            />
-
-            <div>
-              <label for="name">Name *</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                required
-                placeholder="Your name"
-              />
-            </div>
-
-            <div>
-              <label for="email">Email *</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                placeholder="your@email.com"
-              />
-            </div>
-
-            <div>
-              <label for="organisation">Organisation</label>
-              <input
-                type="text"
-                id="organisation"
-                name="organisation"
-                placeholder="Your organisation"
-              />
-            </div>
-
-            <div>
-              <label for="message">Message *</label>
-              <textarea
-                id="message"
-                name="message"
-                required
-                rows="6"
-                placeholder="Tell me about your project..."></textarea>
-            </div>
-
-            <button type="submit">Send message</button>
-          </form>
-        </div>
-
-        <!-- Connect -->
-        <!-- <div class="flex flex-col align-center"> -->
-
-
-          <div class="flex flex-col align-center space-y-12">
-            <!-- Email -->
-            <div class="connect-card">
-              <div class="icon-circle">
-                <Icon aria-hidden="true" name="lucide:mail" />
-              </div>
-              <div>
-                <h3 class="text-theme-main mb-2">Email me</h3>
-                <p class="text-theme-main mb-3">hello@luncaconsulting.ie</p>
-              </div>
-            </div>
-            <!-- LinkedIn -->
-            <div class="connect-card">
-              <div class="icon-circle-link">
-                <a
-                  href="https://www.linkedin.com/in/lunaatkinsromero/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="LinkedIn profile"
-                  class="inline-flex items-center hover:opacity-80 transition-opacity"
-                >
-                  <LinkedInIcon />
-                </a>
-              </div>
-              <div>
-                <h3 class="text-theme-main mb-2">LinkedIn</h3>
-                <p class="text-theme-main mb-3">
-                  Connect with me professionally.
-                </p>
-                <a
-                  href="https://www.linkedin.com/in/lunaatkinsromero/"
-                  target="_blank"
-                  rel="noopener
-                noreferrer"
-                  class="link-arrow"
-                >
-                  View Profile
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
-                </a>
-              </div>
-            </div>
-
-            <!-- Based in Ireland -->
-            <div class="connect-card">
-              <div class="icon-circle">
-                <Icon aria-hidden="true" name="lucide:map-pin" />
-              </div>
-              <div>
-                <h3 class="text-theme-main mb-2">Based in Ireland</h3>
-                <p class="text-theme-main mb-3">
-                  Working with organisations locally, nationally and
-                  internationally.
-                </p>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-
-      <!-- </div> -->
-
-    </div><!--END Message + Connect Columns -->
-  </section>
-</DefaultLayout>
-
-<!-- Footer -->
-<Footer />
-
-

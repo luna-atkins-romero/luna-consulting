@@ -5,25 +5,17 @@
   
   /* Palette colors*/
 
-    /* Pinks */
-  --color-pink-subtle: #9b7d73;
-  --color-vibrant-coral: #EE6055;
-  --color-bubble-pink: #FF6978;
-  --color-dark-raspberry: #82204A;
-  
-  /* Neutrals */
-  --color-neutral-bone: #edf2f8;
-  --color-kneat-bg: #f5f4f1;
-  --color-white: #e3ede1;
-  --color-ash-grey: #C3D7C1;
 
   /* Blues */
   --color-dusk-blue: #2c5378;
+
   --color-navy: #03396c;
   --color-blue-rich: #005b96;
   --color-blue-light: #00A7E1;
   --color-pacific-blue: #00B2CA;
   --color-space-blue: #0B3954;
+  --color-slate-inky1: #4E7287;
+  --color-slate-inky2: #50748a;
 
   /* Greens */
   --color-green-aqua: #83E8BA;
@@ -31,62 +23,58 @@
   --color-blue-green: #71A2B6;
   --color-green-verdigris: #339989;
 
+        /* Pinks */
+  --color-pink-subtle: #9b7d73;
+  --color-vibrant-coral: #EE6055;
+  --color-bubble-pink: #FF6978;
+  --color-dark-raspberry: #82204A;
+  --color-royal-plum: #832161;
+  --color-lobster-pink: #E15554;
+
 
   /* Theme Custom Tailwind utilities */
 
   /* THEME COLORS */
 
-  /* BLUES ---------------------------------------------------- */
- 
-  /* dusk blue */
-  --color-theme-main: #2c5378; 
-
   /* slate inky 1 */
-  /* --color-theme-main: #4E7287;  */
+  /* --color-theme-bg-primary-blue: #4E7287;  */
 
   /* slate inky 2 */
-  /* --color-theme-main: #50748a;  */
+  /* --color-theme-bg-primary-blue: #50748a;  */
 
    /* inky */
-  --color-theme-main-darker: #16264C;  
+  /* --color-theme-bg-alt1-green: #16264C;   */
+  /* --color-theme-bg-alt1-green: #0B3954; */
 
-  --color-theme-main-lighter: #71A2B6; /* blue green */
-
-  --color-theme-bg-light-blue: #EEF8FF;
-
-  --color-theme-bg-light-green: #85D6CA;
-
-   --color-theme-bg-dark-green: #095256;
-
-
-/* END BLUES ---------------------------------------------------- */
-
-   /* --color-theme-bg: #edf2f8; */
-  --color-theme-bg: #FFFCF9; /* porcelain */
-
-   --color-theme-bg-alt: #f5f4f1; 
-   --color-theme-bg-alt2: #F4F3EE; /* parchment  */
-
-
-/* GREENS ---------------------------------------------------- */
  
- /* verdig  */
- /* --color-theme-accent: #38A897;  */
+  --color-theme-bg-primary-blue: #2c5378;  /* dusk blue */
+  --color-theme-bg-alt1-green: #70C1B3;   /*lighter accent green */
 
- /* verdig shade lighter */
- --color-theme-accent: #3DB8A5; 
+  --color-theme-accent: #3DB8A5;  /* verdig shade lighter */
+  --color-theme-accent-red: #EE6055;
 
- --color-theme-accent-red: #F25F5C;
+    /* Neautral BGs */
+  --color-theme-bg-neutral1: #FFFCF9; /* porcelain */
+  --color-theme-bg-alt: #f5f4f1; 
+  --color-theme-bg-alt2: #F4F3EE; /* parchment  */
 
- /* --color-theme-accent: #83E8BA;  green aqua */
+  
+  --color-theme-bg-light-blue: #EEF8FF;
+  --color-theme-bg-light-green: #85D6CA;
+  --color-theme-bg-dark-green: #095256;
 
 
-/* END GREENS ---------------------------------------------------- */
-
+  /* Text */
   --color-theme-text-dark: #2c5378; /* dusk blue */
   --color-theme-text-alt-dark: #005b96; /* blue rich*/
+  --color-theme-text-dark-contrast: #0B3954;
+  /* --color-theme-text-dark-contrast: #71A2B6; */
+  /* --color-theme-text-grey: #4E7287; */
+  --color-theme-text-grey: #71A2B6; 
   --color-theme-text-light: #e3ede1; /* white */
   --color-theme-text-alt-light: #03396c;
+
+
 
   /* Typography */
   --font-size-hero: clamp(2.5rem, 6vw, 4.5rem);
@@ -378,6 +366,7 @@ nav a[aria-label]::after {
   height: 3.5rem;
   border-radius: 9999px;
   background-color: rgba(100, 151, 177, 0.1);
+  opacity: 0.7;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -389,7 +378,7 @@ nav a[aria-label]::after {
 .icon-circle svg {
   width: 1.75rem;  
   height: 1.75rem;
-  color: var(--color-theme-subtle);  
+  color: var(--color-theme-accent-red); 
 }
 
 .icon-circle-link {
@@ -439,13 +428,13 @@ nav a[aria-label]::after {
   position: absolute;
   inset: 0;
   z-index: 1;
-  border: 3px solid var(--color-theme-main);
+  border: 3px solid var(--color-theme-accent);
   border-radius: 0.5rem;
-  background-color: var(--color-theme-bg);
+  background-color: var(--color-theme-bg-neutral1);
   /* Spacing only on right and bottom */
   box-shadow: 
-    6px 0 0 0 var(--color-theme-accent),  /* right side */
-    0 6px 0 0 var(--color-theme-accent);  /* bottom side */
+    6px 0 0 0 var(--color-theme-bg-neutral1),  /* right side */
+    0 6px 0 0 var(--color-theme-bg-neutral1);  /* bottom side */
 }
 
 .service-card::after {
@@ -454,8 +443,8 @@ nav a[aria-label]::after {
   inset: 1rem -0.85rem -0.85rem 1rem;
   z-index: 0;
   border-radius: 0.5rem;
-  background-color: var(--color-theme-accent-red);
-  opacity: 0.7;
+  background-color: var(--color-theme-bg-primary-blue);
+  opacity: .85;
   transition: opacity 0.3s ease;
 }
 
@@ -517,8 +506,8 @@ nav a[aria-label]::after {
 .work-item svg {
   width: 3em;
   height: 3em;
-  color: var(--color-theme-accent);
-  margin: 0;
+  color: var(--color-theme-bg-primary-blue);
+  margin-bottom: 2em;
 }
 
 .work-item-title {
@@ -531,7 +520,7 @@ nav a[aria-label]::after {
 }
 
 .work-item-description {
-  color: var(--color-theme-text-light);
+  color: var(--color-theme-text-dark);
   text-align: center;
   line-height: 1.6;
 }

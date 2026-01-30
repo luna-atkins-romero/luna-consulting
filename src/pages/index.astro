@@ -22,7 +22,8 @@ import logoGOAL from "../assets/logos/goal.png";
 <DefaultLayout>
   <!-- Navbar + Hero - Full viewport -->
   <section
-    class="min-h-screen bg-theme-main text-theme-text-light flex flex-col"
+    id="hero"
+    class="min-h-screen bg-theme-bg-primary-blue text-theme-text-light flex flex-col"
   >
     <!-- Header -->
     <Header />
@@ -51,10 +52,13 @@ import logoGOAL from "../assets/logos/goal.png";
   </section>
 
   <!-- Intro -->
-  <section id="intro" class="py-12 px-6 bg-theme-bg">
+  <section
+    id="intro"
+    class="pt-8 md:pt-12 pb-8 md:pb-16 px-6 bg-theme-bg-neutral1"
+  >
     <div class="max-w-5xl mx-auto">
       <!-- Outer container: stacks vertically on mobile, horizontally on desktop -->
-      <div class="flex flex-col md:flex-row gap-8 md:gap-8 items-center mb-8">
+      <div class="flex flex-col md:flex-row gap-8 md:gap-18 items-center mb-8">
         <!-- Left: Image -->
         <div class="flex-shrink-0 w-56 sm:w-64 md:w-72">
           <Image
@@ -68,32 +72,21 @@ import logoGOAL from "../assets/logos/goal.png";
           />
         </div>
 
-        <!-- Right: Quote + Text (always in a row) -->
         <div class="flex flex-row items-start gap-2 md:gap-4">
-          <!-- Quote mark -->
-          <div class="quotes-single text-theme-accent flex-shrink-0">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 70 54"
-              role="img"
-              aria-hidden="true"
-            >
-              <path
-                d="M68.7 4.614c0 2.16-1.555 4.09-3.734 4.475-3.268.617-6.459 2.006-9.571 4.244-4.28 3.01-6.458 6.714-6.458 11.112 0 4.012 3.812 3.858 6.847 3.55 10.738-1.158 17.897 10.262 12.217 19.445-5.447 8.797-19.142 8.41-25.367.849-8.949-10.88-5.836-30.635 4.124-39.894 4.746-4.399 10.271-7.1 16.652-8.257 2.723-.54 5.29 1.698 5.29 4.476zm-37.349 0c0 2.16-1.556 4.09-3.735 4.475-3.268.617-6.458 2.006-9.57 4.244-4.28 3.01-6.46 6.714-6.46 11.112 0 4.012 3.813 3.858 6.848 3.55 10.738-1.158 17.897 10.262 12.217 19.445-5.447 8.797-19.142 8.41-25.367.849C-3.665 37.33-.552 17.577 9.408 8.318 14.154 3.919 19.679 1.218 26.06.06c2.723-.463 5.291 1.775 5.291 4.553z"
-                fill="currentColor"></path>
-            </svg>
-          </div>
-
           <!-- Text content -->
-          <div class="flex flex-col gap-6 items start">
+          <div class="flex flex-col gap-6 items-start">
             <!-- Statement -->
-            <h2 class="font-statement text-theme-text-dark">
+            <h2 class="font-statement text-theme-text-dark no-mb">
               I have dedicated my career to working with and for mission-driven
               organisations.
             </h2>
 
+            <div class="mt-2 mb-2 pr-4 md:pr-12">
+              <WavyDivider />
+            </div>
+
             <!-- Bio paragraph -->
-            <p class="text-lg text-theme-text-dark leading-relaxed">
+            <p class="text-lg text-theme-text-dark">
               Over the last 20 years, I have worked with mission-driven
               organisations as an employee, consultant, and Charity Trustee -
               bringing 360° lived experience of the non-profit sector. My
@@ -101,48 +94,44 @@ import logoGOAL from "../assets/logos/goal.png";
               measurement, and organisational development.
             </p>
 
-            <div class="flex flex-row gap-6">
-              <div class="flex flex-row gap-6">
-                <a
-                  href="#about"
-                  class="action-button text-lg text-theme-main border-theme-main bg-transparent hover:bg-theme-accent"
+            <div class="flex flex-col sm:flex-row gap-4 sm:gap-6">
+              <a
+                href="#about"
+                class="action-button text-lg text-theme-text-dark border-theme-bg-primary-blue bg-transparent hover:bg-theme-accent"
+              >
+                About me
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
                 >
-                  About me
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
-                </a>
-              </div>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
 
-              <div class="flex flex-row gap-6">
-                <a
-                  href="/contact"
-                  class="action-button text-lg text-theme-main border-theme-main bg-transparent hover:bg-theme-accent"
+              <a
+                href="/contact"
+                class="action-button text-lg text-theme-bg-primary-blue border-theme-bg-primary-blue bg-transparent hover:bg-theme-accent"
+              >
+                Contact me
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
                 >
-                  Contact me
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
-                </a>
-              </div>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
             </div>
           </div>
         </div>
@@ -151,11 +140,11 @@ import logoGOAL from "../assets/logos/goal.png";
   </section>
 
   <!-- Testimonials Section -->
-  <section id="testimonials" class="pt-12 pb-24 px-6 bg-theme-bg">
+  <section id="testimonials" class="pb-12 md:pb-24 px-6 bg-theme-bg-neutral1">
     <div class="max-w-6xl mx-auto">
       <!-- Testimonials Grid - Responsive -->
       <div
-        class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 items-stretch"
       >
         <TestimonialCard
           quote="The Board, staff team and community loved working with Luna on our Strategic Plan. She made us feel comfortable and guided us through the process, and kept us focused and on track. It was a pleasure to work with Luna and I would highly recommend her."
@@ -170,23 +159,19 @@ import logoGOAL from "../assets/logos/goal.png";
           title="Former CEO, Kerry Community Youth Service"
           initials="BS"
         />
-
-        <TestimonialCard
-          quote="Her candid feedback and empowering methodology helped our team build the confidence and capacity we needed to take our mission to the next level."
-          name="Aisha Johnson"
-          title="CEO, Community Impact Group"
-          initials="AJ"
-        />
       </div>
     </div>
   </section>
 
   <!-- Services Cards -->
-  <section id="services" class="pt-12 pb-24 px-6 bg-theme-bg-dark-green">
+  <section id="services" class="pt-12 pb-24 px-6 bg-theme-bg-neutral1">
     <div class="max-w-6xl mx-auto">
       <div class="mb-18">
-        <h2 class="heading-section text-theme-bg">How can I help you?</h2>
-        <WavyDivider color="var(--color-theme-accent-red)" />
+        <h2 class="heading-section text-theme-text-dark">
+          How can I help you?
+        </h2>
+        <WavyDivider color={"var(--color-theme-accent)"} />
+        <!--  -->
       </div>
 
       <div class="grid gap-12 sm:grid-cols-2 lg:grid-cols-3">
@@ -261,35 +246,42 @@ import logoGOAL from "../assets/logos/goal.png";
   </section>
 
   <!-- About -->
-  <section id="about" class="pt-12 pb-24 px-6 bg-theme-bg">
-    <div class="max-w-5xl mx-auto">
-      <!-- Constrain with centering -->
-      <div class="max-w-4xl mx-auto">
-        <!-- Passionate Statement as Subheading -->
-        <h2
-          class="heading-section text-theme-text-dark text-center leading-relaxed"
-        >
-          I am passionate about the role of the non-profit sector in bringing
-          about social and economic justice.
-        </h2>
 
-        <!-- About text -->
-        <div class="max-w-3xl mx-auto text-theme-text-dark space-y-6 mb-12">
+  <section id="about">
+    <!-- Removed py-12 md:py-16 from here -->
+    <div class="flex flex-col md:flex-row">
+      <!-- Left: Heading -->
+      <div
+        class="md:w-1/2 bg-theme-bg-primary-blue px-6 py-12 md:py-16 flex justify-end"
+      >
+        <div class="max-w-xl w-full md:pr-4">
+          <h2 class="heading-section text-theme-text-light text-right">
+            I am passionate about the role of the non-profit sector in bringing
+            about social and economic justice.
+          </h2>
+        </div>
+      </div>
+
+      <!-- Right: Content -->
+      <div
+        class="md:w-1/2 bg-theme-bg-primary-blue px-6 py-12 md:py-16 flex justify-start"
+      >
+        <div class="max-w-xl w-full md:pl-4 text-theme-text-light space-y-6">
           <p>
             Charities, NGOs, social enterprises, research and advocacy
             organisations, and social movements play a vital role in championing
             and addressing people's needs where the state or the economy have
-            failed them. <span class="para-emphasis"
+            failed them. <span class="para-emphasis text-theme-accent"
               >I am committed to applying my skills and experience to enable
               them to do so more effectively and efficiently</span
-            >
-            .
+            >.
           </p>
 
           <p>
             My academic and professional background is in the social sciences,
             particularly equality, gender justice, human rights and
-            international development. <span class="para-emphasis"
+            international development. <span
+              class="para-emphasis text-theme-accent"
               >I've worked with individual change-makers, organisations and
               networks spanning a huge diversity of social sectors and issues
               nationally and internationally</span
@@ -297,57 +289,65 @@ import logoGOAL from "../assets/logos/goal.png";
           </p>
 
           <p>
-            Over the last 20 years, I have garnered <span class="para-emphasis"
+            Over the last 20 years, I have garnered <span
+              class="para-emphasis text-theme-accent"
               >360° lived experience of non-profits</span
             >: as an employee and manager within the sector, as a consultant to
             the sector, and as a Charity Trustee.
           </p>
         </div>
-
-        <!-- Logos Grid -->
-        <div>
-          <h3 class="text-theme-text-dark text-center mt-18 mb-12">
-            A sample of the organisations I've worked with, and for:
-          </h3>
-          <div
-            class="grid grid-cols-2 md:grid-cols-5 gap-6 items-center justify-items-center"
-          >
-            <Image
-              src={logoGNB}
-              alt="Girls not Brides Charity Logo"
-              class="work-logo max-h-16 object-contain"
-            />
-            <Image
-              src={logoUnicef}
-              alt="UNICEF UK Charity Logo"
-              class="work-logo max-h-20 object-contain"
-            />
-            <Image
-              src={logoAmnesty}
-              alt="Amnesty International Charity Logo Banner"
-              class="work-logo max-h-16 object-contain"
-            />
-            <Image
-              src={logoKCYS}
-              alt="Kerry Community Youth Services Charity Logo"
-              class="work-logo max-h-24 object-contain"
-            />
-            <Image
-              src={logoGOAL}
-              alt="GOAL Charity Logo"
-              class="work-logo max-h-16 object-contain"
-            />
-          </div>
-        </div>
       </div>
     </div>
   </section>
 
-  <!-- How I work -->
-  <section id="how-i-work" class="py-36 bg-theme-main-darker">
+  <!-- Logos Section -->
+  <section class="py-12 px-6 bg-theme-bg-neutral1">
+    <div class="max-w-6xl mx-auto">
+      <div class="mb-12">
+        <h2
+          class="font-statement text-center text-theme-text-dark mb-8 text-lg"
+        >
+          A sample of organisations I've worked with:
+        </h2>
+      </div>
+
+      <div
+        class="grid grid-cols-2 md:grid-cols-5 gap-8 items-center justify-items-center opacity-70 hover:opacity-100 transition-opacity"
+      >
+        <Image
+          src={logoGNB}
+          alt="Girls not Brides Charity Logo"
+          class="work-logo max-h-20 object-contain grayscale hover:grayscale-0 transition-all"
+        />
+        <Image
+          src={logoUnicef}
+          alt="UNICEF UK Charity Logo"
+          class="work-logo max-h-24 object-contain grayscale hover:grayscale-0 transition-all"
+        />
+        <Image
+          src={logoAmnesty}
+          alt="Amnesty International Charity Logo Banner"
+          class="work-logo max-h-20 object-contain grayscale hover:grayscale-0 transition-all"
+        />
+        <Image
+          src={logoKCYS}
+          alt="Kerry Community Youth Services Charity Logo"
+          class="work-logo max-h-28 object-contain grayscale hover:grayscale-0 transition-all"
+        />
+        <Image
+          src={logoGOAL}
+          alt="GOAL Charity Logo"
+          class="work-logo max-h-20 object-contain grayscale hover:grayscale-0 transition-all"
+        />
+      </div>
+    </div>
+  </section>
+
+   <!-- How I work -->
+  <section id="how-i-work" class="md:pt-16 md:pb-32 bg-theme-bg-alt1-green">
     <div class="max-w-6xl mx-auto px-6">
       <!-- Section Heading -->
-      <h2 class="heading-section text-center text-theme-text-light">
+      <h2 class="heading-section text-center text-theme-text-dark">
         How I work
       </h2>
 
