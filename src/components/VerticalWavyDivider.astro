@@ -1,0 +1,30 @@
+---
+// VerticalWavyDivider.astro
+interface Props {
+  color?: string;
+}
+
+const { color = 'var(--color-theme-accent)' } = Astro.props;
+---
+
+<div class="vertical-wavy-divider-wrapper">
+  <svg
+    class="w-2 h-full"
+    viewBox="0 0 12 800"
+    preserveAspectRatio="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M6,0 Q0,10 6,20 T6,40 T6,60 T6,80 T6,100 T6,120 T6,140 T6,160 T6,180 T6,200 T6,220 T6,240 T6,260 T6,280 T6,300 T6,320 T6,340 T6,360 T6,380 T6,400 T6,420 T6,440 T6,460 T6,480 T6,500 T6,520 T6,540 T6,560 T6,580 T6,600 T6,620 T6,640 T6,660 T6,680 T6,700 T6,720 T6,740 T6,760 T6,780 T6,800 T6,820 T6,840 T6,860 T6,880 T6,900 T6,920 T6,940 T6,960 T6,980 T6,1000 T6,1020 T6,1040 T6,1060 T6,1080 T6,1100 T6,1120 T6,1140 T6,1160 T6,1180 T6,1200"
+      stroke={color}
+      stroke-width="6"
+      fill="none"
+    />
+  </svg>
+</div>
+
+<style>
+  .vertical-wavy-divider-wrapper {
+    pointer-events: none;
+  }
+</style>
