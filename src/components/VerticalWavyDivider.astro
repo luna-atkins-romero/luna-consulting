@@ -2,15 +2,20 @@
 // VerticalWavyDivider.astro
 interface Props {
   color?: string;
+  height?: number;
 }
 
-const { color = 'var(--color-theme-accent)' } = Astro.props;
+const { 
+  color = 'var(--color-theme-accent)',
+  height = 800 
+} = Astro.props;
 ---
 
 <div class="vertical-wavy-divider-wrapper">
   <svg
-    class="w-2 h-full"
-    viewBox="0 0 12 800"
+    class="w-2"
+    style="height: 100%;"
+    viewBox={`0 0 12 ${height}`}
     preserveAspectRatio="none"
     xmlns="http://www.w3.org/2000/svg"
   >
@@ -26,5 +31,6 @@ const { color = 'var(--color-theme-accent)' } = Astro.props;
 <style>
   .vertical-wavy-divider-wrapper {
     pointer-events: none;
+    height: 100%;
   }
 </style>

@@ -52,49 +52,56 @@ import logoGOAL from "../assets/logos/goal.png";
   </section>
 
   <!-- Intro -->
-  <section
-    id="intro"
-    class="pt-8 md:pt-12 pb-8 md:pb-16 px-6 bg-theme-bg-neutral1"
-  >
-    <div class="max-w-5xl mx-auto">
-      <!-- Outer container: stacks vertically on mobile, horizontally on desktop -->
-      <div class="flex flex-col md:flex-row gap-8 md:gap-18 items-center mb-8">
-        <!-- Left: Image -->
-        <div class="flex-shrink-0 w-56 sm:w-64 md:w-72">
-          <Image
-            src={luna}
-            alt="Luna Atkins Romero Portrait"
-            width={512}
-            height={494}
-            class="w-full h-auto"
-            loading="lazy"
-            decoding="async"
-          />
+  <section id="intro" class="bg-theme-bg-neutral1">
+    <div class="max-w-6xl mx-auto">
+      <!-- This container constrains everything -->
+      <div class="flex flex-col md:flex-row md:pt-12">
+        <!-- Left: Image + Statement -->
+        <div
+          class="w-full md:w-1/2 px-6 pt-8 md:py-12 flex justify-start md:justify-end items-center"
+        >
+          <div class="max-w-xl w-full md:pr-20">
+            <div class="w-56 sm:w-64 md:w-72 mx-auto md:ml-auto md:mr-0">
+              <Image
+                src={luna}
+                alt="Luna Atkins Romero Portrait"
+                width={512}
+                height={494}
+                class="w-full h-auto"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            
+         
+          </div>
         </div>
 
-        <div class="flex flex-row items-start gap-2 md:gap-4">
-          <!-- Text content -->
-          <div class="flex flex-col gap-6 items-start">
-            <!-- Statement -->
-            <h2 class="font-statement text-theme-text-dark no-mb">
+        <!-- Horizontal Divider (mobile only) -->
+        <div class="md:hidden py-8 px-6">
+          <div class="pr-4 md:pr-12">
+            <WavyDivider />
+          </div>
+        </div>
+
+        <!-- Vertical Divider (desktop only) -->
+        <div class="hidden md:flex justify-center">
+          <div>
+            <VerticalWavyDivider height={600} />
+          </div>
+        </div>
+
+        <!-- Right: statement + Buttons -->
+        <div
+          class="w-full md:w-1/2 px-6 pb-8 md:py-16 flex justify-start items-center"
+        >
+          <div class="max-w-xl w-full md:pl-4 text-theme-text-dark space-y-6">
+            <h2 class="heading-section text-theme-text-dark mb-12">
               I have dedicated my career to working with and for mission-driven
               organisations.
             </h2>
 
-            <div class="mt-2 mb-2 pr-4 md:pr-12">
-              <WavyDivider />
-            </div>
-
-            <!-- Bio paragraph -->
-            <p class="text-lg text-theme-text-dark">
-              Over the last 20 years, I have worked with mission-driven
-              organisations as an employee, consultant, and Charity Trustee -
-              bringing 360° lived experience of the non-profit sector. My
-              expertise spans strategic planning, governance, impact
-              measurement, and organisational development.
-            </p>
-
-            <div class="flex flex-col sm:flex-row gap-4 sm:gap-6">
+            <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-8">
               <a
                 href="#about"
                 class="action-button text-lg text-theme-text-dark border-theme-bg-primary-blue bg-transparent hover:bg-theme-accent"
@@ -113,7 +120,6 @@ import logoGOAL from "../assets/logos/goal.png";
                   <polyline points="12 5 19 12 12 19"></polyline>
                 </svg>
               </a>
-
               <a
                 href="/contact"
                 class="action-button text-lg text-theme-bg-primary-blue border-theme-bg-primary-blue bg-transparent hover:bg-theme-accent"
@@ -140,7 +146,7 @@ import logoGOAL from "../assets/logos/goal.png";
   </section>
 
   <!-- Testimonials Section -->
-  <section id="testimonials" class="pb-12 md:pb-24 px-6 bg-theme-bg-neutral1">
+  <section id="testimonials" class="pb-12 md:pt-12 md:pb-24 px-6 bg-theme-bg-neutral1">
     <div class="max-w-6xl mx-auto">
       <!-- Testimonials Grid - Responsive -->
       <div
@@ -152,7 +158,6 @@ import logoGOAL from "../assets/logos/goal.png";
           title="CEO Listowel Family & Community Resource Centre"
           initials="JL"
           color="var(--color-theme-accent)"
-          border="border-theme-accent"
         />
 
         <TestimonialCard
@@ -161,7 +166,6 @@ import logoGOAL from "../assets/logos/goal.png";
           title="Former CEO, Kerry Community Youth Service"
           initials="BS"
           color="var(--color-theme-accent)"
-          border="border-theme-accent"
         />
       </div>
     </div>
@@ -278,8 +282,7 @@ import logoGOAL from "../assets/logos/goal.png";
 
       <!-- Vertical Divider (desktop only) -->
       <div class="hidden md:flex items-stretch py-12 bg-theme-bg-alt1-green">
-        <!-- Constrains height to 12rem (192px) - adjust as needed -->
-        <VerticalWavyDivider color="var(--color-theme-accent-coral)" />
+        <VerticalWavyDivider color="var(--color-theme-accent-coral)", height={700} />
       </div>
 
       <!-- Right: Content -->
@@ -316,18 +319,17 @@ import logoGOAL from "../assets/logos/goal.png";
         </div>
       </div>
 
-        <!-- Horizontal Divider (mobile only) -->
+      <!-- Horizontal Divider (mobile only) -->
       <div class="md:hidden pb-8 px-6 bg-theme-bg-alt1-green">
         <div class="pr-4 md:pr-12">
           <WavyDivider color="var(--color-theme-accent-coral)" />
         </div>
       </div>
-
     </div>
   </section>
 
   <!-- How I work -->
-  <section id="how-i-work" class="md:pb-16 bg-theme-bg-alt1-green">
+  <section id="how-i-work" class="md:pb-12 bg-theme-bg-alt1-green">
     <div class="max-w-5xl mx-auto px-6">
       <!-- Section Heading -->
       <h2 class="heading-section text-center text-theme-text-dark">
@@ -340,7 +342,7 @@ import logoGOAL from "../assets/logos/goal.png";
 
       <!-- Icons Grid -->
       <div
-        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-18 items-start"
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-16 items-start"
       >
         <HowIWorkItem
           title="Collaborative"
@@ -414,7 +416,7 @@ import logoGOAL from "../assets/logos/goal.png";
           <Image
             src={logoGNB}
             alt="Girls not Brides Charity Logo"
-            class="work-logo max-h-16 object-contain transition-all"
+            class="work-logo max-h-12 object-contain transition-all"
           />
         </a>
 
@@ -427,7 +429,7 @@ import logoGOAL from "../assets/logos/goal.png";
           <Image
             src={logoUnicef}
             alt="UNICEF UK Charity Logo"
-            class="work-logo max-h-20 object-contain transition-all"
+            class="work-logo max-h-16 object-contain transition-all"
           />
         </a>
 
@@ -440,7 +442,7 @@ import logoGOAL from "../assets/logos/goal.png";
           <Image
             src={logoAmnesty}
             alt="Amnesty International Charity Logo Banner"
-            class="work-logo max-h-16 object-contain transition-all"
+            class="work-logo max-h-12 object-contain transition-all"
           />
         </a>
 
@@ -453,7 +455,7 @@ import logoGOAL from "../assets/logos/goal.png";
           <Image
             src={logoKCYS}
             alt="Kerry Community Youth Services Charity Logo"
-            class="work-logo max-h-24 object-contain transition-all"
+            class="work-logo max-h-20 object-contain transition-all"
           />
         </a>
 
@@ -466,7 +468,7 @@ import logoGOAL from "../assets/logos/goal.png";
           <Image
             src={logoGOAL}
             alt="GOAL Charity Logo"
-            class="work-logo max-h-16 object-contain transition-all"
+            class="work-logo max-h-12 object-contain transition-all"
           />
         </a>
       </div>
