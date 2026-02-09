@@ -54,7 +54,6 @@ import logoGOAL from "../assets/logos/goal.png";
   <!-- Intro -->
   <section id="intro" class="bg-theme-bg-neutral1">
     <div class="max-w-6xl mx-auto">
-      <!-- This container constrains everything -->
       <div class="flex flex-col md:flex-row md:pt-12">
         <!-- Left: Image + Statement -->
         <div
@@ -72,8 +71,6 @@ import logoGOAL from "../assets/logos/goal.png";
                 decoding="async"
               />
             </div>
-            
-         
           </div>
         </div>
 
@@ -97,8 +94,14 @@ import logoGOAL from "../assets/logos/goal.png";
         >
           <div class="max-w-xl w-full md:pl-4 text-theme-text-dark space-y-6">
             <h2 class="heading-section text-theme-text-dark mb-12">
-              I have dedicated my career to working with and for mission-driven
-              organisations.
+              I have dedicated my career to working with and for mission<span
+                class="text-theme-accent font-punctuation">-</span
+              >driven
+              <span class="word-unit">
+                organisations<span
+                  class="text-theme-accent font-punctuation-oversize">.</span
+                >
+              </span>
             </h2>
 
             <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-8">
@@ -146,7 +149,10 @@ import logoGOAL from "../assets/logos/goal.png";
   </section>
 
   <!-- Testimonials Section -->
-  <section id="testimonials" class="pb-12 md:pt-12 md:pb-24 px-6 bg-theme-bg-neutral1">
+  <section
+    id="testimonials"
+    class="pb-12 md:pt-12 md:pb-24 px-6 bg-theme-bg-neutral1"
+  >
     <div class="max-w-6xl mx-auto">
       <!-- Testimonials Grid - Responsive -->
       <div
@@ -155,7 +161,7 @@ import logoGOAL from "../assets/logos/goal.png";
         <TestimonialCard
           quote="The Board, staff team and community loved working with Luna on our Strategic Plan. She made us feel comfortable and guided us through the process, and kept us focused and on track. It was a pleasure to work with Luna and I would highly recommend her."
           name="Jackie Landers"
-          title="CEO Listowel Family & Community Resource Centre"
+          title="CEO, Listowel Family & Community Resource Centre"
           initials="JL"
           color="var(--color-theme-accent)"
         />
@@ -282,37 +288,45 @@ import logoGOAL from "../assets/logos/goal.png";
 
       <!-- Vertical Divider (desktop only) -->
       <div class="hidden md:flex items-stretch py-12 bg-theme-bg-alt1-green">
-        <VerticalWavyDivider color="var(--color-theme-accent-coral)", height={700} />
+        <VerticalWavyDivider
+          color="var(--color-theme-accent-coral)"
+          ,
+          height={700}
+        />
       </div>
 
       <!-- Right: Content -->
       <div
         class="md:w-1/2 bg-theme-bg-alt1-green px-6 pb-8 md:py-16 flex justify-start items-start"
       >
-        <div class="max-w-xl w-full md:pl-4 text-theme-text-dark space-y-6">
-          <p class="md: no-mt">
+        <div
+          class="about-content max-w-xl w-full md:pl-4 text-theme-text-dark space-y-6"
+        >
+          <p class="about-para md: no-mt about-para-bullet">
             Charities, NGOs, social enterprises, research and advocacy
             organisations, and social movements play a vital role in championing
             and addressing people's needs where the state or the economy have
-            failed them. <span class="para-emphasis"
+            failed them. <span class="text-theme-text-alt-dark para-emphasis"
               >I am committed to applying my skills and experience to enable
               them to do so more effectively and efficiently</span
             >.
           </p>
 
-          <p>
+          <p class="about-para about-para-bullet">
             My academic and professional background is in the social sciences,
             particularly equality, gender justice, human rights and
-            international development. <span class="para-emphasis"
+            international development. <span
+              class="text-theme-text-alt-dark para-emphasis"
               >I've worked with individual change-makers, organisations and
               networks spanning a huge diversity of social sectors and issues
               nationally and internationally</span
             >.
           </p>
 
-          <p class="no-mb">
-            Over the last 20 years, I have garnered <span class="para-emphasis"
-              >360° lived experience of non-profits</span
+          <p class="about-para no-mb about-para-bullet">
+            <span class="text-theme-text-alt-dark para-emphasis"
+              >Over the last 20 years, I have garnered 360° lived experience of
+              non-profits</span
             >: as an employee and manager within the sector, as a consultant to
             the sector, and as a Charity Trustee.
           </p>
@@ -328,43 +342,54 @@ import logoGOAL from "../assets/logos/goal.png";
     </div>
   </section>
 
-  <!-- How I work -->
-  <section id="how-i-work" class="md:pb-12 bg-theme-bg-alt1-green">
-    <div class="max-w-5xl mx-auto px-6">
-      <!-- Section Heading -->
-      <h2 class="heading-section text-center text-theme-text-dark">
-        How I work:
-      </h2>
+ <!-- How I work -->
+<section id="how-i-work" class="md:pb-12 bg-theme-bg-alt1-green">
+  <div class="max-w-5xl mx-auto px-6">
+    <!-- Section Heading -->
+    <h2 class="heading-section text-center text-theme-text-dark no-mb">
+      How I work:
+    </h2>
 
-      <!-- <div class="mt-8 mb-12">
-        <WavyDivider color="var(--color-theme-accent-coral)"/>
-      </div> -->
-
-      <!-- Icons Grid -->
-      <div
-        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-16 items-start"
-      >
-        <HowIWorkItem
-          title="Collaborative"
-          description="Co-creating solutions alongside teams to ensure ownership and practical outcomes."
-          icon="lucide:handshake"
-        />
-        <HowIWorkItem
-          title="Empowering"
-          description="Building capacity, confidence, and resilience within organisations."
-          icon="lucide:mountain"
-        />
-        <HowIWorkItem
-          title="Analytical"
-          description="Evidence-led insight that informs practical strategy and decision-making."
-          icon="lucide:search"
-        />
-        <HowIWorkItem
-          title="Candid"
-          description="Honest, clear guidance rooted in real-world experience."
-          icon="lucide:message-square-quote"
-        />
+    <!-- Cards Grid -->
+    <div class="flex flex-row gap-6 md:gap-8 mt-8 justify-center items-start">
+      <div class="work-card">
+        <h3 class="work-card-title word-unit">
+          <span class="work-moon"></span>Collaborative
+        </h3>
+        <p class="work-para">
+          Co-creating solutions alongside teams to ensure ownership and
+          practical outcomes.
+        </p>
       </div>
+
+      <div class="work-card">
+        <h3 class="work-card-title word-unit">
+          <span class="work-moon"></span>Empowering
+        </h3>
+        <p class="work-para">
+          Building capacity, confidence, and resilience within organisations.
+        </p>
+      </div>
+
+      <div class="work-card">
+        <h3 class="work-card-title word-unit">
+          <span class="work-moon"></span>Analytical
+        </h3>
+        <p class="work-para">
+          Evidence-led insight that informs practical strategy and
+          decision-making.
+        </p>
+      </div>
+
+      <div class="work-card">
+        <h3 class="work-card-title word-unit">
+          <span class="work-moon"></span>Candid
+        </h3>
+        <p class="work-para">
+          Honest, clear guidance rooted in real-world experience.
+        </p>
+      </div>
+    </div>
 
       <div class="mt-8 mb-8">
         <WavyDivider color="var(--color-theme-accent-coral)" />
@@ -376,18 +401,18 @@ import logoGOAL from "../assets/logos/goal.png";
           class="action-button text-lg text-theme-bg-primary-blue border-theme-bg-primary-blue bg-transparent hover:bg-theme-accent-coral"
         >
           Contact me
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-            <polyline points="12 5 19 12 12 19"></polyline>
-          </svg>
+             <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
         </a>
       </div>
     </div>
@@ -396,7 +421,7 @@ import logoGOAL from "../assets/logos/goal.png";
   <!-- Logos Section -->
   <section id="logo-reel" class="pt-12 px-6 bg-theme-bg-primary-blue">
     <div class="max-w-6xl mx-auto">
-      <div class="mb-12">
+      <div class="mb-8">
         <h2
           class="font-statement-subtle text-center text-theme-text-light mb-8 text-lg"
         >

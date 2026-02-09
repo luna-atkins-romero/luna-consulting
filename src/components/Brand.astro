@@ -1,9 +1,11 @@
 ---
 interface Props {
   showCircle?: boolean;
+  lunaColor?: string;
 }
 
-const { showCircle = false } = Astro.props;
+const { showCircle = false, lunaColor = "var(--color-theme-text-dark)" } =
+  Astro.props;
 
 const currentPath = new URL(Astro.request.url).pathname;
 const isHomePage = currentPath === "/";
@@ -17,25 +19,29 @@ const isHomePage = currentPath === "/";
         <span
           class="absolute rounded-full bg-theme-accent opacity-80"
           style="width: 20em; height: 20em; top: -8em; left: -4.55em; z-index: var(--z-base);"
-        ></span>
+        />
       )
     }
 
-    <!-- Text - using z-header to sit above circle -->
-    <h1
-      class="font-brand text-theme-text-light text-3xl lg:text-4xl brand-heading"
-    >
-      <span class="font-punctuation" style="font-size: 1.1em;">L</span>una
-      Atkins Romero
-    </h1>
-
-    <h2
-      class="font-brand text-theme-text-light text-2xl lg:text-3xl brand-heading"
-    >
-      Consulting<span
-        class={`font-punctuation-oversize ${showCircle ? "text-theme-text-dark" : "text-theme-accent"}`}
-        >.</span
+    <div class="brand-text">
+      <h1
+        class="font-brand text-theme-text-light text-3xl lg:text-4xl brand-heading"
       >
-    </h2>
+        <span
+          class="font-punctuation"
+          style={`font-size: 1.1em; color: ${lunaColor};`}>L</span
+        ><span style={`font-size: 1.1em; color: ${lunaColor};`}>una</span>
+        <span class="text-theme-text-light/80"> Atkins Romero </span>
+      </h1>
+
+      <h2
+        class="font-brand text-theme-text-light text-2xl lg:text-3xl brand-heading"
+      >
+        Consulting<span
+          class={`font-punctuation-oversize ${showCircle ? "text-theme-text-dark" : "text-theme-accent"}`}
+          >.</span
+        >
+      </h2>
+    </div>
   </a>
 </div>
