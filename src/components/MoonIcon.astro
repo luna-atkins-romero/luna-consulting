@@ -1,0 +1,87 @@
+---
+interface Props {
+  phase: 'empty' | 'waxing' | 'waning' | 'full';
+  class?: string;
+}
+
+const { phase, class: className = '' } = Astro.props;
+---
+
+<svg
+  class={className}
+  viewBox="0 0 24 24"
+  xmlns="http://www.w3.org/2000/svg"
+  aria-hidden="true"
+>
+  <defs>
+    <clipPath id="moon-clip">
+      <circle cx="12" cy="12" r="9" />
+    </clipPath>
+  </defs>
+
+  {/* EMPTY ○ */}
+  {phase === 'empty' && (
+    <circle
+      cx="12"
+      cy="12"
+      r="9"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.25"
+    />
+  )}
+
+  {/* FULL ● */}
+  {phase === 'full' && (
+    <circle
+      cx="12"
+      cy="12"
+      r="9"
+      fill="currentColor"
+    />
+  )}
+
+  {/* WAXING ◐ */}
+  {phase === 'waxing' && (
+    <>
+      <circle
+        cx="12"
+        cy="12"
+        r="9"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.25"
+      />
+      <rect
+        x="12"
+        y="3"
+        width="9"
+        height="18"
+        fill="currentColor"
+        clip-path="url(#moon-clip)"
+      />
+    </>
+  )}
+
+  {/* WANING ◑ */}
+  {phase === 'waning' && (
+    <>
+      <circle
+        cx="12"
+        cy="12"
+        r="9"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.25"
+      />
+      <rect
+        x="3"
+        y="3"
+        width="9"
+        height="18"
+        fill="currentColor"
+        clip-path="url(#moon-clip)"
+      />
+    </>
+  )}
+</svg>
