@@ -1,28 +1,31 @@
 ---
 // Footer.astro
-import Brand from './Brand.astro';
-import LinkedInIcon from './LinkedInIcon.astro';
-import WavyDivider from './WavyDivider.astro';
+import Brand from "./Brand.astro";
+import LinkedInIcon from "./LinkedInIcon.astro";
+import WavyDivider from "./WavyDivider.astro";
 
 const currentYear = new Date().getFullYear();
 ---
+
 <footer class="bg-theme-bg-primary-blue text-theme-text-light py-12 px-6">
   <div class="max-w-6xl mx-auto">
     <!-- Main Footer Content -->
-    <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-12 mb-8">
+    <div
+      class="flex flex-col md:flex-row md:justify-between md:items-start gap-12 mb-8"
+    >
       <!-- Brand & Description -->
       <div>
-        <Brand lunaColor="var(--color-theme-accent)"/>
+        <Brand lunaColor="var(--color-theme-accent)" />
       </div>
 
       <!-- Quick Links & Connect grouped on right -->
-      <div class="grid grid-cols-1 md: grid-cols-2 gap-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
         <!-- Quick Links -->
         <div>
-          <div class="mb-2">  
+          <div class="mb-2">
             <h4 class="nav-header mb-4 text-theme-accent">Quick Links</h4>
           </div>
-          
+
           <nav aria-label="Footer navigation">
             <ul class="font-nav space-y-4">
               <li>
@@ -31,14 +34,10 @@ const currentYear = new Date().getFullYear();
                 </a>
               </li>
               <li>
-                <a href="#services" class="text-theme-text-light">
-                  Services
-                </a>
+                <a href="#services" class="text-theme-text-light"> Services </a>
               </li>
               <li>
-                <a href="#about" class="text-theme-text-light">
-                  About
-                </a>
+                <a href="#about" class="text-theme-text-light"> About </a>
               </li>
               <li>
                 <a href="#how-i-work" class="text-theme-text-light">
@@ -46,14 +45,10 @@ const currentYear = new Date().getFullYear();
                 </a>
               </li>
               <li>
-                <a href="/articles" class="text-theme-text-light">
-                  Articles
-                </a>
+                <a href="/articles" class="text-theme-text-light"> Articles </a>
               </li>
               <li>
-                <a href="/contact" class="text-theme-text-light">
-                  Contact
-                </a>
+                <a href="/contact" class="text-theme-text-light"> Contact </a>
               </li>
             </ul>
           </nav>
@@ -64,23 +59,27 @@ const currentYear = new Date().getFullYear();
           <div class="mb-2">
             <h4 class="nav-header mb-4 text-theme-accent">Connect</h4>
           </div>
-          
-           <a
-                    href="https://www.linkedin.com/in/lunaatkinsromero/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="LinkedIn profile"
-                    class="linkedin-link inline-flex items-center"
-                >
-                    <LinkedInIcon class="w-4.5 h-4.5" />
-                </a>
-          
 
+          <ul class="font-nav space-y-4">
+            <li>
+              <a
+                href="https://www.linkedin.com/in/lunaatkinsromero/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="linkedin-link inline-flex items-center"
+                aria-label="LinkedIn profile (opens in new tab)"
+              >
+                <LinkedInIcon class="w-4.5 h-4.5" aria-hidden="true" />
+              </a>
+            </li>
+          </ul>
+
+          <!-- Accountability section -->
           <div class="mt-6">
             <div class="mb-2">
               <h4 class="nav-header text-theme-accent">Accountability</h4>
             </div>
-            
+
             <ul class="font-nav space-y-4">
               <li>
                 <a
@@ -88,6 +87,7 @@ const currentYear = new Date().getFullYear();
                   target="_blank"
                   rel="noopener noreferrer"
                   class="footer-link text-theme-text-light flex items-start gap-2"
+                  aria-label="Low Carbon Website (opens in new tab)"
                 >
                   <span>Low Carbon Website</span>
                 </a>
@@ -97,9 +97,9 @@ const currentYear = new Date().getFullYear();
                   href="https://www.w3.org/WAI/standards-guidelines/wcag/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="footer-link text-theme-text-lightflex items-start gap-2"
+                  class="footer-link text-theme-text-light flex items-start gap-2"
+                  aria-label="WCAG Compliant (opens in new tab)"
                 >
-
                   <span>WCAG Compliant</span>
                 </a>
               </li>
@@ -114,14 +114,20 @@ const currentYear = new Date().getFullYear();
       <div class="mb-8">
         <WavyDivider />
       </div>
-        
-      <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-theme-text-light">
-        
+
+      <div
+        class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-theme-text-light"
+      >
         <p>
-          © {currentYear} Luna Atkins Romero Consulting.  All rights reserved.
+          © {currentYear} Luna Atkins Romero Consulting. All rights reserved.
         </p>
         <p>
-          Built with <a href="https://astro.build" target="_blank" rel="noopener noreferrer" class="footer-link">Astro</a>.
+          Built with <a
+            href="https://astro.build"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="footer-link" aria-label="Astro (opens in new tab)">Astro</a
+          >.
         </p>
       </div>
     </div>

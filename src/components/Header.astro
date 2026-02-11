@@ -8,6 +8,8 @@ const isHomepage = currentPath === "/";
 ---
 
 <header class="py-8 px-6 bg-theme-bg-primary-blue text-theme-text-light">
+    <!-- Skip link - first focusable element -->
+    <a href="#main-content" class="skip-link"> Skip to main content </a>
     <div class="max-w-6xl mx-auto flex items-baseline justify-between">
         <!-- Brand -->
         <Brand showCircle={true} />
@@ -28,6 +30,7 @@ const isHomepage = currentPath === "/";
                     rel="noopener noreferrer"
                     aria-label="LinkedIn profile"
                     class="linkedin-link inline-flex items-center"
+                    aria-label="LinkedIn profile (opens in new tab)"
                 >
                     <LinkedInIcon class="w-4.5 h-4.5" />
                 </a>

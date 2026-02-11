@@ -9,16 +9,16 @@ interface Props {
 const { title, icon = "lucide:star" } = Astro.props;
 ---
 
-<div class="service-card">
+<article class="service-card">
   <div class="service-card-inner">
     {icon && (
       <div class="icon-circle">
-        <Icon aria-hidden="true" name={icon} />
+        <Icon name={icon} aria-hidden="true" />
       </div>
     )}
     <h3 class="service-card-title">{title}</h3>
     <div class="service-card-content">
-      <slot><p>Default content goes here</p></slot>
+      <slot />
     </div>
   </div>
-</div>
+</article>

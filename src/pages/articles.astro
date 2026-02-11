@@ -11,6 +11,7 @@ const sortedPosts = posts.sort((a, b) => b.data.date.getTime() - a.data.date.get
 
 <DefaultLayout title="Articles | Luna Atkins Romero">
   <Header />
+  <main id="main-content">  
 
   <!-- Hero Section -->
   <section class="flex-grow flex items-center py-16 px-6 bg-theme-bg-primary-blue text-theme-text-light">
@@ -37,20 +38,20 @@ const sortedPosts = posts.sort((a, b) => b.data.date.getTime() - a.data.date.get
       <div class="space-y-6">
         {sortedPosts.map((post) => (
           <article class="article-card">
-            <a href={`/articles/${post.slug}`}>
+            <a href={`/articles/${post.slug}`} tabindex="-1">
               <h2 class="article-card-title">
                 {post.data.title}
               </h2>
             </a>
             <time class="article-card-date" datetime={post.data.date.toISOString()}>
-              {post.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+              Published: {post.data.date.toLocaleDateString('en-IE', { year: 'numeric', month: 'long', day: 'numeric' })}
             </time>
             <p class="article-card-description">
               {post.data.description}
             </p>
-            <a href={`/articles/${post.slug}`} class="link-arrow">
+            <a href={`/articles/${post.slug}`} class="link-arrow" aria-label={`Read article: ${post.data.title}`}>
               Read Article
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <line x1="5" y1="12" x2="19" y2="12"></line>
                 <polyline points="12 5 19 12 12 19"></polyline>
               </svg>
@@ -67,6 +68,6 @@ const sortedPosts = posts.sort((a, b) => b.data.date.getTime() - a.data.date.get
    
   </section>
 
-
+  </main>
   <Footer />
 </DefaultLayout>

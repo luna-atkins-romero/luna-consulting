@@ -4,88 +4,28 @@
 @theme {
 
   /* Palette colors*/
-
-
-  /* Blues */
-  --color-dusk-blue: #2c5378;
-
-  --color-navy: #03396c;
-  --color-blue-rich: #005b96;
-  --color-blue-light: #00A7E1;
-  --color-pacific-blue: #00B2CA;
-  --color-space-blue: #0B3954;
-  --color-slate-inky1: #4E7287;
-  --color-slate-inky2: #50748a;
-
-  /* Greens */
-  --color-green-aqua: #83E8BA;
-  --color-green-neon: #03F7EB;
-  --color-blue-green: #71A2B6;
-  --color-green-verdigris: #339989;
-
-  /* Pinks */
-  --color-pink-subtle: #9b7d73;
-  --color-vibrant-coral: #EE6055;
-  --color-bubble-pink: #FF6978;
-  --color-dark-raspberry: #82204A;
-  --color-royal-plum: #832161;
-  --color-lobster-pink: #E15554;
-
-
-  /* Theme Custom Tailwind utilities */
-
-  /* THEME COLORS */
-
-  /* slate inky 1 */
-  /* --color-theme-bg-primary-blue: #4E7287;  */
-
-  /* slate inky 2 */
-  /* --color-theme-bg-primary-blue: #50748a;  */
-
-  /* inky */
-  /* --color-theme-bg-alt1-green: #16264C;   */
-  /* --color-theme-bg-alt1-green: #0B3954; */
-
-
   --color-theme-bg-primary-blue: #2c5378;
-  /* dusk blue */
   --color-theme-bg-alt1-green: #70C1B3;
-  --color-theme-bg-alt2-green: #A9DBD3;
-  --color-theme-bg-alt3-coral: #F49B90;
 
   --color-theme-accent: #3DB8A5;
-  /* verdig shade lighter */
   --color-theme-accent-coral: #EE6055;
 
   /* Neautral BGs */
   --color-theme-bg-neutral1: #FFFCF9;
-  /* porcelain */
-  --color-theme-bg-alt: #f5f4f1;
-  --color-theme-bg-alt2: #F4F3EE;
-  /* parchment  */
-
-
-  --color-theme-bg-light-blue: #EEF8FF;
-  --color-theme-bg-light-green: #85D6CA;
-  --color-theme-bg-dark-green: #095256;
-
+  --color-theme-bg-neutral2: #F7F6F2;
 
   /* Text */
   --color-theme-text-dark: #2c5378;
-  /* dusk blue */
   --color-theme-text-alt-dark: #03396c;
-  /* blue rich*/
   --color-theme-text-dark-contrast: #0B3954;
-  /* --color-theme-text-dark-contrast: #71A2B6; */
-  /* --color-theme-text-grey: #4E7287; */
+ 
   --color-theme-text-grey: #71A2B6;
   --color-theme-text-light: #e3ede1;
-  /* white */
-  --color-theme-text-alt-light: #03396c;
 
   --color-theme-text-accent-coral: #EB3F33;
 
-
+  /* white */
+  --color-theme-text-alt-light: #03396c;
 
   /* Typography */
   --font-size-hero: clamp(2.5rem, 6vw, 4.5rem);
@@ -118,6 +58,41 @@
   --space-service-card: clamp(1.5rem, 1.4348rem + 0.3261vw, 1.6875rem);
 }
 
+
+/* Accessibility */
+/* Global focus style - applies to all interactive elements */
+:focus-visible {
+  outline: 3px solid var(--color-theme-accent-coral);
+  outline-offset: 3px;
+  position: relative;
+  z-index: var(--z-overlay); /* Ensure focus always visible */
+}
+
+/* Remove default browser outline */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100px; /* Hidden off-screen */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--color-theme-accent-coral);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  z-index: var(--z-modal);
+  text-decoration: none;
+  transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+  top: 1rem; 
+}
+
+/* Text elements */ 
 /* Elevate text content above decorations */
 h1,
 h2,
@@ -297,12 +272,7 @@ p {
 
 .brand-link:hover .brand-text {
   opacity: 0.7;
-}
-
-.brand-link:focus-visible {
-  outline: 2px solid var(--color-theme-accent-coral);
-  outline-offset: 4px;
-}
+} 
 
 /* Nav links */
 nav a {
@@ -352,7 +322,7 @@ nav a[aria-label]::after {
     0 2px 4px -1px rgba(0, 0, 0, 0.2);
 }
 
-/* Remove border/shadow on desktop since it's inline */
+/* Remove border/shadow on desktop */
 @media (min-width: 768px) {
   #primary-menu {
     border: none;
@@ -393,7 +363,7 @@ nav a[aria-label]::after {
   transform: translateX(3px);
 }
 
-/* Shared Link Style (used in contact cards and article cards) */
+/* Shared Link Style */
 .link-arrow {
   font-family: "Hanken Grotesk Variable", sans-serif;
   font-weight: 500;
@@ -418,7 +388,6 @@ nav a[aria-label]::after {
 
 .link-arrow:hover svg {
   transform: translateX(2px);
-  /* Arrow shifts right */
 }
 
 /* GLOBAL ITEMS */
@@ -473,7 +442,6 @@ nav a[aria-label]::after {
 .icon-circle-link svg {
   width: 1.75rem;
   height: 1.75rem;
-  color: var(--color-theme-main);
 }
 
 .icon-circle-link a:hover {
@@ -507,7 +475,6 @@ nav a[aria-label]::after {
   border: 3px solid var(--color-theme-accent);
   border-radius: 0.5rem;
   background-color: var(--color-theme-bg-neutral1);
-  /* Spacing only on right and bottom */
   box-shadow:
     6px 0 0 0 var(--color-theme-bg-primary-blue),
     /* right side */
@@ -555,10 +522,6 @@ nav a[aria-label]::after {
 }
 
 /* About */
-.about-para {
-  font-size: 1.1rem;
-}
-
 .about-para-bullet {
   position: relative;
   padding-left: 2.5rem;
@@ -578,7 +541,7 @@ nav a[aria-label]::after {
 
 /* How I Work */
 .work-card {
-  text-align: center; /* Center all content */
+  text-align: center; 
 }
 
 .work-card-title {
@@ -590,8 +553,8 @@ nav a[aria-label]::after {
   line-height: 1.3;
   min-height: 3em; 
   display: flex;
-  flex-direction: column; /* Stack moon above text */
-  align-items: center; /* Center horizontally */
+  flex-direction: column; 
+  align-items: center; 
 }
 
 .work-moon {
@@ -599,51 +562,24 @@ nav a[aria-label]::after {
   color: var(--color-theme-accent-coral);
   line-height: 1;
   margin-bottom: 0.5rem;
-  display: flex; /* Change to flex */
-  align-items: center; /* Center vertically */
-  justify-content: center; /* Center horizontally */
-  height: 1.2em; /* Fixed height container */
-  width: 100%; /* Full width for centering */
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  height: 1.2em; 
+  width: 100%; 
 }
 
 .work-moon-svg {
-  width: 3.5rem;  /* Adjust size here */
+  width: 3.5rem;  
   height: 3.5rem;
-  color: var(--color-theme-accent-coral); /* Sets currentColor */
+  color: var(--color-theme-accent-coral); 
   margin-bottom: 0.75rem;
-  flex-shrink: 0; /* Prevent shrinking */
+  flex-shrink: 0; 
 }
 
 .work-moon::before {
   display: block;
   line-height: 0; 
-}
-
-.work-card:nth-child(1) .work-moon::before {
-  content: "○";
-}
-
-.work-card:nth-child(2) .work-moon::before {
-  content: "◐";
-  font-size: 0.68em;
-}
-
-.work-card:nth-child(3) .work-moon::before {
-  content: "◑";
-  font-size: 0.68em;
-}
-
-.work-card:nth-child(4) .work-moon::before {
-  content: "●";
-}
-
-.work-para {
-  color: var(--color-theme-text-dark);
-  font-family: "Montserrat Variable", sans-serif;
-  font-weight: 500;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin: 0;
 }
 
 /* Sample Orgs */
@@ -703,18 +639,12 @@ nav a[aria-label]::after {
   display: none;
 }
 
-
-/* ATICLE TEMPLATE */
-/* Article Body Styles */
-
-/* Article + contact container: Mimicking Service Card Styles */
+/* Article + contact container */
 .in-page-container {
   position: relative;
   z-index: var(--z-content);
   padding: 2rem;
-  background-color: white;
   border-radius: 0.75rem;
-  /* box-shadow: white;  */
 }
 
 .in-page-container>* {
@@ -729,7 +659,7 @@ nav a[aria-label]::after {
   z-index: 1;
   border: 3px solid var(--color-theme-accent);
   border-radius: 0.5rem;
-  background-color: white;
+  background-color: var(--color-theme-bg-neutral2);
   box-shadow:
     6px 0 0 0 var(--color-theme-bg-neutral1),
     /* right side */
@@ -771,7 +701,6 @@ nav a[aria-label]::after {
   margin-bottom: 1rem;
 }
 
-
 /* Inline text emphasis */
 .article-body strong {
   font-weight: 600;
@@ -784,7 +713,6 @@ nav a[aria-label]::after {
 .article-body hr {
   color: var(--color-theme-accent);
   opacity: 0.7;
-
 }
 
 /* Links */
@@ -843,7 +771,7 @@ select {
   font-size: var(--font-size-body);
   width: 100%;
   padding: 0.75rem 1rem;
-  border: 2px solid rgba(44, 83, 120, 0.2);
+  border: 2px solid var(--color-theme-bg-primary-blue);
   border-radius: 0.5rem;
   transition: border-color 0.2s, box-shadow 0.2s;
 }
@@ -852,8 +780,8 @@ input:focus,
 textarea:focus,
 select:focus {
   outline: none;
-  border-color: var(--color-theme-main);
-  box-shadow: 0 0 0 3px rgba(44, 83, 120, 0.1);
+  /* border: 3px solid;  */
+  border-color: var(--color-theme-accent-coral);
 }
 
 textarea {
@@ -864,33 +792,34 @@ textarea {
 /* Submit Button with Icon */
 .submit-button {
   width: 100%;
-  padding: 1rem 2rem;
-  background: var(--color-theme-bg-primary-blue);
-  color: var(--color-theme-text-light);
+  padding: 0.5em 1em; 
+  background: var(--color-theme-accent);
+  color: var(--color-theme-text-dark);
   border: 2px solid var(--color-theme-bg-primary-blue);
   border-radius: 0.5rem;
   font-family: "Hanken Grotesk Variable", sans-serif;
   font-weight: 500;
+  font-size: 1.1em; 
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.75em;
-  transition: all 0.2s ease;
+  gap: 0.5em;
+  transition: background-color 0.2s ease; 
 }
 
 .submit-button svg {
-  width: 1.25em;
+  width: 1.25em; 
   height: 1.25em;
   transition: transform 0.2s ease;
 }
 
 .submit-button:hover {
-  background: var(--color-theme-accent);
-  color: var(--color-theme-main);
+  background: var(--color-theme-accent-coral);
+  color: var(--color-theme-text-dark); 
 }
 
 .submit-button:hover svg {
-  transform: translateX(3px) translateY(-2px);
+  transform: translateX(3px);
 }
 
 /* Contact Cards */
