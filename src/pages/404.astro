@@ -1,0 +1,40 @@
+---
+import DefaultLayout from "../layouts/DefaultLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<DefaultLayout title="Page Not Found | Luna Atkins Romero Consulting">
+  <Header />
+  
+  <main id="main-content">
+    <section class="min-h-screen flex items-center py-16 px-6 bg-theme-bg-primary-blue text-theme-text-light">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="hero-section">
+          404<span class="text-theme-accent font-punctuation-oversize">.</span>
+        </h1>
+        
+        <p class="font-statement-subtle mb-12">
+          This page doesn't exist, but my website does<span class="font-punctuation-oversize text-theme-accent">.</span>
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
+          <a href="/" 
+             class="action-button text-lg bg-theme-accent">
+            Home
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" 
+                 fill="none" stroke="currentColor" stroke-width="2" 
+                 stroke-linecap="round" stroke-linejoin="round"
+                 aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</DefaultLayout>

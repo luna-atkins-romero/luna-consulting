@@ -12,36 +12,37 @@ const isHomePage = currentPath === "/";
 ---
 
 <div class="flex flex-col items-start gap-0 relative overflow-visible">
-   <!-- Circle - using z-base (0) so it stays visible but behind text -->
-    {
-      showCircle && (
-        <span
-          class="absolute rounded-full bg-theme-accent/80"
-          style="width: 20em; height: 20em; top: -8em; left: -4.55em; z-index: var(--z-base);"
-        />
-      )
-    }
+  <!-- Circle - using z-base (0) so it stays visible but behind text -->
+  {
+    showCircle && (
+      <span
+        class="absolute rounded-full bg-theme-accent/80"
+        style="width: 20em; height: 20em; top: -8em; left: -4.55em; z-index: var(--z-base);"
+      />
+    )
+  }
 
-  <a href="/" aria-current={isHomePage ? "page" : undefined} class="brand-link">
-   
+  <a href="/" 
+      aria-current={isHomePage ? "page" : undefined} 
+      class="brand-link">
     <div class="brand-text">
-      <h1 
+      <div
         class="font-brand text-theme-text-light text-3xl lg:text-4xl brand-heading"
       >
-        <span
-          class="font-punctuation"
-          style="font-size: 1.1em;">L</span
-        ><span style="font-size: 1.1em;">una Atkins Romero </span>
-      </h1>
+        <span class="font-punctuation" style="font-size: 1.1em;">L</span><span
+          style="font-size: 1.1em;"
+          >una Atkins Romero
+        </span>
+      </div>
 
-      <h2
+      <div
         class="font-brand text-theme-text-light text-2xl lg:text-3xl brand-heading"
       >
         Consulting<span
           class={`font-punctuation-oversize ${showCircle ? "text-theme-text-dark" : "text-theme-accent"}`}
-          >.</span
+          aria-hidden="true">.</span
         >
-      </h2>
+      </div>
     </div>
   </a>
 </div>

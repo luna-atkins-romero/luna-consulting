@@ -9,14 +9,9 @@
       flex items-center justify-center
       w-10 h-10
       rounded
-      focus-visible:outline
-      focus-visible:outline-2
-      focus-visible:outline-light
     text-theme-bg-neutral1 hover:text-theme-accent
       transition-colors"
   >
-    <span class="sr-only">Menu</span>
-
     <!-- Hamburger icon (inherit color from button) -->
     <svg
       class="nav-icon nav-icon--open w-6 h-6"
@@ -25,6 +20,7 @@
       stroke="currentColor"   
       stroke-width="2"
       stroke-linecap="round"
+      aria-hidden="true"
     >
       <line x1="3" y1="6" x2="21" y2="6"></line>
       <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -39,6 +35,7 @@
       stroke="currentColor"
       stroke-width="2"
       stroke-linecap="round"
+      aria-hidden="true"
     >
       <line x1="18" y1="6" x2="6" y2="18"></line>
       <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -67,19 +64,51 @@
   const toggle = document.getElementById('nav-toggle');
   const menu = document.getElementById('primary-menu');
 
-  if (toggle instanceof HTMLButtonElement && menu) {
+  if (toggle instanceof HTMLButtonElement && menu instanceof HTMLElement) {
     const openIcon = toggle.querySelector('.nav-icon--open');
     const closeIcon = toggle.querySelector('.nav-icon--close');
 
-    toggle.addEventListener('click', () => {
-      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+    function closeMenu() {
+      if (toggle && menu) {
+        toggle.setAttribute('aria-expanded', 'false');
+        menu.classList.add('hidden');
+        if (openIcon && closeIcon) {
+          openIcon.classList.remove('hidden');
+          closeIcon.classList.add('hidden');
+        }
+      }
+    }
 
-      toggle.setAttribute('aria-expanded', String(!expanded));
-      menu.classList.toggle('hidden');
+    function toggleMenu() {
+      if (toggle && menu) {
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!expanded));
+        menu.classList.toggle('hidden');
 
-      if (openIcon && closeIcon) {
-        openIcon.classList.toggle('hidden');
-        closeIcon.classList.toggle('hidden');
+        if (openIcon && closeIcon) {
+          openIcon.classList.toggle('hidden');
+          closeIcon.classList.toggle('hidden');
+        }
+      }
+    }
+
+    toggle.addEventListener('click', toggleMenu);
+
+    // Close menu on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (toggle && e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+        closeMenu();
+        toggle.focus();
+      }
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (toggle && menu) {
+        const isClickInside = toggle.contains(e.target as Node) || menu.contains(e.target as Node);
+        if (!isClickInside && toggle.getAttribute('aria-expanded') === 'true') {
+          closeMenu();
+        }
       }
     });
   }
