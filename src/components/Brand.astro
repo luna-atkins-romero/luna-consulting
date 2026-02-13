@@ -9,39 +9,33 @@ const { showCircle = false, lunaColor = "var(--color-theme-text-dark)" } =
 
 const currentPath = new URL(Astro.request.url).pathname;
 const isHomePage = currentPath === "/";
+
+// Set hover color based on showCircle
+const hoverColor = showCircle ? "var(--color-theme-bg-primary-blue)" : "var(--color-theme-accent-coral)";
 ---
 
-<div class="flex flex-col items-start gap-0 relative overflow-visible">
-  <!-- Circle - using z-base (0) so it stays visible but behind text -->
-  {
-    showCircle && (
-      <span
-        class="absolute rounded-full bg-theme-accent/80"
-        style="width: 20em; height: 20em; top: -8em; left: -4.55em; z-index: var(--z-base);"
-      />
-    )
-  }
+<div class="flex flex-col items-start gap-0 relative">
+  {showCircle && (
+    <span
+      class="absolute rounded-full bg-theme-accent/80"
+      style="width: 20em; height: 20em; top: -8em; left: -4.55em; z-index: var(--z-base);"
+      aria-hidden="true"
+    />
+  )}
 
   <a href="/" 
-      aria-current={isHomePage ? "page" : undefined} 
-      class="brand-link">
+     aria-current={isHomePage ? "page" : undefined} 
+     class="brand-link"
+     style={`--brand-hover-color: ${hoverColor};`}>
     <div class="brand-text">
-      <div
-        class="font-brand text-theme-text-light text-3xl lg:text-4xl brand-heading"
-      >
-        <span class="font-punctuation" style="font-size: 1.1em;">L</span><span
-          style="font-size: 1.1em;"
-          >una Atkins Romero
-        </span>
+      <div class="font-brand text-theme-text-light text-3xl lg:text-4xl brand-heading">
+        <span class="brand-name font-punctuation" style="font-size: 1.1em;">L</span><span class="brand-name" style="font-size: 1.1em;">una</span> Atkins Romero
       </div>
 
-      <div
-        class="font-brand text-theme-text-light text-2xl lg:text-3xl brand-heading"
-      >
-        Consulting<span
+      <div class="font-brand text-theme-text-light text-2xl lg:text-3xl brand-heading">
+        <span class="brand-name">Consulting</span><span
           class={`font-punctuation-oversize ${showCircle ? "text-theme-text-dark" : "text-theme-accent"}`}
-          aria-hidden="true">.</span
-        >
+          aria-hidden="true">.</span>
       </div>
     </div>
   </a>

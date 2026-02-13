@@ -54,6 +54,7 @@ import logoGOAL from "../assets/logos/goal.png";
     <!-- Intro -->
     <section id="intro" class="bg-theme-bg-neutral1">
       <div class="max-w-6xl mx-auto">
+        <h2 class="sr-only">Introduction</h2>
         <div class="flex flex-col md:flex-row md:pt-12">
           <!-- Left: Image + Statement -->
           <div
@@ -155,11 +156,15 @@ import logoGOAL from "../assets/logos/goal.png";
     <!-- Testimonials Section -->
     <section
       id="testimonials"
-      class="pb-12 px-6 md:pt-12 md:pb-24 bg-theme-bg-neutral1"
+      class="px-6 pb-12 md:pt-12 bg-theme-bg-neutral1"
       aria-label="Client testimonials"
       tabindex="-1"
     >
-      <div class="max-w-6xl mx-auto">
+      <div class="max-w-6xl mx-auto pt-12">
+        <h2 id="testimonials-heading" class="heading-section">Testimonials<span class="text-theme-accent font-punctuation-oversize">.</span
+                  >
+                </span></h2>
+                
         <!-- Testimonials Grid - Responsive -->
         <div
           class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 items-stretch"
@@ -180,6 +185,104 @@ import logoGOAL from "../assets/logos/goal.png";
             color="var(--color-theme-accent)"
           />
         </div>
+        <div class="pt-12">
+          <WavyDivider color={"var(--color-theme-accent)"} />
+        </div>
+      </div>
+    </section>
+
+    <!-- Logos Section -->
+    <section
+      id="logo-reel"
+      class="pt-12 pb-12 px-6 bg-theme-bg-neutral1"
+      aria-label="Organizations I've worked with"
+    >
+      <div class="max-w-4xl mx-auto mb-8">
+        <div class="mb-8">
+          <h2 class="font-statement text-center text-theme-text-alt-dark">
+            A sample of the organisations I've worked with.
+          </h2>
+        </div>
+
+        <div
+          class="flex flex-col gap-8 md:flex-row md:gap-12 md:justify-center"
+        >
+          <!-- First group: 3 logos -->
+          <div class="flex justify-center gap-8 items-center">
+            <a
+              href="https://www.girlsnotbrides.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="work-logo-link w-32"
+              aria-label="Visit Girls Not Brides website (opens in new tab)"
+            >
+              <Image
+                src={logoGNB}
+                alt="Girls not Brides Charity Logo"
+                class="work-logo max-h-12 object-contain w-full"
+              />
+            </a>
+
+            <a
+              href="https://www.unicef.org.uk/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="work-logo-link w-32"
+              aria-label="Visit Unicef UK website (opens in new tab)"
+            >
+              <Image
+                src={logoUnicef}
+                alt="UNICEF UK Charity Logo"
+                class="work-logo max-h-16 object-contain w-full"
+              />
+            </a>
+
+            <a
+              href="https://www.amnesty.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="work-logo-link w-32"
+              aria-label="Visit Amnesty International website (opens in new tab)"
+            >
+              <Image
+                src={logoAmnesty}
+                alt="Amnesty International Charity Logo Banner"
+                class="work-logo max-h-12 object-contain w-full"
+              />
+            </a>
+          </div>
+
+          <!-- Second group: 2 logos -->
+          <div class="flex justify-center gap-8 items-center">
+            <a
+              href="https://www.kcys.ie/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="work-logo-link w-32"
+              aria-label="Visit Kerry Community Youth Services website (opens in new tab)"
+            >
+              <Image
+                src={logoKCYS}
+                alt="Kerry Community Youth Services Charity Logo"
+                class="work-logo max-h-20 object-contain w-full"
+              />
+            </a>
+
+            <a
+              href="https://www.goalglobal.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="work-logo-link w-32"
+              aria-label="Visit GOAL website (opens in new tab)"
+            >
+              <Image
+                src={logoGOAL}
+                alt="GOAL Charity Logo"
+                class="work-logo max-h-12 object-contain w-full"
+              />
+            </a>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -196,10 +299,11 @@ import logoGOAL from "../assets/logos/goal.png";
             class="heading-section text-theme-text-light"
             tabindex="-1"
           >
-            How I can help you
+            How I can help you<span
+              class="text-theme-accent font-punctuation-oversize">.</span
+            >
           </h2>
           <WavyDivider color={"var(--color-theme-accent)"} />
-          <!--  -->
         </div>
 
         <div class="grid gap-12 sm:grid-cols-2 lg:grid-cols-3">
@@ -276,85 +380,82 @@ import logoGOAL from "../assets/logos/goal.png";
     <!-- About -->
     <section
       id="about"
-      class="pt-12 px-6 bg-theme-bg-alt1-green"
+      class="pt-12 bg-theme-bg-alt1-green"
       aria-label="About Luna"
     >
-      <div class="flex flex-col md:flex-row">
-        <!-- Left: Heading -->
-        <div
-          class="md:w-1/2 bg-theme-bg-alt1-green pt-8 md:py-16 flex justify-start md:justify-end items-start"
-        >
-          <div class="max-w-xl w-full md:pr-12">
-            <h2
-              class="heading-section text-theme-text-alt-dark md:text-right no-mb no-mt"
-              tabindex="-1"
-            >
-              I am passionate about the role of the non<span
-                class="text-theme-accent-coral">-</span
-              >profit sector in bringing about social and economic justice<span
-                class="text-theme-accent-coral font-oversize">.</span
-              >
-            </h2>
-          </div>
-        </div>
-
-        <!-- Horizontal Divider (mobile only) -->
-        <div class="md:hidden py-8 px-6 bg-theme-bg-alt1-green">
-          <div class="pr-4 md:pr-12">
-            <WavyDivider color="var(--color-theme-accent-coral)" />
-          </div>
-        </div>
-
-        <!-- Vertical Divider (desktop only) -->
-        <div class="hidden md:flex items-stretch py-12 bg-theme-bg-alt1-green">
-          <VerticalWavyDivider
-            color="var(--color-theme-accent-coral)"
-            ,
-            height={700}
-          />
-        </div>
-
-        <!-- Right: Content -->
-        <div
-          class="md:w-1/2 bg-theme-bg-alt1-green pb-8 md:py-16 md:pl-4 flex justify-start items-start"
-        >
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="flex flex-col md:flex-row">
+          <!-- Left: Heading -->
           <div
-            class="about-content max-w-xl w-full px-6 md:pl-4 text-theme-text-dark space-y-6"
+            class="md:w-1/2 bg-theme-bg-alt1-green md:pt-8 md:py-16 flex justify-start md:justify-end items-start"
           >
-            <p class="about-para no-mt about-para-bullet">
-              Charities, NGOs, social enterprises, research and advocacy
-              organisations, and social movements play a vital role in
-              championing and addressing people's needs where the state or the
-              economy have failed them. <strong class="para-emphasis"
-                >I am committed to applying my skills and experience to enable
-                them to do so more effectively and efficiently</strong
-              >.
-            </p>
-
-            <p class="about-para about-para-bullet">
-              My academic and professional background is in the social sciences,
-              particularly equality, gender justice, human rights and
-              international development. <strong class="para-emphasis"
-                >I've worked with individual change-makers, organisations and
-                networks spanning a huge diversity of social sectors and issues
-                nationally and internationally</strong
-              >.
-            </p>
-
-            <p class="about-para no-mb about-para-bullet">
-              <strong class="para-emphasis"
-                >Over the last 20 years, I have garnered 360° lived experience
-                of non-profits: as an employee and manager within the sector, as a consultant
-              to the sector, and as a Charity Trustee.</strong
+            <div class="max-w-xl w-full md:pr-12">
+              <h2
+                id="about-heading"
+                class="heading-section text-theme-text-alt-dark md:text-right md:no-mb no-mt"
+                tabindex="-1"
               >
-            </p>
+                I am passionate about the role of the non<span
+                  class="text-theme-accent-coral">-</span
+                >profit sector in bringing about social and economic justice<span
+                  class="text-theme-accent-coral font-oversize">.</span
+                >
+              </h2>
+            </div>
           </div>
-        </div>
 
-        <!-- Horizontal Divider (mobile only) -->
-        <div class="md:hidden pb-8 px-6 bg-theme-bg-alt1-green">
-          <div class="pr-4 md:pr-12">
-            <WavyDivider color="var(--color-theme-accent-coral)" />
+          <!-- Vertical Divider (desktop only) -->
+          <div
+            class="hidden md:flex items-stretch py-12 bg-theme-bg-alt1-green"
+          >
+            <VerticalWavyDivider
+              color="var(--color-theme-accent-coral)"
+              ,
+              height={700}
+            />
+          </div>
+
+          <!-- Right: Content -->
+          <div
+            class="md:w-1/2 bg-theme-bg-alt1-green pb-8 md:py-16 md:pl-4 flex justify-start items-start"
+          >
+            <div
+              class="about-content max-w-xl w-full md:px-6 md:pl-8 text-theme-text-dark space-y-6"
+            >
+              <p class="about-para no-mt drop-cap">
+                Charities, NGOs, social enterprises, research and advocacy
+                organisations, and social movements play a vital role in
+                <strong class="para-emphasis"
+                  >championing and addressing people's needs</strong
+                > where the state or the
+                economy have failed them. I am committed to applying my skills and experience to enable
+                  them to do so more effectively and efficiently.
+              </p>
+
+              <p class="about-para">
+                My academic and professional background is in the social
+                sciences, particularly equality, gender justice, human rights
+                and international development. <strong class="para-emphasis"
+                  >I've worked with individual change-makers, organisations and
+                  networks spanning a huge diversity of social sectors</strong
+                > and issues nationally and internationally.
+              </p>
+
+              <p class="about-para no-mb ">
+                <strong
+                  class="para-emphasis"
+                  >Over the last 20 years, I have garnered 360° lived experience of non-profits</strong
+                >: as an employee and manager within the sector, as a consultant
+                to the sector, and as a Charity Trustee.
+              </p>
+            </div>
+          </div>
+
+          <!-- Horizontal Divider (mobile only) -->
+          <div class="md:hidden pb-8 bg-theme-bg-alt1-green">
+            <div class="pr-4 md:pr-12">
+              <WavyDivider color="var(--color-theme-accent-coral)" />
+            </div>
           </div>
         </div>
       </div>
@@ -366,14 +467,14 @@ import logoGOAL from "../assets/logos/goal.png";
       class="px-6 pb-12 bg-theme-bg-alt1-green"
       aria-labelledby="how-i-work-heading"
     >
-      <div class="max-w-6xl mx-auto px-6 md:pt-8">
+      <div class="max-w-6xl mx-auto md:pt-8">
         <!-- Section Heading -->
         <h2
           id="how-i-work-heading"
           class="heading-section text-center text-theme-text-alt-dark no-mb"
           tabindex="-1"
         >
-          How I work
+          How I work<span class="text-theme-accent-coral font-oversize">.</span>
         </h2>
 
         <!-- Cards Grid -->
@@ -463,101 +564,6 @@ import logoGOAL from "../assets/logos/goal.png";
         </div>
       </div>
     </section>
-
-    <!-- Logos Section -->
-    <section
-      id="logo-reel"
-      class="pt-12 px-6 bg-theme-bg-primary-blue"
-      aria-label="Organizations I've worked with"
-    >
-      <div class="max-w-6xl mx-auto">
-        <div class="mb-8">
-          <h2
-            class="font-statement-subtle text-center text-theme-text-light mb-8 text-lg"
-          >
-            A sample of the organisations I've worked with
-          </h2>
-        </div>
-
-        <div
-          class="grid grid-cols-2 md:grid-cols-5 gap-8 items-center justify-items-center"
-        >
-          <a
-            href="https://www.girlsnotbrides.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="work-logo-link"
-            aria-label="Visit Girls Not Brides website"
-          >
-            <Image
-              src={logoGNB}
-              alt="Girls not Brides Charity Logo"
-              class="work-logo max-h-12 object-contain transition-all"
-            />
-          </a>
-
-          <a
-            href="https://www.unicef.org.uk/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="work-logo-link"
-            aria-label="Visit Unicef UK website"
-          >
-            <Image
-              src={logoUnicef}
-              alt="UNICEF UK Charity Logo"
-              class="work-logo max-h-16 object-contain transition-all"
-            />
-          </a>
-
-          <a
-            href="https://www.amnesty.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="work-logo-link"
-            aria-label="Visit Amnesty International website"
-          >
-            <Image
-              src={logoAmnesty}
-              alt="Amnesty International Charity Logo Banner"
-              class="work-logo max-h-12 object-contain transition-all"
-            />
-          </a>
-
-          <a
-            href="https://www.kcys.ie/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="work-logo-link"
-            aria-label="Visit Kerry Community Youth Services website"
-          >
-            <Image
-              src={logoKCYS}
-              alt="Kerry Community Youth Services Charity Logo"
-              class="work-logo max-h-20 object-contain transition-all"
-            />
-          </a>
-
-          <a
-            href="https://www.goalglobal.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="work-logo-link"
-            aria-label="Visit GOAL website"
-          >
-            <Image
-              src={logoGOAL}
-              alt="GOAL Charity Logo"
-              class="work-logo max-h-12 object-contain transition-all"
-            />
-          </a>
-        </div>
-        <div class="mt-12">
-          <WavyDivider />
-        </div>
-      </div>
-    </section>
   </main>
-  <!-- Contact / Footer -->
   <Footer />
 </DefaultLayout>

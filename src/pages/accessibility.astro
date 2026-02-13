@@ -1,0 +1,47 @@
+---
+import DefaultLayout from "../layouts/DefaultLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<DefaultLayout title="Accessibility Statement | Luna Atkins Romero Consulting">
+  <Header />
+  
+  <main id="main-content">
+    <section class="py-16 px-6 bg-theme-bg-neutral1">
+      <article class="max-w-4xl mx-auto in-page-container" style="padding: 4rem;">
+        
+        <header class="mb-12">
+          <h1 class="heading-section text-theme-text-dark">
+            Accessibility Statement
+          </h1>
+        </header>
+
+        <div class="article-body">
+          <h2>Standards</h2>
+          <p>
+            This website aims to conform to the 
+            <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" 
+               target="_blank" 
+               rel="noopener noreferrer">Web Content Accessibility Guidelines (WCAG) 2.1</a> 
+            at Level AA.
+          </p>
+
+          <h2>Feedback</h2>
+          <p>
+            If you 
+            encounter any accessibility barriers, please report them:
+          </p>
+          <ul>
+            <li>Via the <a href="/contact">contact form</a></li>
+            <li>Email: <a href="mailto:hello@lunaconsulting.ie">hello@lunaconsulting.ie</a></li>
+          </ul>
+          
+        </div>
+        
+      </article>
+    </section>
+  </main>
+  
+  <Footer />
+</DefaultLayout>

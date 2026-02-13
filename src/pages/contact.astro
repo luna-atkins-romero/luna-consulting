@@ -14,7 +14,7 @@ import LinkedInIcon from "../components/LinkedInIcon.astro";
       class="flex-grow flex items-center py-16 px-6 bg-theme-bg-primary-blue text-theme-text-light"
     >
       <div class="max-w-4xl mx-auto text-center">
-        <h1 class="heading-section text-6xl md:text-8xl">
+        <h1 class="page-heading-enter heading-section text-6xl md:text-8xl">
           <span class="word-unit">
             Let<span class="text-theme-accent">'</span>s work together<span
               class="text-theme-accent font-oversize">.</span
@@ -30,33 +30,28 @@ import LinkedInIcon from "../components/LinkedInIcon.astro";
         <!-- Card Container -->
         <div class="in-page-container" style="padding: 4rem;">
           <!-- Based in Ireland -->
-          <div class="mb-18">
-            <div class="flex items-center justify-center gap-3">
+          <div class="mb-12 text-center">
+            <div class="flex items-center justify-center gap-3 mb-2">
               <Icon
                 name="lucide:map-pin"
                 class="w-7 h-7 text-theme-accent-coral"
+                aria-hidden="true"
               />
-              <h2
-                class="heading-alt text-2xl md:text-3xl text-theme-text-dark no-mb"
-              >
-                Based in Ireland
-              </h2>
+              <p class="font-statement text-theme-text-dark no-mb">
+                Based in Ireland.
+              </p>
             </div>
-            <p class="text-theme-text-dark text-center my-4">
+            <p class="font-statement-subtle text-theme-text-dark no-mb">
               Working locally, nationally and internationally.
             </p>
           </div>
 
-          <!-- Two Column Layout  -->
-          <div class="flex flex-col-reverse md:grid md:grid-cols-2 gap-8 mt-12">
+          <!-- Two Column Layout -->
+          <div
+            class="flex flex-col-reverse md:grid md:grid-cols-2 gap-12 mt-12"
+          >
             <!-- Left Column: Contact Form -->
             <div>
-              <h2
-                class="heading-alt text-2xl md:text-3xl text-theme-text-dark text-center"
-              >
-                Send me a message
-              </h2>
-
               <form
                 action="https://api.web3forms.com/submit"
                 method="POST"
@@ -113,50 +108,38 @@ import LinkedInIcon from "../components/LinkedInIcon.astro";
 
                 <button type="submit" class="submit-button">
                   <span>Send message</span>
-                  <Icon name="lucide:send" />
+                  <Icon name="lucide:send" aria-hidden="true" />
                 </button>
               </form>
             </div>
 
             <!-- Right Column: Connect -->
-            <div class="flex flex-col items-center">
-              <h2
-                class="heading-alt text-2xl md:text-3xl text-theme-text-dark text-center"
-              >
-                Connect with me
-              </h2>
-
-              <!-- Email + LinkedIn items-->
-              <div class="flex flex-col items-start gap-12 mt-7">
-                <!-- Email - icon + text in row -->
-                <div class="flex gap-4">
-                  <div
-                    class="icon-circle-link flex-shrink-0 text-theme-accent-coral"
-                    
-                  >
-                    <a href="mailto:hello@lunaconsulting.ie" tabindex="-1" aria-label="Email icon">
-                      <Icon name="lucide:mail" />
+            <div>
+              <div class="flex flex-col gap-12 md:pt-8">
+                <!-- Email -->
+                <div class="flex gap-4 items-center">
+                  <div class="icon-circle-link flex-shrink-0">
+                    <a
+                      href="mailto:hello@lunaconsulting.ie"
+                      tabindex="-1"
+                      aria-label="Email icon"
+                    >
+                      <Icon
+                        name="lucide:mail"
+                        class="text-theme-accent-coral"
+                      />
                     </a>
                   </div>
                   <div class="flex flex-col gap-2">
-                    <h3 class="text-theme-text-dark text-lg font-medium">
-                      Email
-                    </h3>
-                    <a
-                      href="mailto:hello@lunaconsulting.ie"
-                      class="link-arrow"
-                      aria-label="Email hello at luna consulting dot i e"
-                    >
+                    <a href="mailto:hello@lunaconsulting.ie" class="link-arrow">
                       hello@lunaconsulting.ie
                     </a>
                   </div>
                 </div>
 
-                <!-- LinkedIn - icon + text in row -->
-                <div class="flex gap-4">
-                  <div
-                    class="icon-circle-link flex-shrink-0 text-theme-text-dark"
-                  >
+                <!-- LinkedIn -->
+                <div class="flex gap-4 items-center">
+                  <div class="icon-circle-link flex-shrink-0">
                     <a
                       href="https://www.linkedin.com/in/lunaatkinsromero/"
                       target="_blank"
@@ -164,13 +147,10 @@ import LinkedInIcon from "../components/LinkedInIcon.astro";
                       tabindex="-1"
                       aria-label="LinkedIn icon"
                     >
-                      <LinkedInIcon />        
+                      <LinkedInIcon class="text-theme-text-dark" />
                     </a>
                   </div>
                   <div class="flex flex-col gap-2">
-                    <h3 class="text-theme-text-dark text-lg font-medium">
-                      LinkedIn
-                    </h3>
                     <a
                       href="https://www.linkedin.com/in/lunaatkinsromero/"
                       target="_blank"
@@ -195,8 +175,8 @@ import LinkedInIcon from "../components/LinkedInIcon.astro";
                     </a>
                   </div>
                 </div>
-              </div><!-- END Email + LinkedIn items-->
-            </div><!-- END Right Column: Connect -->
+              </div>
+            </div>
           </div>
         </div>
         <!-- END Card Container -->
