@@ -8,7 +8,8 @@
   --color-theme-bg-alt1-green: #70C1B3;
 
   --color-theme-accent: #3DB8A5;
-  --color-theme-accent-coral: #EE6055;
+  /* --color-theme-accent-coral: #EE6055; */
+   --color-theme-accent-coral: #ff5943;
 
   /* Neautral BGs */
   --color-theme-bg-neutral1: #FFFCF9;
@@ -20,13 +21,15 @@
 
   --color-theme-text-dark-contrast: #0B3954;
   --color-theme-text-grey: #71A2B6;
+
   --color-theme-text-light: #FFFCF9;
 
   /* Typography */
-  --font-size-hero: clamp(2.5rem, 6vw, 4.5rem);
+  --font-size-hero: clamp(2.25rem, 6vw, 4.5rem);
   --font-size-headline: clamp(2.25rem, 4vw, 3.5rem);
   --font-size-headline-smaller: clamp(1.75rem, 3.5vw, 2.25rem);
   --font-size-statement-subtle: clamp(1.5rem, 2.5vw, 1.75rem);
+  --font-size-statement-subtler: clamp(1.25rem, 2vw, 1.5rem);
   --font-size-subhead: clamp(1.25rem, 2.5vw, 1.5rem);
   --font-size-label: 1rem;
   --font-size-body: 1rem;
@@ -94,7 +97,6 @@ html {
   outline-offset: 3px;
   position: relative;
   z-index: var(--z-overlay);
-  /* Ensure focus always visible */
 }
 
 /* Remove default browser outline */
@@ -310,6 +312,13 @@ strong.para-emphasis {
   line-height: 1.6;
 }
 
+.font-statement-subtler {
+  font-family: "Goudy Bookletter 1911", serif;
+  font-weight: 400;
+  font-size: var(--font-size-statement-subtler);
+  line-height: 1.6;
+}
+
 .font-statement-alt {
   font-family: "Montserrat Variable", sans-serif;
   font-size: var(--font-size-headline-smaller);
@@ -343,7 +352,7 @@ strong.para-emphasis {
 }
 
 .brand-link:hover .brand-name {
-  color: var(--brand-hover-color, var(--color-theme-accent-coral));
+  color: var(--brand-hover-color, var(--color-theme-accent));
 }
 
 /* Nav links */
@@ -519,6 +528,14 @@ nav a[aria-label]::after {
   transform: scale(1.1);
 }
 
+.icon-solo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+
+}
+
+
 .footer-link:hover {
   color: var(--color-theme-accent-coral);
   transition-duration: 0.3s ease;
@@ -560,12 +577,12 @@ nav a[aria-label]::after {
   z-index: 0;
   border-radius: 0.5rem;
   background-color: var(--color-theme-accent);
-  opacity: .85;
+  opacity: .7;
   transition: opacity 0.3s ease;
 }
 
 .service-card:hover::after {
-  opacity: 0.4;
+  opacity: 1;
 }
 
 .service-card:hover .icon-circle {
@@ -727,7 +744,7 @@ nav a[aria-label]::after {
 .in-page-container {
   position: relative;
   z-index: var(--z-content);
-  padding: 2rem;
+  padding: clamp(1.5rem, 5vw, 5rem);
   border-radius: 0.75rem;
 }
 

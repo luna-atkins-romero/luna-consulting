@@ -1,12 +1,6 @@
 {
-  "name": "Luna Consulting",
+  "name": "lunaconsulting.ie",
   "short_name": "Luna Consulting",
-  "start_url": "/",
-  "scope": "/",
-  "display": "standalone",
-  "theme_color": "#2c5378",
-  "background_color": "#2c5378",
-  "orientation": "portrait",
   "icons": [
     {
       "src": "/favicon/web-app-manifest-192x192.png",

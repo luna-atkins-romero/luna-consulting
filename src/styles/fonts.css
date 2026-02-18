@@ -20,15 +20,6 @@
   font-display: swap;
 }
 
-/* Sorts Mill Goudy – Italic */
-@font-face {
-  font-family: "Sorts Mill Goudy";
-  src: url("/fonts/SortsMillGoudy-Italic.woff2") format("woff2");
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
-
 /* -----------------------------
    Variable Fonts
 ------------------------------ */
@@ -50,3 +41,5 @@
   font-style: normal;
   font-display: swap;
 }
+
+

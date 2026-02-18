@@ -21,7 +21,12 @@ const { post } = Astro.props as Props;
 const { Content } = await post.render();
 ---
 
-<DefaultLayout title={post.data.title}>
+<DefaultLayout 
+  title={`${post.data.title} | Luna Atkins Romero Consulting`}
+  description={post.data.description}
+  image="/og-articles.png"
+  type="article"
+/>
   <Header />
   <main id="main-content">
     <article class="py-16 px-6 bg-theme-bg-neutral1">

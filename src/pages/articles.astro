@@ -9,11 +9,15 @@ const posts = await getCollection('articles');
 const sortedPosts = posts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 ---
 
-<DefaultLayout title="Articles | Luna Atkins Romero">
+<DefaultLayout 
+  title="Articles | Luna Atkins Romero Consulting"
+  description="Insights and thoughts on non-profit strategy, governance and impact from Luna Atkins Romero."
+  image="/og-articles.png"
+/>
   <Header />
   <main id="main-content">  
 
-  <!-- Hero Section -->
+  <!-- Landing Section -->
   <section class="flex-grow flex items-center py-16 px-6 bg-theme-bg-primary-blue text-theme-text-light">
     <div class="max-w-4xl mx-auto text-center">
       <h1 class="page-heading-enter heading-section text-6xl md:text-8xl">

@@ -6,7 +6,11 @@ import { Icon } from "astro-icon/components";
 import LinkedInIcon from "../components/LinkedInIcon.astro";
 ---
 
-<DefaultLayout>
+<DefaultLayout 
+  title="Contact | Luna Atkins Romero Consulting"
+  description="Get in touch to discuss strategic planning, governance reviews, or impact measurement for your non-profit organisation."
+  image="/og-contact.png"
+/>
   <Header />
   <main id="main-content">
     <!-- Landing Section -->
@@ -28,21 +32,21 @@ import LinkedInIcon from "../components/LinkedInIcon.astro";
     <section class="py-16 px-6 bg-theme-bg-neutral1">
       <div class="max-w-4xl mx-auto">
         <!-- Card Container -->
-        <div class="in-page-container" style="padding: 4rem;">
+        <div class="in-page-container">
           <!-- Based in Ireland -->
           <div class="mb-12 text-center">
-            <div class="flex items-center justify-center gap-3 mb-2">
+            <div class="flex items-center justify-center gap-2 md:gap-3 mb-2">
               <Icon
                 name="lucide:map-pin"
-                class="w-7 h-7 text-theme-accent-coral"
+                class="w-7 h-7 icon-solo text-theme-accent-coral"
                 aria-hidden="true"
               />
-              <p class="font-statement text-theme-text-dark no-mb">
-                Based in Ireland.
+              <p class="font-statement-subtle text-theme-text-dark no-mb">
+                Based in Ireland
               </p>
             </div>
-            <p class="font-statement-subtle text-theme-text-dark no-mb">
-              Working locally, nationally and internationally.
+            <p class="font-statement-subtler text-theme-text-dark no-mb">
+              Working locally, nationally and internationally
             </p>
           </div>
 
@@ -115,9 +119,9 @@ import LinkedInIcon from "../components/LinkedInIcon.astro";
 
             <!-- Right Column: Connect -->
             <div>
-              <div class="flex flex-col gap-12 md:pt-8">
+              <div class="flex flex-col gap-8 md:gap-12 md:pt-8">
                 <!-- Email -->
-                <div class="flex gap-4 items-center">
+                <div class="flex flex-col sm:flex-row gap-2 md:gap-4 sm:items-center">
                   <div class="icon-circle-link flex-shrink-0">
                     <a
                       href="mailto:hello@lunaconsulting.ie"
@@ -138,7 +142,7 @@ import LinkedInIcon from "../components/LinkedInIcon.astro";
                 </div>
 
                 <!-- LinkedIn -->
-                <div class="flex gap-4 items-center">
+                <div class="flex flex-col sm:flex-row gap-2 md:gap-4 sm:items-center">
                   <div class="icon-circle-link flex-shrink-0">
                     <a
                       href="https://www.linkedin.com/in/lunaatkinsromero/"

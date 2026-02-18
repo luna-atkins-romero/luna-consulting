@@ -11,14 +11,14 @@ const currentPath = new URL(Astro.request.url).pathname;
 const isHomePage = currentPath === "/";
 
 // Set hover color based on showCircle
-const hoverColor = showCircle ? "var(--color-theme-bg-primary-blue)" : "var(--color-theme-accent-coral)";
+const hoverColor = showCircle ? "var(--color-theme-bg-primary-blue)" : "var(--color-theme-accent)";
 ---
 
 <div class="flex flex-col items-start gap-0 relative">
   {showCircle && (
     <span
-      class="absolute rounded-full bg-theme-accent/80"
-      style="width: 20em; height: 20em; top: -8em; left: -4.55em; z-index: var(--z-base);"
+      class="absolute rounded-full bg-theme-bg-alt1-green/80"
+      style="width: 20em; height: 20em; top: -8em; left: -4em; z-index: var(--z-base);"
       aria-hidden="true"
     />
   )}
@@ -29,7 +29,7 @@ const hoverColor = showCircle ? "var(--color-theme-bg-primary-blue)" : "var(--co
      style={`--brand-hover-color: ${hoverColor};`}>
     <div class="brand-text">
       <div class="font-brand text-theme-text-light text-3xl lg:text-4xl brand-heading">
-        <span class="brand-name font-punctuation" style="font-size: 1.1em;">L</span><span class="brand-name" style="font-size: 1.1em;">una</span> Atkins Romero
+        <span class="brand-name" style="font-size: 1.1em;">Luna</span> Atkins Romero
       </div>
 
       <div class="font-brand text-theme-text-light text-2xl lg:text-3xl brand-heading">

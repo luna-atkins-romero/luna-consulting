@@ -17,7 +17,11 @@ import logoKCYS from "../assets/logos/kcys.png";
 import logoGOAL from "../assets/logos/goal.png";
 ---
 
-<DefaultLayout>
+<DefaultLayout 
+  title="Luna Atkins Romero Consulting | Non-Profit Strategy & Governance"
+  description="Expert strategic planning, governance reviews, and impact measurement for charities and non-profits in Ireland and internationally."
+  image="/og-homepage.png"
+/>
   <!-- Header -->
   <Header />
   <main id="main-content">
@@ -75,13 +79,6 @@ import logoGOAL from "../assets/logos/goal.png";
             </div>
           </div>
 
-          <!-- Horizontal Divider (mobile only) -->
-          <div class="md:hidden py-8 px-6">
-            <div class="pr-4 md:pr-12">
-              <WavyDivider />
-            </div>
-          </div>
-
           <!-- Vertical Divider (desktop only) -->
           <div class="hidden md:flex justify-center">
             <div>
@@ -91,7 +88,7 @@ import logoGOAL from "../assets/logos/goal.png";
 
           <!-- Right: statement + Buttons -->
           <div
-            class="w-full md:w-1/2 px-6 pb-8 md:py-16 flex justify-start items-center"
+            class="w-full md:w-1/2 px-6 pt-8 md:py-16 flex justify-start items-center"
           >
             <div class="max-w-xl w-full md:pl-4 space-y-6">
               <h2 class="heading-section text-theme-text-alt-dark mb-12">
@@ -106,7 +103,7 @@ import logoGOAL from "../assets/logos/goal.png";
               </h2>
 
               <div
-                class="flex flex-col sm:flex-row gap-4 sm:gap-6 md:mt-8 items-center md:items-start"
+                class="flex flex-col sm:flex-row gap-4 sm:gap-6 md:mt-8 items-start"
               >
                 <a
                   href="#about"
@@ -156,18 +153,19 @@ import logoGOAL from "../assets/logos/goal.png";
     <!-- Testimonials Section -->
     <section
       id="testimonials"
-      class="px-6 pb-12 md:pt-12 bg-theme-bg-neutral1"
+      class="px-6 pb-12 md:pb-12 bg-theme-bg-neutral1"
       aria-label="Client testimonials"
       tabindex="-1"
     >
       <div class="max-w-6xl mx-auto pt-12">
         <h2 id="testimonials-heading" class="heading-section">Testimonials<span class="text-theme-accent font-punctuation-oversize">.</span
                   >
-                </span></h2>
+        </h2>
+        <WavyDivider color={"var(--color-theme-accent)"} />
                 
         <!-- Testimonials Grid - Responsive -->
         <div
-          class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 items-stretch"
+          class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 items-stretch pb-12 md:pt-12"
         >
           <TestimonialCard
             quote="The Board, staff team and community loved working with Luna on our Strategic Plan. She made us feel comfortable and guided us through the process, and kept us focused and on track. It was a pleasure to work with Luna and I would highly recommend her."
@@ -185,22 +183,21 @@ import logoGOAL from "../assets/logos/goal.png";
             color="var(--color-theme-accent)"
           />
         </div>
-        <div class="pt-12">
           <WavyDivider color={"var(--color-theme-accent)"} />
-        </div>
+        
       </div>
     </section>
 
     <!-- Logos Section -->
     <section
       id="logo-reel"
-      class="pt-12 pb-12 px-6 bg-theme-bg-neutral1"
+      class="md:pt-8 pb-12 px-6 bg-theme-bg-neutral1"
       aria-label="Organizations I've worked with"
     >
       <div class="max-w-4xl mx-auto mb-8">
         <div class="mb-8">
           <h2 class="font-statement text-center text-theme-text-alt-dark">
-            A sample of the organisations I've worked with.
+            A sample of the organisations I've worked with
           </h2>
         </div>
 
@@ -383,13 +380,13 @@ import logoGOAL from "../assets/logos/goal.png";
       class="pt-12 bg-theme-bg-alt1-green"
       aria-label="About Luna"
     >
-      <div class="max-w-6xl mx-auto px-6">
+      <div class="max-w-6xl mx-auto px-6 bg-theme-bg-alt1-green">
         <div class="flex flex-col md:flex-row">
           <!-- Left: Heading -->
           <div
             class="md:w-1/2 bg-theme-bg-alt1-green md:pt-8 md:py-16 flex justify-start md:justify-end items-start"
           >
-            <div class="max-w-xl w-full md:pr-12">
+            <div class="max-w-xl w-full md:pr-12 bg-theme-bg-alt1-green">
               <h2
                 id="about-heading"
                 class="heading-section text-theme-text-alt-dark md:text-right md:no-mb no-mt"
@@ -424,9 +421,9 @@ import logoGOAL from "../assets/logos/goal.png";
             >
               <p class="about-para no-mt drop-cap">
                 Charities, NGOs, social enterprises, research and advocacy
-                organisations, and social movements play a vital role in
+                organisations, and social movements 
                 <strong class="para-emphasis"
-                  >championing and addressing people's needs</strong
+                  >play a vital role in championing and addressing people's needs</strong
                 > where the state or the
                 economy have failed them. I am committed to applying my skills and experience to enable
                   them to do so more effectively and efficiently.
@@ -451,12 +448,6 @@ import logoGOAL from "../assets/logos/goal.png";
             </div>
           </div>
 
-          <!-- Horizontal Divider (mobile only) -->
-          <div class="md:hidden pb-8 bg-theme-bg-alt1-green">
-            <div class="pr-4 md:pr-12">
-              <WavyDivider color="var(--color-theme-accent-coral)" />
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -471,11 +462,13 @@ import logoGOAL from "../assets/logos/goal.png";
         <!-- Section Heading -->
         <h2
           id="how-i-work-heading"
-          class="heading-section text-center text-theme-text-alt-dark no-mb"
+          class="heading-section text-theme-text-alt-dark"
           tabindex="-1"
         >
           How I work<span class="text-theme-accent-coral font-oversize">.</span>
         </h2>
+        <WavyDivider color="var(--color-theme-accent-coral)" />
+       
 
         <!-- Cards Grid -->
         <div
@@ -541,10 +534,10 @@ import logoGOAL from "../assets/logos/goal.png";
           <WavyDivider color="var(--color-theme-accent-coral)" />
         </div>
 
-        <div class="flex justify-center pt-4 pb-4">
+        <div class="flex sm:justify-center pt-4 pb-4">
           <a
             href="/contact"
-            class="action-button text-lg text-theme-bg-primary-blue border-theme-bg-primary-blue bg-transparent hover:bg-theme-accent-coral"
+            class="action-button text-lg text-theme-text-light border-theme-theme-text-light bg-theme-bg-primary-blue hover:bg-theme-accent-coral"
           >
             Contact me
             <svg
