@@ -12,8 +12,6 @@ collections:
     folder: "src/content/articles"
     create: true
     slug: "{{slug}}"
-    editor:
-      preview: false  # Disable preview to avoid formatting issues
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "text" }
@@ -28,7 +26,5 @@ collections:
       - { 
           label: "Body", 
           name: "body", 
-          widget: "markdown",
-          modes: ["raw"],
-          sanitize_preview: false
+          widget: "markdown"
         }
