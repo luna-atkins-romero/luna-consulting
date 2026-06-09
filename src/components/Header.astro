@@ -7,12 +7,12 @@ const currentPath = new URL(Astro.request.url).pathname;
 const isHomepage = currentPath === "/";
 ---
 
-<header class="py-8 px-6 bg-theme-bg-primary-blue text-theme-text-light">
+<header class="py-8 px-6 sm:px-16  bg-theme-bg-primary-blue text-theme-text-light">
     <!-- Skip link - first focusable element -->
     <a href="#main-content" class="skip-link"> Skip to main content </a>
-    <div class="max-w-6xl mx-auto flex items-baseline justify-between">
+    <div class="relative max-w-6xl mx-auto flex items-start justify-between">
         <!-- Brand -->
-        <Brand showCircle={true} />
+        <Brand />
         <!-- Nav -->
         <Navigation bg-theme-bg-primary-blue>
             <li>

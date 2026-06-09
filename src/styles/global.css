@@ -8,10 +8,9 @@
   --color-theme-bg-alt1-green: #70C1B3;
 
   --color-theme-accent: #3DB8A5;
-  /* --color-theme-accent-coral: #EE6055; */
-   --color-theme-accent-coral: #ff5943;
+  --color-theme-accent-coral: #ff5943;
 
-  /* Neautral BGs */
+  /* Neutral BGs */
   --color-theme-bg-neutral1: #FFFCF9;
   --color-theme-bg-neutral2: #F7F6F2;
 
@@ -25,7 +24,9 @@
   --color-theme-text-light: #FFFCF9;
 
   /* Typography */
-  --font-size-hero: clamp(2.25rem, 6vw, 4.5rem);
+  --font-size-brand: clamp(1.5rem, 4vw, 2.5rem);
+  --font-size-nav: clamp(0.95rem, 2vw, 1.1rem);
+  --font-size-hero: clamp(1.5rem, 4vw + 2vh, 4.5rem);
   --font-size-headline: clamp(2.25rem, 4vw, 3.5rem);
   --font-size-headline-smaller: clamp(1.75rem, 3.5vw, 2.25rem);
   --font-size-statement-subtle: clamp(1.5rem, 2.5vw, 1.75rem);
@@ -33,6 +34,7 @@
   --font-size-subhead: clamp(1.25rem, 2.5vw, 1.5rem);
   --font-size-label: 1rem;
   --font-size-body: 1rem;
+
 }
 
 /* Z-index layer system */
@@ -216,8 +218,8 @@ strong.para-emphasis {
   font-weight: 600;
   color: var(--color-theme-text-alt-dark);
   font-style: normal;
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
+  /* text-decoration: underline;
+  text-decoration-thickness: 2px; */
 }
 
 /* Utility Font Classes */
@@ -225,6 +227,8 @@ strong.para-emphasis {
   font-family: "Sorts Mill Goudy", serif;
   font-weight: 400;
   font-style: normal;
+  font-size: var(--font-size-brand);
+  line-height: clamp(2rem, 4vw, 3rem);
 }
 
 .font-punctuation {
@@ -250,7 +254,7 @@ strong.para-emphasis {
 .font-nav {
   font-family: "Hanken Grotesk Variable", sans-serif;
   font-weight: 400;
-  font-size: 1.1em;
+  font-size: var(--font-size-nav);
 }
 
 .hero-section {
@@ -352,7 +356,18 @@ strong.para-emphasis {
 }
 
 .brand-link:hover .brand-name {
-  color: var(--brand-hover-color, var(--color-theme-accent));
+  color: var(--color-theme-accent);
+}
+
+.brand-full-logo {
+  column-gap: clamp(0.25rem, 0.6vw, 0.75rem); /* 0.2x the brand font scaling */
+}
+
+.brand-moon-svg {
+  width: clamp(3rem, 6vw, 4rem); /* 1.5x the brand font scaling */
+  height: clamp(3rem, 6vw, 4rem); 
+  color: var(--color-theme-accent);
+  flex-shrink: 0;
 }
 
 /* Nav links */
@@ -384,31 +399,47 @@ nav a[aria-label]::after {
   font-size: 1.1em;
 }
 
+.nav-menu-label {
+  font-size: 0.875rem;
+  position: relative;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.nav-icon--open:hover .nav-menu-label,
+.nav-icon--close:hover .nav-menu-label {
+  text-decoration: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: var(--color-theme-accent-coral);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 8px;
+}
+
+.nav-menu-label:focus-visible {
+  outline: 2px solid var(--color-theme-accent-coral);
+  outline-offset: 4px;
+}
+
 /* LinkedIn icon */
 .linkedin-link {
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  transition: transform 0.2s ease;
 }
 
 .linkedin-link:hover {
   transform: scale(1.15);
-  opacity: 0.85;
 }
 
 /* Mobile Navigation Dropdown */
 #primary-menu {
   border: 2px solid var(--color-theme-accent);
   border-radius: 0.5rem;
-  box-shadow:
-    0 4px 6px -1px rgba(0, 0, 0, 0.3),
-    0 2px 4px -1px rgba(0, 0, 0, 0.2);
 }
 
-/* Remove border/shadow on desktop */
+/* Remove border on desktop */
 @media (min-width: 768px) {
   #primary-menu {
     border: none;
     border-radius: 0;
-    box-shadow: none;
   }
 }
 
@@ -423,7 +454,7 @@ nav a[aria-label]::after {
   border-radius: 0.5rem;
   font-family: "Hanken Grotesk Variable", sans-serif;
   font-weight: 500;
-  font-size: 1.1em;
+  font-size: var(--font-size-nav);
   min-width: 10rem;
   max-width: 2em;
   transition: background-color 0.2s ease;
@@ -444,10 +475,22 @@ nav a[aria-label]::after {
   transform: translateX(3px);
 }
 
+/* Variant: Coral background */
+.action-button--coral {
+  background-color: var(--color-theme-accent-coral);
+  color: var(--color-theme-text-dark);
+}
+
+.action-button--coral:hover {
+  background-color: var(--color-theme-bg-neutral2);
+  color: var(--color-theme-text-dark);
+}
+
 /* Shared Link Style */
 .link-arrow {
   font-family: "Hanken Grotesk Variable", sans-serif;
   font-weight: 500;
+  font-size: var(--font-size-nav);
   display: inline-flex;
   align-items: center;
   gap: 0.5em;
@@ -649,11 +692,11 @@ nav a[aria-label]::after {
   font-family: "Goudy Bookletter 1911", serif;
   font-weight: 400;
   font-size: clamp(1.5rem, 3vw, 2rem);
-  color: var(--color-theme-text-alt-dark);
+  color: var(--color-theme-text-light);
   margin-bottom: 1rem;
   line-height: 1.3;
   text-decoration: underline;
-  text-decoration-color: var(--color-theme-accent-coral);
+  text-decoration-color: var(--color-theme-accent);
   text-decoration-thickness: 2px;
   text-underline-offset: 12px;
   display: flex;
@@ -674,7 +717,7 @@ nav a[aria-label]::after {
 .work-moon-svg {
   width: 3.5rem;
   height: 3.5rem;
-  color: var(--color-theme-accent-coral);
+  color: var(--color-theme-accent);
   margin-bottom: 0.75rem;
   flex-shrink: 0;
 }
@@ -682,6 +725,10 @@ nav a[aria-label]::after {
 .work-moon::before {
   display: block;
   line-height: 0;
+}
+
+.work-para {
+  color: var(--color-theme-text-light);
 }
 
 /* Sample Orgs */

@@ -15,57 +15,68 @@ import logoUnicef from "../assets/logos/unicef.png";
 import logoAmnesty from "../assets/logos/amnesty.png";
 import logoKCYS from "../assets/logos/kcys.png";
 import logoGOAL from "../assets/logos/goal.png";
+import logoCarmichael from "../assets/logos/carmichael.png";
+import logoDelta from "../assets/logos/delta.png";
+import logoCommonwealth from "../assets/logos/cen.png";
+import LinkedInIcon from "../components/LinkedInIcon.astro";
 ---
 
-<DefaultLayout 
+<DefaultLayout
   title="Luna Atkins Romero Consulting | Non-Profit Strategy & Governance"
   description="Expert strategic planning, governance reviews, and impact measurement for charities and non-profits in Ireland and internationally."
   image="/og-homepage.png"
 />
+
+<!-- Navbar + Hero - Full viewport -->
+<div class="flex flex-col min-h-dvh m-0">
   <!-- Header -->
   <Header />
-  <main id="main-content">
-    <!-- Navbar + Hero - Full viewport -->
-    <section
-      id="hero"
-      class="min-h-screen px-6 bg-theme-bg-primary-blue text-theme-text-light flex flex-col"
-    >
-      <!-- Hero -->
-      <div class="flex-grow flex items-center">
-        <div class="max-w-4xl mx-auto">
-          <h1 class="hero-section text-theme-text-light">
-            Strengthening
-            <span class="word-unit">
-              non<span class="text-theme-accent font-punctuation">-</span
-              >profits
-            </span>
-            in collaboration with their
-            <span class="word-unit">
-              teams<span class="text-theme-accent font-punctuation">,</span>
-            </span>
-            leaders and
-            <span class="word-unit">
-              communities<span
-                class="text-theme-accent font-punctuation-oversize"
-                aria-hidden="true">.</span
-              >
-            </span>
-          </h1>
-        </div>
+  <!-- Hero -->
+  <section
+    id="hero"
+    class="grow flex px-6 sm:px-16 bg-theme-bg-primary-blue text-theme-text-light"
+  >
+    <!-- Hero -->
+    <div class="grow flex items-center">
+      <div class="max-w-4xl mx-auto">
+        <h1 class="hero-section text-theme-text-light">
+          Strengthening
+          <span class="word-unit">
+            non<span class="text-theme-accent font-punctuation">-</span>profits
+          </span>
+          in collaboration with their
+          <span class="word-unit">
+            teams<span class="text-theme-accent font-punctuation">,</span>
+          </span>
+          leaders and
+          <span class="word-unit">
+            communities<span
+              class="text-theme-accent font-punctuation-oversize"
+              aria-hidden="true">.</span
+            >
+          </span>
+        </h1>
       </div>
-    </section>
+    </div>
+  </section>
+</div>
+  
+<main id="main-content">
+  <!-- Intro -->
+  <section id="intro" class="bg-theme-bg-neutral2">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="sr-only">Introduction</h2>
 
-    <!-- Intro -->
-    <section id="intro" class="bg-theme-bg-neutral1">
-      <div class="max-w-6xl mx-auto">
-        <h2 class="sr-only">Introduction</h2>
-        <div class="flex flex-col md:flex-row md:pt-12">
-          <!-- Left: Image + Statement -->
-          <div
-            class="w-full md:w-1/2 px-6 pt-8 md:py-12 flex justify-start md:justify-end items-center"
-          >
-            <div class="max-w-xl w-full md:pr-20">
-              <div class="w-56 sm:w-64 md:w-72 mx-auto md:ml-auto md:mr-0">
+      <!-- Mobile v Desktop layout -->
+      <div class="flex flex-col md:flex-row">
+        <!-- Left: Portrait + Statement (stacked vertically) -->
+        <div
+          class="md:w-1/2 px-6 sm:px-16 pt-8 md:py-12 flex flex-col justify-center"
+        >
+          <div class="max-w-xl w-full">
+            <!-- Portrait -->
+            <div class="flex justify-center md:justify-end py-6">
+              <div class="w-42 md:w-48">
                 <Image
                   src={luna}
                   alt="Luna Atkins Romero Portrait"
@@ -77,20 +88,8 @@ import logoGOAL from "../assets/logos/goal.png";
                 />
               </div>
             </div>
-          </div>
 
-          <!-- Vertical Divider (desktop only) -->
-          <div class="hidden md:flex justify-center">
-            <div>
-              <VerticalWavyDivider height={600} />
-            </div>
-          </div>
-
-          <!-- Right: statement + Buttons -->
-          <div
-            class="w-full md:w-1/2 px-6 pt-8 md:py-16 flex justify-start items-center"
-          >
-            <div class="max-w-xl w-full md:pl-4 space-y-6">
+            <div class="max-w-xl w-full mt-4 md:mt-8 md:pl-4 md:text-right">
               <h2 class="heading-section text-theme-text-alt-dark mb-12">
                 I have dedicated my career to working with and for mission<span
                   class="text-theme-accent font-punctuation">-</span
@@ -101,462 +100,559 @@ import logoGOAL from "../assets/logos/goal.png";
                   >
                 </span>
               </h2>
+            </div>
+          </div>
+        </div>
 
-              <div
-                class="flex flex-col sm:flex-row gap-4 sm:gap-6 md:mt-8 items-start"
-              >
-                <a
-                  href="#about"
-                  class="action-button text-theme-text-dark border-theme-bg-primary-blue bg-theme-accent"
-                >
-                  About me
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    aria-hidden="true"
-                  >
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
-                </a>
-                <a
-                  href="/contact"
-                  class="action-button text-lg text-theme-bg-primary-blue border-theme-bg-primary-blue bg-theme-accent"
-                >
-                  Contact me
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    aria-hidden="true"
-                  >
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
-                </a>
+        <!-- Vertical Divider (desktop only) -->
+        <div class="hidden md:flex justify-center py-12">
+          <div>
+            <VerticalWavyDivider height={600} />
+          </div>
+        </div>
+
+        <!-- Right: Statement + Buttons -->
+        <div
+          class="w-full md:w-1/2 px-6 sm:px-16 pt-8 md:py-12 flex flex-col justify-center"
+        >
+          <div class="max-w-xl w-full">
+            <!-- Text -->
+            <div class="space-y-6">
+              <div>
+                <p class="about-para no-mt drop-cap">
+                  I have a proven track record of supporting organisations to
+                  have greater focus, accountability and impact.
+                </p>
+                <p class="about-para">
+                  Over the last 20 years, I have worked with non-profits,
+                  charities, social enterprises and public bodies as an
+                  employee, management consultant, Trustee and mentor. I can
+                  bring that lived experience and breadth of insight to help
+                  your organisation where the state or the economy have failed
+                  them.
+                </p>
+                <p class="about-para">
+                  I am committed to applying my skills and experience to enable
+                  them to do so more effectively and efficiently.
+                </p>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- Testimonials Section -->
-    <section
-      id="testimonials"
-      class="px-6 pb-12 md:pb-12 bg-theme-bg-neutral1"
-      aria-label="Client testimonials"
-      tabindex="-1"
-    >
-      <div class="max-w-6xl mx-auto pt-12">
-        <h2 id="testimonials-heading" class="heading-section">Testimonials<span class="text-theme-accent font-punctuation-oversize">.</span
-                  >
-        </h2>
-        <WavyDivider color={"var(--color-theme-accent)"} />
-                
-        <!-- Testimonials Grid - Responsive -->
-        <div
-          class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 items-stretch pb-12 md:pt-12"
-        >
-          <TestimonialCard
-            quote="The Board, staff team and community loved working with Luna on our Strategic Plan. She made us feel comfortable and guided us through the process, and kept us focused and on track. It was a pleasure to work with Luna and I would highly recommend her."
-            name="Jackie Landers"
-            title="CEO, Listowel Family & Community Resource Centre"
-            initials="JL"
-            color="var(--color-theme-accent)"
-          />
-
-          <TestimonialCard
-            quote="Luna is extremely skilled at facilitating strategic planning with organisations and groups. I found her openness, perceptiveness and keen insights invaluable throughout. With her support, we achieved a strategic plan that was both ambitious and realisable. No mean feat !!"
-            name="Berni Smyth"
-            title="Former CEO, Kerry Community Youth Service"
-            initials="BS"
-            color="var(--color-theme-accent)"
-          />
-        </div>
-          <WavyDivider color={"var(--color-theme-accent)"} />
-        
-      </div>
-    </section>
-
-    <!-- Logos Section -->
-    <section
-      id="logo-reel"
-      class="md:pt-8 pb-12 px-6 bg-theme-bg-neutral1"
-      aria-label="Organizations I've worked with"
-    >
-      <div class="max-w-4xl mx-auto mb-8">
-        <div class="mb-8">
-          <h2 class="font-statement text-center text-theme-text-alt-dark">
-            A sample of the organisations I've worked with
-          </h2>
-        </div>
-
-        <div
-          class="flex flex-col gap-8 md:flex-row md:gap-12 md:justify-center"
-        >
-          <!-- First group: 3 logos -->
-          <div class="flex justify-center gap-8 items-center">
-            <a
-              href="https://www.girlsnotbrides.org/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="work-logo-link w-32"
-              aria-label="Visit Girls Not Brides website (opens in new tab)"
-            >
-              <Image
-                src={logoGNB}
-                alt="Girls not Brides Charity Logo"
-                class="work-logo max-h-12 object-contain w-full"
-              />
-            </a>
-
-            <a
-              href="https://www.unicef.org.uk/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="work-logo-link w-32"
-              aria-label="Visit Unicef UK website (opens in new tab)"
-            >
-              <Image
-                src={logoUnicef}
-                alt="UNICEF UK Charity Logo"
-                class="work-logo max-h-16 object-contain w-full"
-              />
-            </a>
-
-            <a
-              href="https://www.amnesty.org/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="work-logo-link w-32"
-              aria-label="Visit Amnesty International website (opens in new tab)"
-            >
-              <Image
-                src={logoAmnesty}
-                alt="Amnesty International Charity Logo Banner"
-                class="work-logo max-h-12 object-contain w-full"
-              />
-            </a>
-          </div>
-
-          <!-- Second group: 2 logos -->
-          <div class="flex justify-center gap-8 items-center">
-            <a
-              href="https://www.kcys.ie/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="work-logo-link w-32"
-              aria-label="Visit Kerry Community Youth Services website (opens in new tab)"
-            >
-              <Image
-                src={logoKCYS}
-                alt="Kerry Community Youth Services Charity Logo"
-                class="work-logo max-h-20 object-contain w-full"
-              />
-            </a>
-
-            <a
-              href="https://www.goalglobal.org/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="work-logo-link w-32"
-              aria-label="Visit GOAL website (opens in new tab)"
-            >
-              <Image
-                src={logoGOAL}
-                alt="GOAL Charity Logo"
-                class="work-logo max-h-12 object-contain w-full"
-              />
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Services Cards -->
-    <section
-      id="services"
-      class="pt-12 px-6 pb-32 bg-theme-bg-primary-blue"
-      aria-labelledby="services-heading"
-    >
-      <div class="max-w-6xl mx-auto">
-        <div class="mb-18">
-          <h2
-            id="services-heading"
-            class="heading-section text-theme-text-light"
-            tabindex="-1"
-          >
-            How I can help you<span
-              class="text-theme-accent font-punctuation-oversize">.</span
-            >
-          </h2>
-          <WavyDivider color={"var(--color-theme-accent)"} />
-        </div>
-
-        <div class="grid gap-12 sm:grid-cols-2 lg:grid-cols-3">
-          <!-- Cards 1-3 -->
-          <ServiceCard title="Strategic planning" icon="lucide:compass">
-            Define your strategic vision, priorities and targets, informed by
-            contextual analysis and stakeholder input.
-          </ServiceCard>
-
-          <ServiceCard
-            title="Strategic evaluations and reviews"
-            icon="lucide:clipboard-check"
-          >
-            Develop an evidence-based assessment of your recent successes and
-            set-backs, to inform future action.
-          </ServiceCard>
-
-          <ServiceCard
-            title="Impact definition and measurement"
-            icon="lucide:target"
-          >
-            Strengthen your organisation’s ability to tell the story of its
-            impact by defining and measuring change.
-          </ServiceCard>
-
-          <!-- Cards 4-6 -->
-          <ServiceCard title="Organisational design" icon="lucide:circle-pile">
-            Ensure your organisation's structure and capacity are
-            fit-for-purpose for delivering your mission and strategy.
-          </ServiceCard>
-
-          <ServiceCard title="Board evaluations" icon="lucide:users-round">
-            Independent and objective insights to strengthen your Board’s
-            leadership, accountability and decision-making.
-          </ServiceCard>
-
-          <ServiceCard
-            title="Governance reviews and upgrades"
-            icon="lucide:clipboard-list"
-          >
-            Identify opportunities to strengthen your governance policies,
-            practices and structures towards best practice.
-          </ServiceCard>
-
-          <!-- Cards 7-9 -->
-
-          <ServiceCard
-            title="Horizon scanning and market analysis"
-            icon="lucide:binoculars"
-          >
-            Identify emerging trends, risks and opportunities to position you
-            for future success.
-          </ServiceCard>
-
-          <ServiceCard
-            title="Stakeholder and community consultations"
-            icon="lucide:message-circle"
-          >
-            Tailored engagement with your stakeholders to help you understand
-            and respond to their needs, experiences and expectations.
-          </ServiceCard>
-
-          <ServiceCard
-            title="Mentoring and strategic advice"
-            icon="lucide:lightbulb"
-          >
-            One-to-one support for leaders navigating complex organisational
-            challenges.
-          </ServiceCard>
-        </div>
-      </div>
-    </section>
-
-    <!-- About -->
-    <section
-      id="about"
-      class="pt-12 bg-theme-bg-alt1-green"
-      aria-label="About Luna"
-    >
-      <div class="max-w-6xl mx-auto px-6 bg-theme-bg-alt1-green">
-        <div class="flex flex-col md:flex-row">
-          <!-- Left: Heading -->
-          <div
-            class="md:w-1/2 bg-theme-bg-alt1-green md:pt-8 md:py-16 flex justify-start md:justify-end items-start"
-          >
-            <div class="max-w-xl w-full md:pr-12 bg-theme-bg-alt1-green">
-              <h2
-                id="about-heading"
-                class="heading-section text-theme-text-alt-dark md:text-right md:no-mb no-mt"
-                tabindex="-1"
-              >
-                I am passionate about the role of the non<span
-                  class="text-theme-accent-coral">-</span
-                >profit sector in bringing about social and economic justice<span
-                  class="text-theme-accent-coral font-oversize">.</span
-                >
-              </h2>
-            </div>
-          </div>
-
-          <!-- Vertical Divider (desktop only) -->
-          <div
-            class="hidden md:flex items-stretch py-12 bg-theme-bg-alt1-green"
-          >
-            <VerticalWavyDivider
-              color="var(--color-theme-accent-coral)"
-              ,
-              height={700}
-            />
-          </div>
-
-          <!-- Right: Content -->
-          <div
-            class="md:w-1/2 bg-theme-bg-alt1-green pb-8 md:py-16 md:pl-4 flex justify-start items-start"
-          >
             <div
-              class="about-content max-w-xl w-full md:px-6 md:pl-8 text-theme-text-dark space-y-6"
+              class="flex flex-wrap gap-4 sm:gap-6 my-12 justify-center md:justify-start"
             >
-              <p class="about-para no-mt drop-cap">
-                Charities, NGOs, social enterprises, research and advocacy
-                organisations, and social movements 
-                <strong class="para-emphasis"
-                  >play a vital role in championing and addressing people's needs</strong
-                > where the state or the
-                economy have failed them. I am committed to applying my skills and experience to enable
-                  them to do so more effectively and efficiently.
-              </p>
-
-              <p class="about-para">
-                My academic and professional background is in the social
-                sciences, particularly equality, gender justice, human rights
-                and international development. <strong class="para-emphasis"
-                  >I've worked with individual change-makers, organisations and
-                  networks spanning a huge diversity of social sectors</strong
-                > and issues nationally and internationally.
-              </p>
-
-              <p class="about-para no-mb ">
-                <strong
-                  class="para-emphasis"
-                  >Over the last 20 years, I have garnered 360° lived experience of non-profits</strong
-                >: as an employee and manager within the sector, as a consultant
-                to the sector, and as a Charity Trustee.
-              </p>
+              <!-- <div
+              class="flex flex-col pb-8 md:pb-0 sm:flex-row gap-4 sm:gap-6 md:mt-8 justify-start"
+            > -->
+              <a
+                href="#about"
+                class="action-button text-theme-text-dark border-theme-bg-primary-blue bg-theme-accent"
+              >
+                About me
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+              <a
+                href="/contact"
+                class="action-button text-lg text-theme-bg-primary-blue border-theme-bg-primary-blue bg-theme-accent"
+              >
+                Contact me
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
             </div>
           </div>
-
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- How I work -->
-    <section
-      id="how-i-work"
-      class="px-6 pb-12 bg-theme-bg-alt1-green"
-      aria-labelledby="how-i-work-heading"
-    >
-      <div class="max-w-6xl mx-auto md:pt-8">
-        <!-- Section Heading -->
+  <!-- Services Cards -->
+  <section
+    id="services"
+    class="pt-12 px-6 sm:px-16 pb-32 bg-theme-bg-primary-blue"
+    aria-labelledby="services-heading"
+  >
+    <div class="max-w-6xl mx-auto">
+      <div class="mb-18">
         <h2
-          id="how-i-work-heading"
-          class="heading-section text-theme-text-alt-dark"
+          id="services-heading"
+          class="heading-section text-theme-text-light"
           tabindex="-1"
         >
-          How I work<span class="text-theme-accent-coral font-oversize">.</span>
-        </h2>
-        <WavyDivider color="var(--color-theme-accent-coral)" />
-       
-
-        <!-- Cards Grid -->
-        <div
-          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-x-12 sm:gap-y-8 lg:gap-24 mt-8 md:pt-4 items-start"
-        >
-          <article class="work-card">
-            <h3 class="work-card-title">
-              <MoonIcon
-                phase="empty"
-                class="work-moon-svg"
-                aria-hidden="true"
-              />
-              Collaborative
-            </h3>
-            <p class="work-para">
-              Co-creating solutions alongside teams to ensure ownership and
-              practical outcomes.
-            </p>
-          </article>
-
-          <article class="work-card">
-            <h3 class="work-card-title">
-              <MoonIcon
-                phase="waxing"
-                class="work-moon-svg"
-                aria-hidden="true"
-              />
-              Analytical
-            </h3>
-            <p class="work-para">
-              Evidence-led insight that informs practical strategy and
-              decision-making.
-            </p>
-          </article>
-
-          <article class="work-card">
-            <h3 class="work-card-title">
-              <MoonIcon
-                phase="waning"
-                class="work-moon-svg"
-                aria-hidden="true"
-              />
-              Candid
-            </h3>
-            <p class="work-para">
-              Honest, clear guidance rooted in real-world experience.
-            </p>
-          </article>
-
-          <article class="work-card">
-            <h3 class="work-card-title">
-              <MoonIcon phase="full" class="work-moon-svg" aria-hidden="true" />
-              Empowering
-            </h3>
-            <p class="work-para">
-              Building capacity, confidence, and resilience within
-              organisations.
-            </p>
-          </article>
-        </div>
-
-        <div class="mt-8 mb-8">
-          <WavyDivider color="var(--color-theme-accent-coral)" />
-        </div>
-
-        <div class="flex sm:justify-center pt-4 pb-4">
-          <a
-            href="/contact"
-            class="action-button text-lg text-theme-text-light border-theme-theme-text-light bg-theme-bg-primary-blue hover:bg-theme-accent-coral"
+          How I can help <span class="word-unit"
+            >you<span class="text-theme-accent font-punctuation-oversize"
+              >.</span
+            ></span
           >
-            Contact me
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              aria-hidden="true"
+        </h2>
+        <WavyDivider color={"var(--color-theme-accent)"} />
+      </div>
+
+      <div class="grid gap-12 sm:grid-cols-2 lg:grid-cols-3">
+        <!-- Cards 1-3 -->
+        <ServiceCard title="Strategic planning" icon="lucide:compass">
+          Define your strategic vision, priorities and targets, informed by
+          contextual analysis and stakeholder input.
+        </ServiceCard>
+
+        <ServiceCard
+          title="Strategic evaluations and reviews"
+          icon="lucide:clipboard-check"
+        >
+          Develop an evidence-based assessment of your recent successes and
+          set-backs, to inform future action.
+        </ServiceCard>
+
+        <ServiceCard
+          title="Impact definition and measurement"
+          icon="lucide:target"
+        >
+          Strengthen your organisation’s ability to tell the story of its impact
+          by defining and measuring change.
+        </ServiceCard>
+
+        <!-- Cards 4-6 -->
+        <ServiceCard title="Organisational design" icon="lucide:circle-pile">
+          Ensure your organisation's structure and capacity are fit-for-purpose
+          for delivering your mission and strategy.
+        </ServiceCard>
+
+        <ServiceCard title="Board evaluations" icon="lucide:users-round">
+          Independent and objective insights to strengthen your Board’s
+          leadership, accountability and decision-making.
+        </ServiceCard>
+
+        <ServiceCard
+          title="Governance reviews and upgrades"
+          icon="lucide:clipboard-list"
+        >
+          Identify opportunities to strengthen your governance policies,
+          practices and structures towards best practice.
+        </ServiceCard>
+
+        <!-- Cards 7-9 -->
+
+        <ServiceCard
+          title="Horizon scanning and market analysis"
+          icon="lucide:binoculars"
+        >
+          Identify emerging trends, risks and opportunities to position you for
+          future success.
+        </ServiceCard>
+
+        <ServiceCard
+          title="Stakeholder and community consultations"
+          icon="lucide:message-circle"
+        >
+          Tailored engagement with your stakeholders to help you understand and
+          respond to their needs, experiences and expectations.
+        </ServiceCard>
+
+        <ServiceCard
+          title="Mentoring and strategic advice"
+          icon="lucide:lightbulb"
+        >
+          One-to-one support for leaders navigating complex organisational
+          challenges.
+        </ServiceCard>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section
+    id="about"
+    class="pt-12 bg-theme-bg-alt1-green"
+    aria-label="About Luna"
+  >
+    <div class="max-w-6xl mx-auto px-6 sm:px-16 bg-theme-bg-alt1-green">
+      <!-- Mobile v Desktop layout -->
+      <div class="flex flex-col md:flex-row">
+        <!-- Left: Heading + Button -->
+        <div
+          class="w-full md:w-1/2 bg-theme-bg-alt1-green md:pt-8 md:py-16 flex justify-start md:justify-end items-center"
+        >
+          <div class="max-w-xl w-full md:pr-12 bg-theme-bg-alt1-green">
+            <h2
+              id="about-heading"
+              class="heading-section text-theme-text-alt-dark md:text-right md:no-mb no-mt"
+              tabindex="-1"
             >
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
+              I am passionate about the role of the non<span
+                class="text-theme-accent-coral">-</span
+              >profit sector in bringing about social and economic justice<span
+                class="text-theme-accent-coral font-oversize">.</span
+              >
+            </h2>
+
+            <!-- Button wrapper with alignment -->
+            <div class="flex justify-center md:justify-end pt-4 pb-12">
+              <a
+                href="/contact"
+                class="class = action-button action-button--coral text-theme-text-dark border-theme-bg-primary-blue bg-theme-accent-coral"
+              >
+                Contact me
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Vertical Divider (desktop only) -->
+        <div class="hidden md:flex items-stretch py-12 bg-theme-bg-alt1-green">
+          <VerticalWavyDivider
+            color="var(--color-theme-accent-coral)"
+            ,
+            height={700}
+          />
+        </div>
+
+        <!-- Right: Content -->
+        <div
+          class="md:w-1/2 bg-theme-bg-alt1-green pb-8 md:py-16 md:pl-4 flex justify-start items-start"
+        >
+          <div
+            class="flex flex-col about-content max-w-xl w-full md:px-6 md:pl-8 text-theme-text-alt-dark space-y-6"
+          >
+            <p class="about-para no-mt drop-cap">
+              Charities, NGOs, social enterprises, research and advocacy
+              organisations, and social movements play a vital role in
+              championing and addressing people's needs where the state or the
+              economy have failed them. I am committed to applying my skills and
+              experience to enable them to do so more effectively and
+              efficiently.
+            </p>
+
+            <p class="about-para">
+              My academic and professional background is in the social sciences,
+              particularly equality, gender justice, human rights and
+              international development. I've worked with individual
+              change-makers, organisations and networks spanning a huge
+              diversity of social sectors and issues nationally and
+              internationally.
+            </p>
+
+            <p class="about-para no-mb">
+              Over the last 20 years, I have garnered 360° lived experience of
+              non-profits: as an employee and manager within the sector, as a
+              consultant to the sector, and as a Charity Trustee.
+            </p>
+
+            <div
+              class="flex flex-wrap justify-center md:justify-start gap-4 py-8"
+            >
+              <a
+                href="https://www.linkedin.com/in/lunaatkinsromero/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="linkedin-link inline-flex items-center"
+                tabindex="-1"
+                aria-label="LinkedIn icon"
+              >
+                <LinkedInIcon class="w-4.5 h-4.5" aria-hidden="true" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/lunaatkinsromero/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="link-arrow"
+                aria-label="Connect on LinkedIn (opens in new tab)"
+              >
+                Connect with me
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How I work -->
+  <section
+    id="how-i-work"
+    class="py-8 px-6 sm:px-16 pb-12 bg-theme-bg-primary-blue"
+    aria-labelledby="how-i-work-heading"
+  >
+    <div class="max-w-6xl mx-auto md:pt-8">
+      <!-- Section Heading -->
+      <h2
+        id="how-i-work-heading"
+        class="font-statement text-center text-theme-bg-neutral1"
+      >
+        How I work
+      </h2>
+      <!-- <WavyDivider color="var(--color-theme-accent)" /> -->
+
+      <!-- Cards Grid -->
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-x-12 sm:gap-y-8 lg:gap-24 mt-8 md:pt-4 items-start"
+      >
+        <article class="work-card">
+          <h3 class="work-card-title">
+            <MoonIcon phase="empty" class="work-moon-svg" aria-hidden="true" />
+            Collaborative
+          </h3>
+          <p class="work-para">
+            Co-creating solutions alongside teams to ensure ownership and
+            practical outcomes.
+          </p>
+        </article>
+
+        <article class="work-card">
+          <h3 class="work-card-title">
+            <MoonIcon phase="waxing" class="work-moon-svg" aria-hidden="true" />
+            Analytical
+          </h3>
+          <p class="work-para">
+            Evidence-led insight that informs practical strategy and
+            decision-making.
+          </p>
+        </article>
+
+        <article class="work-card">
+          <h3 class="work-card-title">
+            <MoonIcon phase="waning" class="work-moon-svg" aria-hidden="true" />
+            Candid
+          </h3>
+          <p class="work-para">
+            Honest, clear guidance rooted in real-world experience.
+          </p>
+        </article>
+
+        <article class="work-card">
+          <h3 class="work-card-title">
+            <MoonIcon phase="full" class="work-moon-svg" aria-hidden="true" />
+            Empowering
+          </h3>
+          <p class="work-para">
+            Building capacity, confidence, and resilience within organisations.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section
+    id="testimonials"
+    class="px-6 sm:px-16 pb-12 md:pb-12 bg-theme-bg-neutral2"
+    aria-label="Client testimonials"
+    tabindex="-1"
+  >
+    <div class="max-w-6xl mx-auto pt-12">
+      <h2 id="testimonials-heading" class="heading-section">
+        Testimonials<span class="text-theme-accent font-punctuation-oversize"
+          >.</span
+        >
+      </h2>
+      <WavyDivider color={"var(--color-theme-accent)"} />
+
+      <!-- Testimonials Grid - Responsive -->
+      <div
+        class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 items-stretch pb-12 md:pt-12"
+      >
+        <TestimonialCard
+          quote="The Board, staff team and community loved working with Luna on our Strategic Plan. She made us feel comfortable and guided us through the process, and kept us focused and on track. It was a pleasure to work with Luna and I would highly recommend her."
+          name="Jackie Landers"
+          title="CEO, Listowel Family & Community Resource Centre"
+          initials="JL"
+          color="var(--color-theme-accent)"
+        />
+
+        <TestimonialCard
+          quote="Luna is extremely skilled at facilitating strategic planning with organisations and groups. I found her openness, perceptiveness and keen insights invaluable throughout. With her support, we achieved a strategic plan that was both ambitious and realisable. No mean feat !!"
+          name="Berni Smyth"
+          title="Former CEO, Kerry Community Youth Service"
+          initials="BS"
+          color="var(--color-theme-accent)"
+        />
+      </div>
+      <!-- <WavyDivider color={"var(--color-theme-accent)"} /> -->
+    </div>
+  </section>
+
+  <!-- Logos Section -->
+  <section
+    id="logo-reel"
+    class="pt-12 pb-12 px-6 sm:px-16 bg-theme-bg-neutral1"
+    aria-label="Organizations I've worked with"
+  >
+    <div class="max-w-5xl mx-auto mb-8">
+      <div class="mb-8">
+        <h2 class="font-statement text-center text-theme-text-alt-dark">
+          A sample of the organisations I've worked with
+        </h2>
+      </div>
+
+      <div class="flex flex-col gap-6 xl:flex-row xl:gap-12 justify-center">
+        <!-- First group: 3 logos -->
+        <div class="flex justify-center gap-8 items-center">
+          <a
+            href="https://www.girlsnotbrides.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="work-logo-link w-28"
+            aria-label="Visit Girls Not Brides website (opens in new tab)"
+          >
+            <Image
+              src={logoGNB}
+              alt="Girls not Brides Charity Logo"
+              class="work-logo max-h-12 object-contain w-full"
+            />
+          </a>
+
+          <a
+            href="https://www.unicef.org.uk/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="work-logo-link w-28"
+            aria-label="Visit Unicef UK website (opens in new tab)"
+          >
+            <Image
+              src={logoUnicef}
+              alt="UNICEF UK Charity Logo"
+              class="work-logo max-h-16 object-contain w-full"
+            />
+          </a>
+
+          <a
+            href="https://www.amnesty.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="work-logo-link w-28"
+            aria-label="Visit Amnesty International website (opens in new tab)"
+          >
+            <Image
+              src={logoAmnesty}
+              alt="Amnesty International Charity Logo Banner"
+              class="work-logo max-h-12 object-contain w-full"
+            />
+          </a>
+        </div>
+
+        <!-- Second group: 2 logos -->
+        <div class="flex justify-center gap-8 items-center">
+          <a
+            href="https://www.kcys.ie/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="work-logo-link w-28"
+            aria-label="Visit Kerry Community Youth Services website (opens in new tab)"
+          >
+            <Image
+              src={logoKCYS}
+              alt="Kerry Community Youth Services Charity Logo"
+              class="work-logo max-h-20 object-contain w-full"
+            />
+          </a>
+
+          <a
+            href="https://www.goalglobal.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="work-logo-link w-28"
+            aria-label="Visit GOAL website (opens in new tab)"
+          >
+            <Image
+              src={logoGOAL}
+              alt="GOAL Charity Logo"
+              class="work-logo max-h-12 object-contain w-full"
+            />
+          </a>
+        </div>
+
+        <!-- Third group: 3 logos -->
+        <div class="flex justify-center gap-8 items-center">
+          <a
+            href="https://www.deltaservices.ie/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="work-logo-link w-28"
+            aria-label="Visit Delta Services website (opens in new tab)"
+          >
+            <Image
+              src={logoDelta}
+              alt="Delta Services Logo"
+              class="work-logo max-h-20 object-contain w-full"
+            />
+          </a>
+          <a
+            href="https://www.carmichaelireland.ie/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="work-logo-link w-28"
+            aria-label="Visit Carmichael Ireland website (opens in new tab)"
+          >
+            <Image
+              src={logoCarmichael}
+              alt="Carmichael Ireland Logo"
+              class="work-logo max-h-20 object-contain w-full"
+            />
+          </a>
+          <a
+            href="https://commonwealthequality.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="work-logo-link w-28"
+            aria-label="Visit The Commonwealth Equality Network website (opens in new tab)"
+          >
+            <Image
+              src={logoCommonwealth}
+              alt="Commonwealth Equality Network Logo"
+              class="work-logo max-h-20 object-contain w-full"
+            />
           </a>
         </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
   <Footer />
-</DefaultLayout>
+</main>

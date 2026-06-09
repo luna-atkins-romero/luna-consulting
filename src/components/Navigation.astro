@@ -1,4 +1,4 @@
-<nav aria-label="Primary navigation" class="relative font-nav">
+<nav aria-label="Primary navigation" class="font-nav">
   <!-- Toggle button (mobile only) -->
   <button
     id="nav-toggle"
@@ -6,50 +6,56 @@
     aria-controls="primary-menu"
     aria-label="Toggle navigation"
     class="md:hidden
-      flex items-center justify-center
-      w-10 h-10
+      flex items-center justify-center gap-2
+      px-3
       rounded
-    text-theme-bg-neutral1 hover:text-theme-accent
-      transition-colors"
+      text-theme-bg-neutral1
+      font-nav"
   >
-    <!-- Hamburger icon (inherit color from button) -->
-    <svg
-      class="nav-icon nav-icon--open w-6 h-6"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"   
-      stroke-width="2"
-      stroke-linecap="round"
-      aria-hidden="true"
-    >
-      <line x1="3" y1="6" x2="21" y2="6"></line>
-      <line x1="3" y1="12" x2="21" y2="12"></line>
-      <line x1="3" y1="18" x2="21" y2="18"></line>
-    </svg>
+    <!-- Menu (open state) -->
+    <div class="nav-icon nav-icon--open flex items-center gap-2">
+      <span class="nav-menu-label">Menu</span>
+      <svg
+        class="w-6 h-6"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        aria-hidden="true"
+      >
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </div>
 
-    <!-- Close icon -->
-    <svg
-      class="nav-icon nav-icon--close hidden w-6 h-6"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      aria-hidden="true"
-    >
-      <line x1="18" y1="6" x2="6" y2="18"></line>
-      <line x1="6" y1="6" x2="18" y2="18"></line>
-    </svg>
+    <!-- Close (hidden state) -->
+    <div class="nav-icon nav-icon--close hidden flex items-center gap-2">
+      <span class="nav-menu-label">Close</span>
+      <svg
+        class="w-6 h-6"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        aria-hidden="true"
+      >
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </div>
   </button>
 
   <!-- Menu -->
   <ul
     id="primary-menu"
     class="hidden
-      absolute right-0 top-full mt-4
+      absolute left-0 right-0 top-full mt-8
       flex flex-col gap-4
-      px-6 py-6
-      text-right
+      px-4 sm:px-6 py-6
+      text-left
       bg-theme-bg-primary-blue
       md:static md:flex
       md:flex-row md:gap-6 lg:gap-12
@@ -61,52 +67,77 @@
 </nav>
 
 <script>
-  const toggle = document.getElementById('nav-toggle');
-  const menu = document.getElementById('primary-menu');
+  const toggle = document.getElementById("nav-toggle");
+  const menu = document.getElementById("primary-menu");
+  const hero = document.getElementById("hero");
 
   if (toggle instanceof HTMLButtonElement && menu instanceof HTMLElement) {
-    const openIcon = toggle.querySelector('.nav-icon--open');
-    const closeIcon = toggle.querySelector('.nav-icon--close');
+    const openIcon = toggle.querySelector(".nav-icon--open");
+    const closeIcon = toggle.querySelector(".nav-icon--close");
 
     function closeMenu() {
       if (toggle && menu) {
-        toggle.setAttribute('aria-expanded', 'false');
-        menu.classList.add('hidden');
+        toggle.setAttribute("aria-expanded", "false");
+        menu.classList.add("hidden");
+        if (hero) {
+          hero.style.paddingTop = "0";
+          hero.style.minHeight = ""; // reset - let grow take over again
+        }
         if (openIcon && closeIcon) {
-          openIcon.classList.remove('hidden');
-          closeIcon.classList.add('hidden');
+          openIcon.classList.remove("hidden");
+          closeIcon.classList.add("hidden");
         }
       }
     }
 
     function toggleMenu() {
       if (toggle && menu) {
-        const expanded = toggle.getAttribute('aria-expanded') === 'true';
-        toggle.setAttribute('aria-expanded', String(!expanded));
-        menu.classList.toggle('hidden');
+        const expanded = toggle.getAttribute("aria-expanded") === "true";
+        toggle.setAttribute("aria-expanded", String(!expanded));
+        menu.classList.toggle("hidden");
+
+        if (!expanded && hero) {
+          const menuSpace = menu.scrollHeight; 
+          const currentHeight = hero.offsetHeight;
+          hero.style.minHeight = currentHeight + menuSpace + "px";
+          hero.style.paddingTop = menuSpace + "px";
+        } else if (hero) {
+          hero.style.paddingTop = "0";
+          hero.style.minHeight = "";
+        }
 
         if (openIcon && closeIcon) {
-          openIcon.classList.toggle('hidden');
-          closeIcon.classList.toggle('hidden');
+          openIcon.classList.toggle("hidden");
+          closeIcon.classList.toggle("hidden");
         }
       }
     }
 
-    toggle.addEventListener('click', toggleMenu);
+    toggle.addEventListener("click", toggleMenu);
 
-    // Close menu on Escape key
-    document.addEventListener('keydown', (e) => {
-      if (toggle && e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+    window.addEventListener("resize", () => {
+      if (menu && !menu.classList.contains("hidden")) {
+        closeMenu();
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (
+        toggle &&
+        menu &&
+        e.key === "Escape" &&
+        toggle.getAttribute("aria-expanded") === "true"
+      ) {
         closeMenu();
         toggle.focus();
       }
     });
 
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
+    document.addEventListener("click", (e) => {
       if (toggle && menu) {
-        const isClickInside = toggle.contains(e.target as Node) || menu.contains(e.target as Node);
-        if (!isClickInside && toggle.getAttribute('aria-expanded') === 'true') {
+        const isClickInside =
+          toggle.contains(e.target as Node) || menu.contains(e.target as Node);
+        if (!isClickInside && toggle.getAttribute("aria-expanded") === "true") {
           closeMenu();
         }
       }
