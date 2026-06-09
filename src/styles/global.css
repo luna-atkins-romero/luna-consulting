@@ -557,6 +557,19 @@ nav a:active {
   transform: translateX(3px);
 }
 
+.action-button,
+.link-arrow,
+.submit-button,
+nav a,
+.nav-menu-label,
+.footer-link,
+.work-logo-link {
+  -webkit-touch-callout: none;  
+  -webkit-user-select: none;     
+  user-select: none;             
+  touch-action: manipulation;    
+}
+
 /* ------------***** Universal + Section Styles*****------------ */
 
 /* Action Button - Uniform CTA style */
@@ -571,8 +584,7 @@ nav a:active {
   font-family: "Hanken Grotesk Variable", sans-serif;
   font-weight: 500;
   font-size: var(--font-size-nav);
-  min-width: 8rem;
-  max-width: 10rem;
+  width: 9rem;
   white-space: nowrap;
   transition: background-color 0.2s ease;
 }
