@@ -584,7 +584,7 @@ nav a,
   font-family: "Hanken Grotesk Variable", sans-serif;
   font-weight: 500;
   font-size: var(--font-size-nav);
-  width: 9rem;
+  width: 10rem;
   white-space: nowrap;
   transition: background-color 0.2s ease;
 }
