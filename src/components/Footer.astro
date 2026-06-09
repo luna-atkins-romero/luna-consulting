@@ -5,6 +5,8 @@ import LinkedInIcon from "./LinkedInIcon.astro";
 import WavyDivider from "./WavyDivider.astro";
 
 const currentYear = new Date().getFullYear();
+const currentPath = new URL(Astro.request.url).pathname;
+const isHomepage = currentPath === "/";
 ---
 
 <footer class="bg-theme-bg-primary-blue text-theme-text-light py-12 px-6 sm:px-16 ">
@@ -29,19 +31,14 @@ const currentYear = new Date().getFullYear();
           <nav aria-label="Footer navigation">
             <ul class="font-nav space-y-4">
               <li>
-                <a href="#testimonials" class="text-theme-text-light">
+                <a href={isHomepage ? "#services" : "/#services"} class="text-theme-text-light"> Services </a>
+              </li>
+              <li>
+                <a href={isHomepage ? "#about" : "/#about"} class="text-theme-text-light"> About </a>
+              </li>
+               <li>
+                <a href={isHomepage ? "#testimonials" : "/#testimonials"} class="text-theme-text-light">
                   Testimonials
-                </a>
-              </li>
-              <li>
-                <a href="#services" class="text-theme-text-light"> Services </a>
-              </li>
-              <li>
-                <a href="#about" class="text-theme-text-light"> About </a>
-              </li>
-              <li>
-                <a href="#how-i-work" class="text-theme-text-light">
-                  How I Work
                 </a>
               </li>
               <li>

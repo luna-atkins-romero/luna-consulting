@@ -14,6 +14,11 @@
   --color-theme-bg-neutral1: #FFFCF9;
   --color-theme-bg-neutral2: #F7F6F2;
 
+  --color-theme-off-neutral-grey: #6497B11A;
+
+  /* background-color: rgba(100, 151, 177, 0.1); */
+  /* background-color: #6497B11A; */
+
   /* Text */
   --color-theme-text-dark: #2c5378;
   --color-theme-text-alt-dark: #03396c;
@@ -445,7 +450,6 @@ nav a {
 
   .footer-link:hover {
     color: var(--color-theme-accent-coral);
-    transition: color 0.3s ease;
   }
 
   .action-button:hover {
@@ -522,7 +526,9 @@ nav a:active {
   text-underline-offset: 8px;
 }
 
-.footer-link:active { color: var(--color-theme-accent-coral); }
+.linkedin-link:active {
+  transform: scale(1.15);
+}
 
 .action-button:active {
   background-color: var(--color-theme-accent-coral);
@@ -530,6 +536,14 @@ nav a:active {
 
 .link-arrow:active {
   color: var(--color-theme-accent-coral);
+}
+
+.link-arrow:active svg {
+  transform: translateX(2px);
+}
+
+.icon-circle-link a:active {
+  transform: scale(1.1);
 }
 
 .work-logo-link:active { 
@@ -557,17 +571,24 @@ nav a:active {
   transform: translateX(3px);
 }
 
-.action-button,
-.link-arrow,
-.submit-button,
+.footer-link:active { 
+  color: var(--color-theme-accent-coral); 
+}
+
 nav a,
 .nav-menu-label,
-.footer-link,
-.work-logo-link {
-  -webkit-touch-callout: none;  
-  -webkit-user-select: none;     
-  user-select: none;             
-  touch-action: manipulation;    
+.action-button,
+.link-arrow,
+.icon-circle-link a,
+.work-logo-link,
+.article-card a,
+.connect-card a,
+.submit-button,
+.footer-link {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+  touch-action: manipulation;
 }
 
 /* ------------***** Universal + Section Styles*****------------ */
@@ -621,6 +642,10 @@ nav a,
   transition: transform 0.2s ease;
 }
 
+.footer-link {
+  transition: color 0.3s ease;
+}
+
 /* Quatation svg*/
 .quotes-single {
   display: flex;
@@ -640,7 +665,6 @@ nav a,
   width: 3.5rem;
   height: 3.5rem;
   border-radius: 9999px;
-  background-color: #6497B11A;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -659,12 +683,13 @@ nav a,
   width: 3.5rem;
   height: 3.5rem;
   border-radius: 9999px;
-  background-color: rgba(100, 151, 177, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  margin-bottom: 0.75rem;
+}
+
+.icon-circle-link a {
   transition: transform 0.3s ease;
 }
 
@@ -677,7 +702,6 @@ nav a,
   display: flex;
   align-items: center;
   flex-shrink: 0;
-
 }
 
 /* ------------***** Service Cards *****------------ */

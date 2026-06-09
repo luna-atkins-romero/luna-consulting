@@ -6,186 +6,187 @@ import { Icon } from "astro-icon/components";
 import LinkedInIcon from "../components/LinkedInIcon.astro";
 ---
 
-<DefaultLayout 
+<DefaultLayout
   title="Contact | Luna Atkins Romero Consulting"
   description="Get in touch to discuss strategic planning, governance reviews, or impact measurement for your non-profit organisation."
   image="/og-contact.png"
 />
-  <Header />
-  <main id="main-content">
-    <!-- Landing Section -->
-    <section
-      class="flex-grow flex items-center py-16 px-6 sm:px-16  bg-theme-bg-primary-blue text-theme-text-light"
-    >
-      <div class="max-w-4xl mx-auto text-center">
-        <h1 class="page-heading-enter heading-section text-6xl md:text-8xl">
-          <span class="word-unit">
-            Let<span class="text-theme-accent">'</span>s work together<span
-              class="text-theme-accent font-oversize">.</span
-            >
-          </span>
-        </h1>
-      </div>
-    </section>
+<Header />
+<main id="main-content">
+  <!-- Landing Section -->
+  <section
+    class="flex-grow flex items-center py-16 px-6 sm:px-16 bg-theme-bg-primary-blue text-theme-text-light"
+  >
+    <div class="max-w-4xl mx-auto text-center">
+      <h1 class="page-heading-enter heading-section text-6xl md:text-8xl">
+        <span class="word-unit">
+          Let<span class="text-theme-accent">'</span>s work together<span
+            class="text-theme-accent font-oversize">.</span
+          >
+        </span>
+      </h1>
+    </div>
+  </section>
 
-    <!-- Main Content -->
-    <section class="py-16 px-6 sm:px-16  bg-theme-bg-neutral1">
-      <div class="max-w-4xl mx-auto">
-        <!-- Card Container -->
-        <div class="in-page-container">
-          <!-- Based in Ireland -->
-          <div class="mb-12 text-center">
-            <div class="flex items-center justify-center gap-2 md:gap-3 mb-2">
-              <Icon
-                name="lucide:map-pin"
-                class="w-7 h-7 icon-solo text-theme-accent-coral"
-                aria-hidden="true"
-              />
-              <p class="font-statement-subtle text-theme-text-dark no-mb">
-                Based in Ireland
-              </p>
-            </div>
-            <p class="font-statement-subtler text-theme-text-dark no-mb">
-              Working locally, nationally and internationally
+  <!-- Main Content -->
+  <section class="py-16 px-6 sm:px-16 bg-theme-bg-neutral1">
+    <div class="max-w-4xl mx-auto">
+      <!-- Card Container -->
+      <div class="in-page-container">
+        <!-- Based in Ireland -->
+        <div class="mb-12 text-center">
+          <div class="flex items-center justify-center gap-2 md:gap-3 mb-2">
+            <Icon
+              name="lucide:map-pin"
+              class="w-7 h-7 icon-solo text-theme-accent-coral"
+              aria-hidden="true"
+            />
+            <p class="font-statement-subtle text-theme-text-dark no-mb">
+              Based in Ireland
             </p>
           </div>
+          <p class="font-statement-subtler text-theme-text-dark no-mb">
+            Working locally, nationally and internationally
+          </p>
+        </div>
 
-          <!-- Two Column Layout -->
-          <div
-            class="flex flex-col-reverse md:grid md:grid-cols-2 gap-12 mt-12"
-          >
-            <!-- Left Column: Contact Form -->
-            <div>
-              <form
-                action="https://api.web3forms.com/submit"
-                method="POST"
-                class="space-y-6"
-              >
+        <!-- Two Column Layout -->
+        <div class="flex flex-col-reverse md:grid md:grid-cols-2 gap-12 mt-12">
+          <!-- Left Column: Contact Form -->
+          <div>
+            <form
+              action="https://api.web3forms.com/submit"
+              method="POST"
+              class="space-y-6"
+            >
+              <input
+                type="hidden"
+                name="access_key"
+                value="07207747-177e-49e6-93ed-ceb2af8654c1"
+              />
+
+              <div>
+                <label for="name">Name *</label>
                 <input
-                  type="hidden"
-                  name="access_key"
-                  value="07207747-177e-49e6-93ed-ceb2af8654c1"
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  placeholder="Your name"
                 />
+              </div>
 
+              <div>
+                <label for="email">Email *</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  placeholder="your@email.com"
+                />
+              </div>
+
+              <div>
+                <label for="organisation">Organisation</label>
+                <input
+                  type="text"
+                  id="organisation"
+                  name="organisation"
+                  placeholder="Your organisation (optional)"
+                />
+              </div>
+
+              <div>
+                <label for="message">Message *</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  required
+                  rows="6"
+                  placeholder="Tell me about your project or challenge..."
+                ></textarea>
+              </div>
+
+              <button type="submit" class="submit-button">
+                <span>Send message</span>
+                <Icon name="lucide:send" aria-hidden="true" />
+              </button>
+            </form>
+          </div>
+
+          <!-- Right Column: Connect -->
+          <div>
+            <div class="flex flex-col gap-8 md:gap-12 items-center md:items-start pt-8">
+              <!-- Contact Methods Wrapper -->
+              <div class="flex flex-col gap-8 items-start">
+              <!-- Email -->
+              <div
+                class="flex flex-row gap-2 md:gap-4 items-center"
+              >
+                <a
+                  href="mailto:hello@lunaconsulting.ie"
+                  tabindex="-1"
+                  aria-label="Email icon"
+                  class="icon-circle-link flex-shrink-0 bg-theme-off-neutral-grey"
+                >
+                  <Icon name="lucide:mail" class="text-theme-accent-coral" />
+                </a>
                 <div>
-                  <label for="name">Name *</label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    placeholder="Your name"
-                  />
+                  <a href="mailto:hello@lunaconsulting.ie" class="link-arrow">
+                    hello@lunaconsulting.ie
+                  </a>
                 </div>
+              </div>
 
-                <div>
-                  <label for="email">Email *</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    placeholder="your@email.com"
-                  />
-                </div>
+              <!-- LinkedIn -->
+              <div
+                class="flex flex-row gap-2 md:gap-4 items-center"
+              >
+                <a
+                  href="https://www.linkedin.com/in/lunaatkinsromero/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  tabindex="-1"
+                  aria-label="LinkedIn icon"
+                  class="icon-circle-link flex-shrink-0 bg-theme-off-neutral-grey"
+                >
+                  <LinkedInIcon class="text-theme-text-dark" />
+                </a>
 
-                <div>
-                  <label for="organisation">Organisation</label>
-                  <input
-                    type="text"
-                    id="organisation"
-                    name="organisation"
-                    placeholder="Your organisation (optional)"
-                  />
-                </div>
-
-                <div>
-                  <label for="message">Message *</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    required
-                    rows="6"
-                    placeholder="Tell me about your project or challenge..."
-                  ></textarea>
-                </div>
-
-                <button type="submit" class="submit-button">
-                  <span>Send message</span>
-                  <Icon name="lucide:send" aria-hidden="true" />
-                </button>
-              </form>
-            </div>
-
-            <!-- Right Column: Connect -->
-            <div>
-              <div class="flex flex-col gap-8 md:gap-12 md:pt-8">
-                <!-- Email -->
-                <div class="flex flex-col sm:flex-row gap-2 md:gap-4 sm:items-center">
-                  <div class="icon-circle-link flex-shrink-0">
-                    <a
-                      href="mailto:hello@lunaconsulting.ie"
-                      tabindex="-1"
-                      aria-label="Email icon"
+                <div class="flex flex-row gap-2">
+                  <a
+                    href="https://www.linkedin.com/in/lunaatkinsromero/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="link-arrow"
+                    aria-label="Connect on LinkedIn (opens in new tab)"
+                  >
+                    Connect with me
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
                     >
-                      <Icon
-                        name="lucide:mail"
-                        class="text-theme-accent-coral"
-                      />
-                    </a>
-                  </div>
-                  <div class="flex flex-col gap-2">
-                    <a href="mailto:hello@lunaconsulting.ie" class="link-arrow">
-                      hello@lunaconsulting.ie
-                    </a>
-                  </div>
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </a>
+                </div>
                 </div>
 
-                <!-- LinkedIn -->
-                <div class="flex flex-col sm:flex-row gap-2 md:gap-4 sm:items-center">
-                  <div class="icon-circle-link flex-shrink-0">
-                    <a
-                      href="https://www.linkedin.com/in/lunaatkinsromero/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      tabindex="-1"
-                      aria-label="LinkedIn icon"
-                    >
-                      <LinkedInIcon class="text-theme-text-dark" />
-                    </a>
-                  </div>
-                  <div class="flex flex-col gap-2">
-                    <a
-                      href="https://www.linkedin.com/in/lunaatkinsromero/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="link-arrow"
-                      aria-label="Connect on LinkedIn (opens in new tab)"
-                    >
-                      Connect with me
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        aria-hidden="true"
-                      >
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                        <polyline points="12 5 19 12 12 19"></polyline>
-                      </svg>
-                    </a>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
         </div>
-        <!-- END Card Container -->
       </div>
-    </section>
-  </main>
-  <Footer />
-</DefaultLayout>
+      <!-- END Card Container -->
+    </div>
+  </section>
+</main>
+<Footer />
