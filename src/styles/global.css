@@ -25,7 +25,7 @@
 
   /* Typography */
   --font-size-brand: clamp(1.5rem, 4vw, 2.5rem);
-  --font-size-nav: clamp(0.95rem, 2vw, 1.1rem);
+  --font-size-nav: clamp(0.85rem, 2vw, 1.1rem);
   --font-size-hero: clamp(1.5rem, 4vw + 2vh, 4.5rem);
   --font-size-headline: clamp(2.25rem, 4vw, 3.5rem);
   --font-size-headline-smaller: clamp(1.75rem, 3.5vw, 2.25rem);
@@ -40,11 +40,13 @@
 /* Z-index layer system */
 :root {
   --z-behind: -1;
-  --z-base: 0; /* decorative elements */
+  --z-base: 0;
+  /* decorative elements */
   --z-content: 1;
   --z-text: 5;
   --z-header: 10;
-  --z-overlay: 100; /* dropdown */
+  --z-overlay: 100;
+  /* dropdown */
   --z-modal: 1000;
 
   --space-service-card: clamp(1.5rem, 1.4348rem + 0.3261vw, 1.6875rem);
@@ -70,7 +72,7 @@ html {
 
   @keyframes fade-out {
     to {
-      opacity: 0;    
+      opacity: 0;
     }
   }
 
@@ -82,6 +84,7 @@ html {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   ::view-transition-old(root),
   ::view-transition-new(root) {
     animation: none;
@@ -92,7 +95,8 @@ html {
   }
 }
 
-/* Accessibility */
+/* ------------***** Accessibility *****------------ */
+
 /* Global focus style - applies to all interactive elements */
 :focus-visible {
   outline: 3px solid var(--color-theme-accent-coral);
@@ -151,7 +155,8 @@ html {
   white-space: normal;
 }
 
-/* Text elements */
+/* ------------***** Text elements *****------------ */
+
 /* Elevate text content above decorations */
 h1,
 h2,
@@ -218,8 +223,6 @@ strong.para-emphasis {
   font-weight: 600;
   color: var(--color-theme-text-alt-dark);
   font-style: normal;
-  /* text-decoration: underline;
-  text-decoration-thickness: 2px; */
 }
 
 /* Utility Font Classes */
@@ -263,7 +266,8 @@ strong.para-emphasis {
   margin-bottom: 1.5rem;
 }
 
-/* Apply to all page landing headings */
+
+/* Animation applied to all page landing headings */
 .page-heading-enter,
 .hero-section {
   opacity: 0;
@@ -279,6 +283,7 @@ strong.para-emphasis {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .page-heading-enter,
   .hero-section {
     animation: none;
@@ -332,6 +337,8 @@ strong.para-emphasis {
   margin: 0;
 }
 
+/* ------------***** Utilities *****------------ */
+
 /* Apply rules to text + fonts */
 .word-unit {
   white-space: nowrap;
@@ -345,7 +352,8 @@ strong.para-emphasis {
   margin-top: 0;
 }
 
-/* Navigation Styles */
+/* ------------***** Navigation Styles *****------------ */
+
 /* Brand */
 .brand-link {
   text-decoration: none;
@@ -360,12 +368,14 @@ strong.para-emphasis {
 }
 
 .brand-full-logo {
-  column-gap: clamp(0.25rem, 0.6vw, 0.75rem); /* 0.2x the brand font scaling */
+  column-gap: clamp(0.25rem, 0.6vw, 0.75rem);
+  /* 0.2x the brand font scaling */
 }
 
 .brand-moon-svg {
-  width: clamp(3rem, 6vw, 4rem); /* 1.5x the brand font scaling */
-  height: clamp(3rem, 6vw, 4rem); 
+  width: clamp(3rem, 6vw, 4rem);
+  /* 1.5x the brand font scaling */
+  height: clamp(3rem, 6vw, 4rem);
   color: var(--color-theme-accent);
   flex-shrink: 0;
 }
@@ -374,25 +384,7 @@ strong.para-emphasis {
 nav a {
   position: relative;
   text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-nav a:hover {
-  text-decoration: underline;
-  text-decoration-style: wavy;
-  text-decoration-color: var(--color-theme-accent-coral);
-  text-decoration-thickness: 2px;
-  text-underline-offset: 8px;
-}
-
-nav a:focus-visible,
-nav a[aria-current="page"] {
-  outline: 2px solid var(--color-theme-accent-coral);
-  outline-offset: 4px;
-}
-
-nav a[aria-label]::after {
-  display: none;
+  transition: color 0.3s ease;
 }
 
 .nav-header {
@@ -400,33 +392,15 @@ nav a[aria-label]::after {
 }
 
 .nav-menu-label {
-  font-size: 0.875rem;
+  font-size: var(--font-size-nav);
   position: relative;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
-.nav-icon--open:hover .nav-menu-label,
-.nav-icon--close:hover .nav-menu-label {
-  text-decoration: underline;
-  text-decoration-style: wavy;
-  text-decoration-color: var(--color-theme-accent-coral);
-  text-decoration-thickness: 2px;
-  text-underline-offset: 8px;
-}
-
-.nav-menu-label:focus-visible {
-  outline: 2px solid var(--color-theme-accent-coral);
-  outline-offset: 4px;
-}
-
 /* LinkedIn icon */
 .linkedin-link {
   transition: transform 0.2s ease;
-}
-
-.linkedin-link:hover {
-  transform: scale(1.15);
 }
 
 /* Mobile Navigation Dropdown */
@@ -443,6 +417,148 @@ nav a[aria-label]::after {
   }
 }
 
+
+/* ------------***** Mouse vs Touchscreen Queries *****------------ */
+
+/* Hover - mouse/trackpad only */
+@media (hover: hover) {
+  nav a:hover {
+    text-decoration: underline;
+    text-decoration-style: wavy;
+    text-decoration-color: var(--color-theme-accent-coral);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 8px;
+  }
+
+  .nav-icon--open:hover .nav-menu-label,
+  .nav-icon--close:hover .nav-menu-label {
+    text-decoration: underline;
+    text-decoration-style: wavy;
+    text-decoration-color: var(--color-theme-accent-coral);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 8px;
+  }
+
+  .linkedin-link:hover {
+    transform: scale(1.15);
+  }
+
+  .footer-link:hover {
+    color: var(--color-theme-accent-coral);
+    transition: color 0.3s ease;
+  }
+
+  .action-button:hover {
+    background-color: var(--color-theme-accent-coral);
+  }
+
+  .action-button:hover svg {
+    transform: translateX(3px);
+  }
+
+  .action-button--coral:hover {
+    background-color: var(--color-theme-bg-neutral2);
+    color: var(--color-theme-text-dark);
+  }
+
+  .link-arrow:hover {
+    gap: 0.75em;
+    color: var(--color-theme-accent-coral);
+  }
+
+  .link-arrow:hover svg {
+    transform: translateX(2px);
+  }
+
+  .icon-circle-link a:hover {
+    transform: scale(1.1);
+  }
+
+  .service-card:hover::after {
+    opacity: 1;
+  }
+
+  .service-card:hover .icon-circle {
+    transform: scale(1.1);
+  }
+
+  .work-logo:hover {
+    opacity: 1;
+  }
+
+  .work-logo-link:hover {
+    transform: translateY(-4px);
+  }
+
+  .article-card a:hover .article-card-title {
+    color: var(--color-theme-accent-coral);
+  }
+
+  .article-body a:hover {
+    color: var(--color-theme-accent-coral);
+  }
+
+  .connect-card a:hover {
+    color: var(--color-theme-text-alt-dark);
+    opacity: 0.9;
+  }
+
+  .submit-button:hover {
+    background: var(--color-theme-accent-coral);
+    color: var(--color-theme-text-dark);
+  }
+
+  .submit-button:hover svg {
+    transform: translateX(3px);
+  }
+}
+
+/* Press feedback - all devices, clears on release */
+nav a:active {
+  text-decoration: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: var(--color-theme-accent-coral);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 8px;
+}
+
+.footer-link:active { color: var(--color-theme-accent-coral); }
+
+.action-button:active {
+  background-color: var(--color-theme-accent-coral);
+}
+
+.link-arrow:active {
+  color: var(--color-theme-accent-coral);
+}
+
+.work-logo-link:active { 
+  transform: translateY(-4px); 
+}
+
+.article-card a:active .article-card-title {  
+  color: var(--color-theme-accent-coral); 
+}
+
+.article-body a:active { 
+  color: var(--color-theme-accent-coral); 
+}
+
+.connect-card a:active { 
+  color: var(--color-theme-text-alt-dark); opacity: 0.9; 
+}
+
+.submit-button:active {
+  background: var(--color-theme-accent-coral);
+  color: var(--color-theme-text-dark);
+}
+
+.submit-button:active svg {
+  transform: translateX(3px);
+}
+
+/* ------------***** Universal + Section Styles*****------------ */
+
 /* Action Button - Uniform CTA style */
 .action-button {
   display: inline-flex;
@@ -455,8 +571,9 @@ nav a[aria-label]::after {
   font-family: "Hanken Grotesk Variable", sans-serif;
   font-weight: 500;
   font-size: var(--font-size-nav);
-  min-width: 10rem;
-  max-width: 2em;
+  min-width: 8rem;
+  max-width: 10rem;
+  white-space: nowrap;
   transition: background-color 0.2s ease;
 }
 
@@ -467,22 +584,9 @@ nav a[aria-label]::after {
   margin-left: auto;
 }
 
-.action-button:hover {
-  background-color: var(--color-theme-accent-coral)
-}
-
-.action-button:hover svg {
-  transform: translateX(3px);
-}
-
 /* Variant: Coral background */
 .action-button--coral {
   background-color: var(--color-theme-accent-coral);
-  color: var(--color-theme-text-dark);
-}
-
-.action-button--coral:hover {
-  background-color: var(--color-theme-bg-neutral2);
   color: var(--color-theme-text-dark);
 }
 
@@ -499,22 +603,12 @@ nav a[aria-label]::after {
   text-decoration: none;
 }
 
-.link-arrow:hover {
-  gap: 0.75em;
-  color: var(--color-theme-accent-coral);
-}
-
 .link-arrow svg {
   width: 1em;
   height: 1em;
   transition: transform 0.2s ease;
 }
 
-.link-arrow:hover svg {
-  transform: translateX(2px);
-}
-
-/* GLOBAL ITEMS */
 /* Quatation svg*/
 .quotes-single {
   display: flex;
@@ -567,10 +661,6 @@ nav a[aria-label]::after {
   height: 1.75rem;
 }
 
-.icon-circle-link a:hover {
-  transform: scale(1.1);
-}
-
 .icon-solo {
   display: flex;
   align-items: center;
@@ -578,13 +668,8 @@ nav a[aria-label]::after {
 
 }
 
+/* ------------***** Service Cards *****------------ */
 
-.footer-link:hover {
-  color: var(--color-theme-accent-coral);
-  transition-duration: 0.3s ease;
-}
-
-/* SERVICE CARDS */
 /* Service Card Styles */
 .service-card {
   position: relative;
@@ -624,13 +709,7 @@ nav a[aria-label]::after {
   transition: opacity 0.3s ease;
 }
 
-.service-card:hover::after {
-  opacity: 1;
-}
 
-.service-card:hover .icon-circle {
-  transform: scale(1.1);
-}
 
 .service-card-inner {
   position: relative;
@@ -652,6 +731,8 @@ nav a[aria-label]::after {
   margin: 0;
 }
 
+/* ------------***** Sections *****------------ */
+
 /* About */
 
 .drop-cap::first-letter {
@@ -668,7 +749,6 @@ nav a[aria-label]::after {
 .about-para-bullet {
   position: relative;
   padding-left: 2.5rem;
-  ;
 }
 
 .about-para-bullet::before {
@@ -700,8 +780,8 @@ nav a[aria-label]::after {
   text-decoration-thickness: 2px;
   text-underline-offset: 12px;
   display: flex;
-  flex-direction: column;   
-  align-items: flex-start; 
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .work-moon {
@@ -737,20 +817,14 @@ nav a[aria-label]::after {
   transition: transform 0.3s ease;
 }
 
-.work-logo:hover {
-  opacity: 1;
-}
-
 .work-logo-link {
   display: inline-block;
   transition: transform 0.3s ease;
 }
 
-.work-logo-link:hover {
-  transform: translateY(-4px);
-}
 
-/* ARTICLES LIST PAGE */
+/* ------------***** Articles List Page *****------------ */
+
 /* Article Card Styles */
 .article-card {
   padding-bottom: 2rem;
@@ -764,10 +838,6 @@ nav a[aria-label]::after {
   line-height: 1.3;
   margin-bottom: 0.5rem;
   transition: color 0.2s;
-}
-
-.article-card a:hover .article-card-title {
-  color: var(--color-theme-accent-coral);
 }
 
 .article-card-date {
@@ -787,7 +857,9 @@ nav a[aria-label]::after {
   display: none;
 }
 
-/* Article + contact container */
+/* ------------***** Articles Sub Page *****------------ */
+
+/* Article + contact page container */
 .in-page-container {
   position: relative;
   z-index: var(--z-content);
@@ -813,7 +885,6 @@ nav a[aria-label]::after {
     /* right side */
     0 6px 0 0 var(--color-theme-bg-neutral1);
   /* bottom side */
-  z-index: 1;
 }
 
 .in-page-container::after {
@@ -873,10 +944,6 @@ nav a[aria-label]::after {
   transition: color 0.2s ease;
 }
 
-.article-body a:hover {
-  color: var(--color-theme-accent-coral);
-}
-
 /* Lists */
 .article-body ul,
 .article-body ol {
@@ -901,7 +968,8 @@ nav a[aria-label]::after {
   color: var(--color-theme-text-dark);
 }
 
-/* CONTACT PAGE */
+/* ------------***** Contact Page *****------------ */
+
 /* Form Elements */
 label {
   font-family: "Montserrat Variable", sans-serif;
@@ -960,15 +1028,6 @@ textarea {
   transition: transform 0.2s ease;
 }
 
-.submit-button:hover {
-  background: var(--color-theme-accent-coral);
-  color: var(--color-theme-text-dark);
-}
-
-.submit-button:hover svg {
-  transform: translateX(3px);
-}
-
 /* Contact Cards */
 .connect-card {
   display: flex;
@@ -989,9 +1048,4 @@ textarea {
   font-family: "Hanken Grotesk Variable", sans-serif;
   font-weight: 500;
   transition: color 0.2s ease, opacity 0.2s ease;
-}
-
-.connect-card a:hover {
-  color: var(--color-theme-text-alt-dark);
-  opacity: 0.9;
 }
