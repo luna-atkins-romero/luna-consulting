@@ -30,7 +30,7 @@
 
   /* Typography */
   --font-size-brand: clamp(1.5rem, 4vw, 2.5rem);
-  --font-size-nav: clamp(0.85rem, 2vw, 1.1rem);
+  --font-size-nav: clamp(0.9rem, 2vw, 1.1rem);
   --font-size-hero: clamp(1.5rem, 4vw + 2vh, 4.5rem);
   --font-size-headline: clamp(2.25rem, 4vw, 3.5rem);
   --font-size-headline-smaller: clamp(1.75rem, 3.5vw, 2.25rem);
@@ -55,6 +55,7 @@
   --z-modal: 1000;
 
   --space-service-card: clamp(1.5rem, 1.4348rem + 0.3261vw, 1.6875rem);
+  --size-icon-circle: clamp(2.75rem, 6vw, 3.5rem);
 }
 
 html {
@@ -474,7 +475,7 @@ nav a {
     transform: translateX(2px);
   }
 
-  .icon-circle-link a:hover {
+  .icon-circle-link:hover {
     transform: scale(1.1);
   }
 
@@ -534,6 +535,11 @@ nav a:active {
   background-color: var(--color-theme-accent-coral);
 }
 
+.action-button--coral:active {
+  background-color: var(--color-theme-bg-neutral2);
+  color: var(--color-theme-text-dark);
+}
+
 .link-arrow:active {
   color: var(--color-theme-accent-coral);
 }
@@ -542,24 +548,25 @@ nav a:active {
   transform: translateX(2px);
 }
 
-.icon-circle-link a:active {
+.icon-circle-link:active {
   transform: scale(1.1);
 }
 
-.work-logo-link:active { 
-  transform: translateY(-4px); 
+.work-logo-link:active {
+  transform: translateY(-6px);
 }
 
-.article-card a:active .article-card-title {  
-  color: var(--color-theme-accent-coral); 
+.article-card a:active .article-card-title {
+  color: var(--color-theme-accent-coral);
 }
 
-.article-body a:active { 
-  color: var(--color-theme-accent-coral); 
+.article-body a:active {
+  color: var(--color-theme-accent-coral);
 }
 
-.connect-card a:active { 
-  color: var(--color-theme-text-alt-dark); opacity: 0.9; 
+.connect-card a:active {
+  color: var(--color-theme-text-alt-dark);
+  opacity: 0.9;
 }
 
 .submit-button:active {
@@ -571,15 +578,15 @@ nav a:active {
   transform: translateX(3px);
 }
 
-.footer-link:active { 
-  color: var(--color-theme-accent-coral); 
+.footer-link:active {
+  color: var(--color-theme-accent-coral);
 }
 
 nav a,
 .nav-menu-label,
 .action-button,
 .link-arrow,
-.icon-circle-link a,
+.icon-circle-link,
 .work-logo-link,
 .article-card a,
 .connect-card a,
@@ -605,7 +612,7 @@ nav a,
   font-family: "Hanken Grotesk Variable", sans-serif;
   font-weight: 500;
   font-size: var(--font-size-nav);
-  width: 10rem;
+  width: clamp(8rem, 22vw, 10rem);
   white-space: nowrap;
   transition: background-color 0.2s ease;
 }
@@ -662,8 +669,8 @@ nav a,
 
 /* Universal Icon Circle + Styles */
 .icon-circle {
-  width: 3.5rem;
-  height: 3.5rem;
+  width: var(--size-icon-circle);
+  height: var(--size-icon-circle);
   border-radius: 9999px;
   display: flex;
   align-items: center;
@@ -674,14 +681,14 @@ nav a,
 }
 
 .icon-circle svg {
-  width: 1.75rem;
-  height: 1.75rem;
+  width: calc(var(--size-icon-circle) * 0.5);
+  height: calc(var(--size-icon-circle) * 0.5);
   color: var(--color-theme-accent-coral);
 }
 
 .icon-circle-link {
-  width: 3.5rem;
-  height: 3.5rem;
+  width: var(--size-icon-circle);
+  height: var(--size-icon-circle);
   border-radius: 9999px;
   display: flex;
   align-items: center;
@@ -689,16 +696,18 @@ nav a,
   flex-shrink: 0;
 }
 
-.icon-circle-link a {
+.icon-circle-link {
   transition: transform 0.3s ease;
 }
 
 .icon-circle-link svg {
-  width: 1.75rem;
-  height: 1.75rem;
+  width: calc(var(--size-icon-circle) * 0.5);
+  height: calc(var(--size-icon-circle) * 0.5);
 }
 
 .icon-solo {
+  width: calc(var(--size-icon-circle) * 0.5);
+  height: calc(var(--size-icon-circle) * 0.5);
   display: flex;
   align-items: center;
   flex-shrink: 0;

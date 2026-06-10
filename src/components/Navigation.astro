@@ -52,7 +52,7 @@
   <ul
     id="primary-menu"
     class="hidden
-      absolute left-0 right-0 top-full mt-8
+      absolute left-0 right-0 top-full mt-4
       flex flex-col gap-4
       px-4 sm:px-6 py-6
       text-left
@@ -69,7 +69,9 @@
 <script>
   const toggle = document.getElementById("nav-toggle");
   const menu = document.getElementById("primary-menu");
-  const hero = document.getElementById("hero");
+  const pushTarget = document.querySelector(
+    "[data-menu-push]",
+  ) as HTMLElement | null;
 
   if (toggle instanceof HTMLButtonElement && menu instanceof HTMLElement) {
     const openIcon = toggle.querySelector(".nav-icon--open");
@@ -79,9 +81,9 @@
       if (toggle && menu) {
         toggle.setAttribute("aria-expanded", "false");
         menu.classList.add("hidden");
-        if (hero) {
-          hero.style.paddingTop = "0";
-          hero.style.minHeight = ""; 
+        if (pushTarget) {
+          pushTarget.style.paddingTop = "";
+          pushTarget.style.minHeight = "";
         }
         if (openIcon && closeIcon) {
           openIcon.classList.remove("hidden");
@@ -96,14 +98,22 @@
         toggle.setAttribute("aria-expanded", String(!expanded));
         menu.classList.toggle("hidden");
 
-        if (!expanded && hero) {
-          const menuSpace = menu.scrollHeight; 
-          const currentHeight = hero.offsetHeight;
-          hero.style.minHeight = currentHeight + menuSpace + "px";
-          hero.style.paddingTop = menuSpace + "px";
-        } else if (hero) {
-          hero.style.paddingTop = "0";
-          hero.style.minHeight = "";
+        if (!expanded && pushTarget) {
+          const styles = getComputedStyle(menu);
+          const menuSpace =
+            menu.offsetHeight +
+            parseFloat(styles.marginTop) +
+            parseFloat(styles.marginBottom);
+
+          const offset = parseFloat(pushTarget.dataset.menuPushOffset || "0"); // ← read it
+          const currentHeight = pushTarget.offsetHeight;
+
+          pushTarget.style.minHeight =
+            currentHeight + menuSpace + offset + "px"; // ← use it
+          pushTarget.style.paddingTop = menuSpace + offset + "px"; // ← use it
+        } else if (pushTarget) {
+          pushTarget.style.paddingTop = "";
+          pushTarget.style.minHeight = "";
         }
 
         if (openIcon && closeIcon) {

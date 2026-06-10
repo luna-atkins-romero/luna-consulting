@@ -25,7 +25,7 @@ import LinkedInIcon from "../components/LinkedInIcon.astro";
   title="Luna Atkins Romero Consulting | Non-Profit Strategy & Governance"
   description="Expert strategic planning, governance reviews, and impact measurement for charities and non-profits in Ireland and internationally."
   image="/og-homepage.png"
-/>
+>
 
 <!-- Navbar + Hero - Full viewport -->
 <div class="flex flex-col min-h-dvh m-0">
@@ -33,7 +33,7 @@ import LinkedInIcon from "../components/LinkedInIcon.astro";
   <Header />
   <!-- Hero -->
   <section
-    id="hero"
+    id="hero" data-menu-push data-menu-push-offset="-32"
     class="grow flex px-6 sm:px-16 bg-theme-bg-primary-blue text-theme-text-light"
   >
     <!-- Hero -->
@@ -313,7 +313,7 @@ import LinkedInIcon from "../components/LinkedInIcon.astro";
             <div class="flex justify-center md:justify-end pt-4 pb-12">
               <a
                 href="/contact"
-                class="class = action-button action-button--coral text-theme-text-dark border-theme-bg-primary-blue bg-theme-accent-coral"
+                class="action-button action-button--coral text-theme-text-dark border-theme-bg-primary-blue bg-theme-accent-coral"
               >
                 Contact me
                 <svg
@@ -375,8 +375,9 @@ import LinkedInIcon from "../components/LinkedInIcon.astro";
             </p>
 
              <!-- LinkedIn -->
+              <div class="flex justify-center md:justify-start py-8">
               <div
-                class="flex flex-col sm:flex-row gap-2 md:gap-4 sm:items-center"
+                class="flex flex-row gap-2 md:gap-4 items-center"
               >
                 <a
                   href="https://www.linkedin.com/in/lunaatkinsromero/"
@@ -384,7 +385,7 @@ import LinkedInIcon from "../components/LinkedInIcon.astro";
                   rel="noopener noreferrer"
                   tabindex="-1"
                   aria-label="LinkedIn icon"
-                  class="icon-circle-link flex-shrink-0 bg-theme-off-neutral-grey"
+                  class="icon-circle-link shrink-0 bg-theme-off-neutral-grey"
                 >
                   <LinkedInIcon class="text-theme-text-dark" />
                 </a>
@@ -412,6 +413,7 @@ import LinkedInIcon from "../components/LinkedInIcon.astro";
                       <polyline points="12 5 19 12 12 19"></polyline>
                     </svg>
                   </a>
+                </div>
                 </div>
                 
               </div>

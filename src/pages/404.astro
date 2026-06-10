@@ -8,11 +8,12 @@ import Footer from "../components/Footer.astro";
   title="Page Not Found | Luna Atkins Romero Consulting"
   description="The page you're looking for doesn't exist."
   image="/og-homepage.png"
-/>
+>
   <Header />
+  <div data-menu-push data-menu-push-offset="-32" class="px-6 sm:px-16 bg-theme-bg-primary-blue"></div>
   
   <main id="main-content">
-    <section class="min-h-screen flex items-center py-16 px-6 sm:px-16  bg-theme-bg-primary-blue text-theme-text-light">
+    <section data-menu-push class="min-h-screen flex items-center py-16 px-6 sm:px-16  bg-theme-bg-primary-blue text-theme-text-light">
       <div class="max-w-4xl mx-auto text-center">
         <h1 class="page-heading-enter hero-section">
           404<span class="text-theme-accent font-punctuation-oversize">.</span>
@@ -22,9 +23,9 @@ import Footer from "../components/Footer.astro";
           This page doesn't exist, but my website does<span class="font-punctuation-oversize text-theme-accent">.</span>
         </p>
 
-        <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
+        <div class="flex flex-row sm:flex-row gap-4 sm:gap-6 justify-center">
           <a href="/" 
-             class="action-button text-lg bg-theme-accent">
+             class="action-button bg-theme-accent">
             Home
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" 
                  fill="none" stroke="currentColor" stroke-width="2" 

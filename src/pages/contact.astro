@@ -10,12 +10,12 @@ import LinkedInIcon from "../components/LinkedInIcon.astro";
   title="Contact | Luna Atkins Romero Consulting"
   description="Get in touch to discuss strategic planning, governance reviews, or impact measurement for your non-profit organisation."
   image="/og-contact.png"
-/>
+>
 <Header />
 <main id="main-content">
   <!-- Landing Section -->
-  <section
-    class="flex-grow flex items-center py-16 px-6 sm:px-16 bg-theme-bg-primary-blue text-theme-text-light"
+  <section data-menu-push
+    class="grow flex items-center py-16 px-6 sm:px-16 bg-theme-bg-primary-blue text-theme-text-light"
   >
     <div class="max-w-4xl mx-auto text-center">
       <h1 class="page-heading-enter heading-section text-6xl md:text-8xl">
@@ -38,7 +38,7 @@ import LinkedInIcon from "../components/LinkedInIcon.astro";
           <div class="flex items-center justify-center gap-2 md:gap-3 mb-2">
             <Icon
               name="lucide:map-pin"
-              class="w-7 h-7 icon-solo text-theme-accent-coral"
+              class="icon-solo text-theme-accent-coral"
               aria-hidden="true"
             />
             <p class="font-statement-subtle text-theme-text-dark no-mb">
@@ -128,7 +128,7 @@ import LinkedInIcon from "../components/LinkedInIcon.astro";
                   href="mailto:hello@lunaconsulting.ie"
                   tabindex="-1"
                   aria-label="Email icon"
-                  class="icon-circle-link flex-shrink-0 bg-theme-off-neutral-grey"
+                  class="icon-circle-link shrink-0 bg-theme-off-neutral-grey"
                 >
                   <Icon name="lucide:mail" class="text-theme-accent-coral" />
                 </a>
@@ -149,7 +149,7 @@ import LinkedInIcon from "../components/LinkedInIcon.astro";
                   rel="noopener noreferrer"
                   tabindex="-1"
                   aria-label="LinkedIn icon"
-                  class="icon-circle-link flex-shrink-0 bg-theme-off-neutral-grey"
+                  class="icon-circle-link shrink-0 bg-theme-off-neutral-grey"
                 >
                   <LinkedInIcon class="text-theme-text-dark" />
                 </a>
