@@ -51,20 +51,20 @@
   --z-text: 5;
   --z-header: 10;
   --z-overlay: 100;
-  /* dropdown */
-  --z-modal: 1000;
-
+  
   --space-service-card: clamp(1.5rem, 1.4348rem + 0.3261vw, 1.6875rem);
+  --space-card-overhang: 0.85rem;
+
   --size-icon-circle: clamp(2.75rem, 6vw, 3.5rem);
+
+  --font-size-body: 1rem;
+  --line-height-body: 1.6;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-body { 
-  background: var(--color-theme-bg-primary-blue); 
-}
 
 @view-transition {
   navigation: auto;
@@ -189,12 +189,8 @@ nav {
   z-index: var(--z-header);
 }
 
-:root {
-  --font-size-body: 1rem;
-  --line-height-body: 1.6;
-}
-
 body {
+  background: var(--color-theme-bg-primary-blue); 
   color: var(--color-theme-text-dark);
   font-family: "Montserrat Variable", sans-serif;
   font-weight: 400;
@@ -343,8 +339,6 @@ strong.para-emphasis {
   font-size: var(--font-size-headline-smaller);
   font-weight: 500;
   line-height: 1.6;
-  margin-bottom: 1.25rem;
-  margin: 0;
 }
 
 /* ------------***** Utilities *****------------ */
@@ -706,9 +700,6 @@ nav a,
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-}
-
-.icon-circle-link {
   transition: transform 0.3s ease;
 }
 
@@ -732,7 +723,7 @@ nav a,
   position: relative;
   z-index: var(--z-content);
   padding: var(--space-service-card);
-  inline-size: calc(100% - var(--space-l));
+  inline-size: calc(100% - var(--space-card-overhang));
 }
 
 .service-card>* {
@@ -922,6 +913,7 @@ nav a,
   z-index: var(--z-content);
   padding: clamp(1.5rem, 5vw, 5rem);
   border-radius: 0.75rem;
+  inline-size: calc(100% - var(--space-card-overhang));
 }
 
 .in-page-container>* {
@@ -948,7 +940,7 @@ nav a,
   content: "";
   position: absolute;
   inset: 1rem -0.85rem -0.85rem 1rem;
-  border-radius: 0.75rem;
+  border-radius: 0.5rem;
   background-color: var(--color-theme-accent);
   opacity: 0.7;
   z-index: 0;
@@ -1031,7 +1023,6 @@ nav a,
 label {
   font-family: "Montserrat Variable", sans-serif;
   font-weight: 500;
-  color: var(--color-theme-main);
   margin-bottom: 0.5rem;
   display: block;
 }
