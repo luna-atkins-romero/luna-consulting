@@ -30,7 +30,7 @@
 
   /* Typography */
   --font-size-brand: clamp(1.5rem, 4vw, 2.5rem);
-  --font-size-nav: clamp(0.9rem, 2vw, 1.1rem);
+  --font-size-nav: clamp(0.95rem, 2vw, 1.1rem);
   --font-size-hero: clamp(1.5rem, 4vw + 2vh, 4.5rem);
   --font-size-headline: clamp(2.25rem, 4vw, 3.5rem);
   --font-size-headline-smaller: clamp(1.75rem, 3.5vw, 2.25rem);
@@ -60,6 +60,10 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+body { 
+  background: var(--color-theme-bg-primary-blue); 
 }
 
 @view-transition {
@@ -520,6 +524,14 @@ nav a {
 
 /* Press feedback - all devices, clears on release */
 nav a:active {
+  text-decoration: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: var(--color-theme-accent-coral);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 8px;
+}
+
+#nav-toggle:active .nav-menu-label {
   text-decoration: underline;
   text-decoration-style: wavy;
   text-decoration-color: var(--color-theme-accent-coral);
