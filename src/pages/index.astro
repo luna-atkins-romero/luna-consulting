@@ -65,90 +65,76 @@ import LinkedInIcon from "../components/LinkedInIcon.astro";
 
   <main id="main-content">
     <!-- Intro -->
-    <section id="intro" class="bg-theme-bg-neutral2">
-      <div class="max-w-6xl mx-auto">
+    <section 
+      id="intro" 
+      class="bg-theme-bg-neutral2"
+    >
+      <div class="max-w-6xl mx-auto px-6 sm:px-16">
         <h2 class="sr-only">Introduction</h2>
 
         <!-- Mobile v Desktop layout -->
         <div class="flex flex-col md:flex-row">
+          
           <!-- Left: Portrait + Statement (stacked vertically) -->
-          <div
-            class="md:w-1/2 px-6 sm:px-16 pt-8 md:py-12 flex flex-col justify-center"
-          >
-            <div class="max-w-xl w-full">
-              <!-- Portrait -->
-              <div class="flex justify-center md:justify-end py-6">
-                <div class="w-42 md:w-48">
-                  <Image
-                    src={luna}
-                    alt="Luna Atkins Romero Portrait"
-                    width={512}
-                    height={494}
-                    class="w-full h-auto"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-              </div>
-
-              <div class="max-w-xl w-full mt-4 md:mt-8 md:pl-4 md:text-right">
-                <h2 class="heading-section text-theme-text-alt-dark mb-12">
-                  I have dedicated my career to working with and for mission<span
-                    class="text-theme-accent font-punctuation">-</span
-                  >driven
-                  <span class="word-unit">
-                    organisations<span
-                      class="text-theme-accent font-punctuation-oversize"
-                      >.</span
-                    >
-                  </span>
-                </h2>
-              </div>
+          <div class="md:w-1/2 flex flex-col justify-center md:py-12 md:pr-12">
+            <!-- Portrait -->
+            <div class="flex justify-center md:justify-end py-12">           
+                <Image
+                  src={luna}
+                  alt="Luna Atkins Romero Portrait"
+                  width={512}
+                  height={494}
+                  class="w-42 md:w-48"
+                  loading="lazy"
+                  decoding="async"
+                />             
             </div>
+
+            <h2
+              class="heading-section md:text-right text-theme-text-alt-dark"
+            >
+              I have dedicated my career to working with and for mission<span
+                class="text-theme-accent font-punctuation">-</span
+              >driven
+              <span class="word-unit">
+                organisations<span
+                  class="text-theme-accent font-punctuation-oversize">.</span
+                >
+              </span>
+            </h2>
+
           </div>
 
           <!-- Vertical Divider (desktop only) -->
-          <div class="hidden md:flex justify-center py-12">
-            <div>
-              <VerticalWavyDivider height={600} />
-            </div>
+          <div class="hidden md:flex justify-center py-12">         
+              <VerticalWavyDivider height={600} />          
           </div>
 
-          <!-- Right: Statement + Buttons -->
-          <div
-            class="w-full md:w-1/2 px-6 sm:px-16 pt-8 md:py-12 flex flex-col justify-center"
-          >
-            <div class="max-w-xl w-full">
+          <!-- Right: Intro Paragraphs + Buttons -->
+          <div class="md:w-1/2 flex flex-col justify-center py-12 md:pl-12">
+            
+            <div class="flex flex-col md:pt-8 space-y-6">
               <!-- Text -->
-              <div class="space-y-6">
-                <div>
-                  <p class="about-para no-mt drop-cap">
-                    My approach is shaped by 20 years of working in and
-                    alongside the non-profit sector, as a consultant, trustee,
-                    leader and mentor.
-                  </p>
-                  <p class="about-para">
-                    I understand the challenges and pressures leaders and their
-                    organisations face, from prioritising competing demands and
-                    opportunities, to navigating change and uncertainty, to
-                    funding, to governance and compliance.
-                  </p>
-                  <p class="about-para">
-                    I bring a combination of strategic thinking, practical
-                    experience and a genuine respect for the values that drive
-                    the work, and a proven track record of supporting
-                    organisations to have greater focus, accountability and
-                    impact.
-                  </p>
-                </div>
-              </div>
+              <p class="about-para no-mt drop-cap">
+                My approach is shaped by 20 years of working in and alongside
+                the non-profit sector, as a consultant, trustee, leader and
+                mentor.
+              </p>
+              <p class="about-para">
+                I understand the challenges and pressures leaders and their
+                organisations face, from prioritising competing demands and
+                opportunities, to navigating change and uncertainty, to funding,
+                to governance and compliance.
+              </p>
+              <p class="about-para no-mb">
+                I bring a combination of strategic thinking, practical
+                experience and a genuine respect for the values that drive the
+                work, and a proven track record of supporting organisations to
+                have greater focus, accountability and impact.
+              </p>
 
-              <div
-                class="flex flex-wrap gap-4 sm:gap-6 my-12 justify-center md:justify-start"
-              >
-                <!-- <div
-              class="flex flex-col pb-8 md:pb-0 sm:flex-row gap-4 sm:gap-6 md:mt-8 justify-start"
-            > -->
+              <!-- Buttons wrapper with alignment -->
+              <div class="flex flex-wrap gap-4 sm:gap-6 py-12 justify-center md:justify-start">
                 <a
                   href="#about"
                   class="action-button text-theme-text-dark border-theme-bg-primary-blue bg-theme-accent"
@@ -170,7 +156,7 @@ import LinkedInIcon from "../components/LinkedInIcon.astro";
                 </a>
                 <a
                   href="/contact"
-                  class="action-button text-lg text-theme-bg-primary-blue border-theme-bg-primary-blue bg-theme-accent"
+                  class="action-button text-theme-bg-primary-blue border-theme-bg-primary-blue bg-theme-accent"
                 >
                   Contact me
                   <svg
@@ -188,8 +174,10 @@ import LinkedInIcon from "../components/LinkedInIcon.astro";
                   </svg>
                 </a>
               </div>
+
             </div>
           </div>
+          <!-- End Right Col -->
         </div>
       </div>
     </section>
@@ -288,22 +276,24 @@ import LinkedInIcon from "../components/LinkedInIcon.astro";
     </section>
 
     <!-- About -->
-    <section
-      id="about"
-      class="pt-12 md:pt-0 bg-theme-bg-alt1-green"
+    <section 
+      id="about" 
+      class="bg-theme-bg-alt1-green text-theme-text-alt-dark" 
       aria-label="About Luna"
     >
-      <div class="max-w-6xl mx-auto px-6 sm:px-16 bg-theme-bg-alt1-green">
+      <div class="max-w-6xl mx-auto px-6 sm:px-16">
+        
         <!-- Mobile v Desktop layout -->
         <div class="flex flex-col md:flex-row">
-          <!-- Left: Heading + Button -->
+          
+          <!-- Left: Statement + LinkedIn -->
           <div
-            class="w-full md:w-1/2 bg-theme-bg-alt1-green md:pt-8 md:py-16 flex justify-start md:justify-end items-center"
+            class="md:w-1/2 flex flex-col justify-center py-12 md:pr-12"
           >
-            <div class="max-w-xl w-full md:pr-12 bg-theme-bg-alt1-green">
+              
               <h2
                 id="about-heading"
-                class="heading-section text-theme-text-alt-dark md:text-right md:no-mb no-mt"
+                class="heading-section text-theme-text-alt-dark md:text-right no-mb no-mt"
                 tabindex="-1"
               >
                 I am passionate about the role of the non<span
@@ -314,7 +304,10 @@ import LinkedInIcon from "../components/LinkedInIcon.astro";
               </h2>
 
               <!-- LinkedIn -->
-              <div class="flex justify-center md:justify-end pt-4 md:pt-0 pb-12 md:pb-8">
+              <div
+                class="flex justify-center md:justify-end pt-12"
+              >
+                <!-- Dual Link Wrapper -->
                 <div class="flex flex-row gap-2 md:gap-4 items-center">
                   <a
                     href="https://www.linkedin.com/in/lunaatkinsromero/"
@@ -353,32 +346,32 @@ import LinkedInIcon from "../components/LinkedInIcon.astro";
                   </div>
                 </div>
               </div>
-            </div>
+
           </div>
 
           <!-- Horizontal divider (mobile only) -->
-          <div class="flex md:hidden pb-12 md:pb-0 bg-theme-bg-alt1-green">
+          <div class="flex md:hidden">
             <WavyDivider color="var(--color-theme-accent-coral)" />
           </div>
 
           <!-- Vertical Divider (desktop only) -->
           <div
-            class="hidden md:flex items-stretch py-12 bg-theme-bg-alt1-green"
+            class="hidden md:flex justify-center py-12"
           >
             <VerticalWavyDivider
               color="var(--color-theme-accent-coral)"
-              ,
               height={700}
             />
           </div>
 
-          <!-- Right: Content -->
+          <!-- Right: About Paragraphs + Buttons -->
           <div
-            class="md:w-1/2 bg-theme-bg-alt1-green pb-8 md:py-16 md:pl-4 flex justify-start items-start"
+            class="md:w-1/2 flex flex-col justify-center py-12 md:pl-12"
           >
             <div
-              class="flex flex-col about-content max-w-xl w-full md:pt-8 md:px-6 md:pl-8 text-theme-text-alt-dark space-y-6"
+              class="flex flex-col md:pt-8 space-y-6"
             >
+              <!-- Text -->
               <p class="about-para no-mt drop-cap">
                 Charities, NGOs, social enterprises, research and advocacy
                 organisations, and social movements play a vital role in
@@ -403,9 +396,9 @@ import LinkedInIcon from "../components/LinkedInIcon.astro";
                 consultant to the sector, and as a Charity Trustee.
               </p>
 
-              <!-- Button wrapper with alignment -->
+              <!-- Buttons wrapper with alignment -->
               <div
-                class="flex flex-wrap gap-4 sm:gap-6 my-12 justify-center md:justify-start"
+                class="flex flex-wrap gap-4 sm:gap-6 py-12 justify-center md:justify-start"
               >
                 <a
                   href="/contact"
@@ -455,10 +448,10 @@ import LinkedInIcon from "../components/LinkedInIcon.astro";
     <!-- How I work -->
     <section
       id="how-i-work"
-      class="py-8 px-6 sm:px-16 pb-12 bg-theme-bg-primary-blue"
+      class="bg-theme-bg-primary-blue"
       aria-labelledby="how-i-work-heading"
     >
-      <div class="max-w-6xl mx-auto md:pt-8">
+      <div class="max-w-6xl mx-auto py-8 px-6 sm:px-16 md:pt-8 pb-12">
         <!-- Section Heading -->
         <h2
           id="how-i-work-heading"
