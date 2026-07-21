@@ -6,7 +6,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://lunaconsulting.ie', 
+  site: 'https://www.lunaconsulting.ie', 
   integrations: [
     icon({
       include: {
