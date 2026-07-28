@@ -8,11 +8,11 @@ interface Props {
   type?: "website" | "article";
 }
 
-const { 
-  title = "Luna Atkins Romero Consulting | Non-Profit Strategy & Governance", 
+const {
+  title = "Luna Atkins Romero Consulting | Non-Profit Strategy & Governance",
   description = "Expert strategic planning, governance reviews, and impact measurement for non-profit organisations in Ireland and internationally.",
-  image = "/og-homepage.png", 
-  type = "website"
+  image = "/og-homepage.png",
+  type = "website",
 } = Astro.props;
 
 const siteUrl = Astro.site?.toString() || "https://lunaconsulting.ie";
@@ -32,6 +32,13 @@ const ogImageURL = new URL(image, siteUrl);
     <!-- Preload critical fonts -->
     <link
       rel="preload"
+      href="/fonts/SortsMillGoudy-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
       href="/fonts/GoudyBookletter1911.woff2"
       as="font"
       type="font/woff2"
@@ -39,9 +46,9 @@ const ogImageURL = new URL(image, siteUrl);
     />
     <link
       rel="preload"
-      href="/fonts/Montserrat-VariableFont_wght.ttf"
+      href="/fonts/HankenGrotesk-VariableFont_wght.woff2"
       as="font"
-      type="font/ttf"
+      type="font/woff2"
       crossorigin
     />
 
