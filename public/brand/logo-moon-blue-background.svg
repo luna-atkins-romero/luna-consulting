@@ -1,0 +1,22 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <clipPath id="moon-clip">
+      <circle cx="256" cy="256" r="192" />
+    </clipPath>
+  </defs>
+	  <rect
+     width="512"
+     height="512"
+     fill="#2c5378"
+     id="rect1"
+     rx="0"
+     x="0"
+     y="0"
+     ry="50" />
+
+  <circle cx="256" cy="256" r="192"
+          fill="none" stroke="#3DB8A5" stroke-width="26.7" />
+
+  <rect x="64" y="64" width="192" height="384"
+        fill="#3DB8A5" clip-path="url(#moon-clip)" />
+</svg>
