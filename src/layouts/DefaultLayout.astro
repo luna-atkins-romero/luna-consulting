@@ -9,7 +9,7 @@ interface Props {
 }
 
 const {
-  title = "Luna Atkins Romero Consulting | Non-Profit Strategy & Governance",
+  title = "Luna Consulting | Non-Profit Strategy & Governance",
   description = "Expert strategic planning, governance reviews, and impact measurement for non-profit organisations in Ireland and internationally.",
   image = "/og-homepage.png",
   type = "website",
@@ -61,6 +61,7 @@ const ogImageURL = new URL(image, siteUrl);
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content={type} />
     <meta property="og:url" content={canonicalURL} />
+    <meta property="og:site_name" content="Luna Consulting" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImageURL} />
