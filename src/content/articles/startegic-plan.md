@@ -4,7 +4,7 @@ description:  "Discover why a clear strategic plan is essential for turning ambi
 date: "2026-01-17"
 ---
 
-Most charities and nonprofits are driven by a strong sense of purpose. But purpose alone isn't enough to deliver lasting impact — especially in complex, fast-changing environments. A strategic plan provides the structure needed to turn ambition into action. Done well, it's not a lengthy document that sits on a shelf, but a practical tool that guides decisions, priorities and resource use.
+Most charities and non-profits are driven by a strong sense of purpose. But purpose alone isn't enough to deliver lasting impact — especially in complex, fast-changing environments. A strategic plan provides the structure needed to turn ambition into action. Done well, it's not a lengthy document that sits on a shelf, but a practical tool that guides decisions, priorities and resource use.
 
 Here are five reasons why having a clear strategic plan really matters.
 
@@ -34,10 +34,10 @@ Rather than simply describing activities, it shows how the organisation intends 
 
 # 5. It helps organisations navigate change and uncertainty
 
-The external environment for charities and nonprofits is rarely stable.  Funding landscapes shift, needs evolve, and unexpected challenges emerge. A strategic plan doesn't eliminate uncertainty — but it does provide a framework for responding to it.
+The external environment for charities and non-profits is rarely stable.  Funding landscapes shift, needs evolve, and unexpected challenges emerge. A strategic plan doesn't eliminate uncertainty — but it does provide a framework for responding to it.
 
 By setting clear priorities and principles, organisations are better equipped to adapt without losing sight of their mission. In this way, a strategic plan supports resilience as much as it supports growth. 
 
 # In summary
 
-A strategic plan isn't about predicting the future or controlling every outcome. It's about making deliberate choices, aligning people and resources, and creating the conditions for meaningful, sustained impact. For charities and nonprofits working under constant pressure, that clarity is not a luxury — it's essential. 
+A strategic plan isn't about predicting the future or controlling every outcome. It's about making deliberate choices, aligning people and resources, and creating the conditions for meaningful, sustained impact. For charities and non-profits working under constant pressure, that clarity is not a luxury — it's essential. 
