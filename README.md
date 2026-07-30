@@ -35,7 +35,7 @@ static HTML/CSS and ships the bare minimum of client-side JavaScript.
 
 ## Project structure
 
-\`\`\`
+```
 src/
   components/    reusable UI (header, nav, footer, cards, brand mark, dividers, icons)
   content/       article collection (Markdown) + schema
@@ -47,16 +47,16 @@ public/
   fonts/         self-hosted woff2
   favicon/       full favicon set + web manifest
   og-*.png       Open Graph share images
-\`\`\`
+```
 
 ## Running locally
 
-\`\`\`bash
+```bash
 npm install
 npm run dev      # http://localhost:4321
 npm run build    # production build → dist/
 npm run preview  # preview the production build
-\`\`\`
+```
 
 ## Credits
 
