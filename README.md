@@ -1,7 +1,7 @@
 # Luna Atkins Romero Consulting — website
 
 Profile site for a non-profit strategy & governance consultancy.
-Built with Astro and Tailwind, deployed on Netlify. Static, lightweight, and attention given to sematic HTML and accessibility.
+Built with Astro and Tailwind, deployed on Netlify. Static, lightweight with particular attention given to sematic HTML and accessibility.
 
 **Live:** https://www.lunaconsulting.ie
 
@@ -57,7 +57,6 @@ npm run dev      # http://localhost:4321
 npm run build    # production build → dist/
 npm run preview  # preview the production build
 \`\`\`
-
 
 ## Credits
 
